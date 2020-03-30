@@ -1,5 +1,5 @@
 # LATAM Voucher Class Type
-![Ventana de configuración](MainPage.png)
+![Ventana de configuración](MainPage.PNG)
 
 ## Descripción
 Este maestro es una tipificación para las [clases de comprobantes](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md). Hay varias secciones en esta entidad, cada una representa un tipo de documento que puede ser usada en distintas entidades por ejemplo el grupo facturas tiene facturas de ventas, factura de compras, factura de servicios. Cada uno de estos check representa que puede ser usada como la extension de un determinado documento.
