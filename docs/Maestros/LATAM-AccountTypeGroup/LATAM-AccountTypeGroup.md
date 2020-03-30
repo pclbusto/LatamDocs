@@ -14,7 +14,7 @@ Mestro de grupo de tipo de cuenta. Crea una tipificación para un tipo de cuenta
 ### Campos
 
 >#### Tipo de cuenta
->>**Descripcion**: Especifica a que tipo de cuenta va a tipificar. 
+>>**Descripción**: Especifica a que tipo de cuenta va a tipificar. 
 
 >>> * Cliente
 >>> * Proveedor
@@ -26,90 +26,147 @@ un grupo tipo cuenta cuyo Tipo cuenta es cliente solo puede ser usado en la exte
 >>**Tipo**:Code
 
 >#### No.
->>**Descripcion**: 
+>>**Descripción**: 
 	
 >>**Tipo**:Code
 
 >#### Descripción
->>**Descripcion**: 
+>>**Descripción**: 
 	
 >>**Tipo**:Code
 
 ## Sección clase de comprobante Cliente/Proveedor 
 ### Campos
 >#### Clase de comprobante
->>**Descripcion**: 
+>>**Descripción**: 
 	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md)
 	
 >>**Tipo**:Code
 
 >#### Descripción
->>**Descripcion**: 
+>>**Descripción**: 
 	Descripción de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md)
 	
 >>**Tipo**:Text
 
 ## Sección Clase de comprobante por defecto de cliente
 ### Campos
->#### Clase de comprobante
->>**Descripcion**: 
-	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md)
-	
->>**Tipo**:Code
-
->#### Descripción
->>**Descripcion**: 
-	Descripción de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md)
-	
->>**Tipo**:Text
-
-## Sección Clase de comprobante por defecto de proveedor
-### Campos
->#### Diario de crédito
->>**Descripcion**: 
-	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo pueden cargarse comprobante cuya clase de comprobante tenga marcado el check 
+>#### Nota de crédito de servicio
+>>**Descripción**: 
+	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una nota de crédito de servicio. En este campo solo pueden cargarse comprobante cuyo tipo clase de comprobante tenga marcado el [check Notas de crédito de servicio](../../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#notas-de-credito-de-servicio)
 	
 >>**Tipo**:Code[15]
 
->#### Diario de débito
->>**Descripcion**: 
-	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo pueden cargarse comprobante cuya clase de comprobante tenga marcado el check 
+>#### Factura de servicio
+>>**Descripción**: 
+	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una factura de servicio. En este campo solo pueden cargarse comprobante cuyo tipo clase de comprobante tenga marcado el [check Factura de servicio](../../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#factura-de-servicio) 
 	
 >>**Tipo**:Code[15]
 
->#### Medio de pago predeterminado
->>**Descripcion**: 
-	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear un medio de cobro pago. En este campo solo pueden cargarse comprobante cuya clase de comprobante tenga marcado el check 
+>#### Remito de servicio
+>>**Descripción**: 
+	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear un remito de servicio. En este campo solo pueden cargarse comprobante cuyo tipo clase de comprobante tenga marcado el [check Remito](../../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#remito)  
 	
 >>**Tipo**:Code[15]
 
 >#### Remito
->>**Descripcion**: 
-	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo pueden cargarse comprobante cuya clase de comprobante tenga marcado el check 
+>>**Descripción**: 
+	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear un remito de compra/ventas. En este campo solo pueden cargarse comprobante cuyo tipo clase de comprobante tenga marcado el [check Remito](../../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#remito)
+	
+>>**Tipo**:Code[15]
+
+>#### Nota de crédito de proyecto
+>>**Descripción**: 
+	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo pueden cargarse comprobante cuyo tipo clase de comprobante tenga marcado el [check Remito](../../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#remito) 
+	
+>>**Tipo**:Code[15]
+
+>#### Factura de proyecto
+>>**Descripción**: 
+	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo pueden cargarse comprobante cuyo tipo clase de comprobante tenga marcado el check 
+	
+>>**Tipo**:Code[15]
+
+>#### Remito de proyecto
+>>**Descripción**: 
+	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo pueden cargarse comprobante cuyo tipo clase de comprobante tenga marcado el check 
+	
+>>**Tipo**:Code[15]
+
+>#### Remisión de devolución de proyecto
+>>**Descripción**: 
+	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo pueden cargarse comprobante cuyo tipo clase de comprobante tenga marcado el check 
+	
+>>**Tipo**:Code[15]
+
+>#### Remisión de reembolso
+>>**Descripción**: 
+	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo pueden cargarse comprobante cuyo tipo clase de comprobante tenga marcado el check 
+	
+>>**Tipo**:Code[15]
+
+>#### Nota de crédito de venta
+>>**Descripción**: 
+	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo pueden cargarse comprobante cuyo tipo clase de comprobante tenga marcado el check 
+	
+>>**Tipo**:Code[15]
+
+>#### Factura de venta
+>>**Descripción**: 
+	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo pueden cargarse comprobante cuyo tipo clase de comprobante tenga marcado el check 
+	
+>>**Tipo**:Code[15]
+
+
+
+
+## Sección Clase de comprobante por defecto de proveedor
+### Campos
+>#### Diario de crédito
+>>**Descripción**: 
+	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo pueden cargarse comprobante cuyo tipo clase de comprobante tenga marcado el check 
 	
 >>**Tipo**:Code[15]
 
 >#### Diario de débito
->>**Descripcion**: 
-	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo pueden cargarse comprobante cuya clase de comprobante tenga marcado el check 
+>>**Descripción**: 
+	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo pueden cargarse comprobante cuyo tipo clase de comprobante tenga marcado el check 
+	
+>>**Tipo**:Code[15]
+
+>#### Medio de pago predeterminado
+>>**Descripción**: 
+	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear un medio de cobro pago. En este campo solo pueden cargarse comprobante cuyo tipo clase de comprobante tenga marcado el check 
+	
+>>**Tipo**:Code[15]
+
+>#### Remito
+>>**Descripción**: 
+	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo pueden cargarse comprobante cuyo tipo clase de comprobante tenga marcado el check 
+	
+>>**Tipo**:Code[15]
+
+>#### Nota de crédito de compra
+>>**Descripción**: 
+	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo pueden cargarse comprobante cuyo tipo clase de comprobante tenga marcado el check 
+	
+>>**Tipo**:Code[15]
+
+>#### Factura de compra
+>>**Descripción**: 
+	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo pueden cargarse comprobante cuyo tipo clase de comprobante tenga marcado el check 
+	
+>>**Tipo**:Code[15]
+
+>#### Remisión de reembolso
+>>**Descripción**: 
+	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo pueden cargarse comprobante cuyo tipo clase de comprobante tenga marcado el check 
 	
 >>**Tipo**:Code[15]
 
 >#### Diario de débito
->>**Descripcion**: 
-	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo pueden cargarse comprobante cuya clase de comprobante tenga marcado el check 
-	
->>**Tipo**:Code[15]
-
->#### Diario de débito
->>**Descripcion**: 
-	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo pueden cargarse comprobante cuya clase de comprobante tenga marcado el check 
-	
->>**Tipo**:Code[15]
-
->#### Diario de débito
->>**Descripcion**: 
-	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo pueden cargarse comprobante cuya clase de comprobante tenga marcado el check 
+>>**Descripción**: 
+	Id de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo pueden cargarse comprobante cuyo tipo clase de comprobante tenga marcado el check 
 	
 >>**Tipo**:Code[15]
 
