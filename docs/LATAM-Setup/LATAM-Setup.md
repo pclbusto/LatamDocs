@@ -6,27 +6,27 @@ Ventana de configuración que permite configurar comportamientos generales de la
 ## Sección Habilitar localización core LATAM
 ###Campos
 
->####LATAM habilitado
+>#### LATAM habilitado
 >>**Descripcion**: 
 	Habilita o deshabilita la localización. Si este campo esta en falso el código de la localización no debería ejecutarse. Esto implica extensiones a páginas o código que ejecuta en puntos de integración.
 	
 >>**Tipo**:Booleano
 
 ## Sección prefijo
-###Campos
->####Long. prefijo letra clase comprobante
+### Campos
+>#### Long. prefijo letra clase comprobante
 >>**Descripcion**: 
 	Cantidad de caracteres que permite el campo letra de comprobante de la entidad [letra de comprobante](../LATAM-LATAMVoucherClassLetter/LATAM-LATAMVoucherClassLetter.md) letra de comprobante.
 	
 >>**Tipo**:Entero
->####Long. prefijo tipo clase comprobante
+>#### Long. prefijo tipo clase comprobante
 >>**Descripcion**: 
 	Cantidad de caracteres que permite el campo prefijo de clase de comprobante de la entidad clase de comprobante.
 	
 >>**Tipo**:Entero
 
 ### Sección definidos por usuario cliente
-###Campos
+### Campos
 >#### Etiqueta concepto 1
 >>**Descripción**: 
 	Define la etiqueta que va a tener el [campo concepto 1 de la extensión cliente](../Extensiones/LATAM-Customer/LATAM-Customer.md#concepto-1). Es decir el valor que se de a este campo es la etiqueta que va a tomar en la extensión de la entidad clientes.
