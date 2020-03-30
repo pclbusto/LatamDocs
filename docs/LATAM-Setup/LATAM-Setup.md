@@ -4,7 +4,7 @@
 Ventana de configuración que permite configurar comportamientos generales de la localización. Por ejemplo si la localización esta o no activada.
 
 ## Sección Habilitar localización core LATAM
-###Campos
+### Campos
 
 >#### LATAM habilitado
 >>**Descripcion**: 
