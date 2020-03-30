@@ -1,0 +1,1126 @@
+#LATAM Document Extension
+##Descripción
+Esta CU es la encargada de toda la funcionalidades de la entidad [Document Extension](../../../LATAM-DocumentExtension/LATAM-DocumentExtension.md)
+
+##Procedimientos
+***
+>####GetEntityType
+>>** Descripción **
+Recuperar el tipo de entidad que participa en [Document Extension](../../../LATAM-DocumentExtension/LATAM-DocumentExtension.md) dependiendo del [tipo de extensión](../../../Desarrollo/Enums/LATAM-DocumentExtensionType/LATAM-DocumentExtensionType.md). Si el tipo de extensión es `SalesCreditNote`,`SalesInvoice`, `SalesOrder`, `SalesReturnOrder` o `ServiceInvoices` retorna el [tipo de entidad](../../../Desarrollo/Enums/LATAM-EntityType/LATAM-EntityType.md) `Customer`. En caso que el tipo de extensión sea `PurchaseInvoice`, `PurchaseCreditNote`, `PurchaseOrder` o `PurchaseReturnOrder` retorna el [tipo de entidad](../../../Desarrollo/Enums/LATAM-EntityType/LATAM-EntityType.md) `Vendor`. En caso que el tipo de extensión no sea uno de los mencionados muestra el mensaje `'GetEntityType: Tipo de extension no reconocido'`
+
+
+>>**Parametros:** 
+>>>DocumentExtension: **Record "LATAM Document Extension"**) 
+
+>>**Retorna**: 
+>>>Existe: **Boolean**
+    
+>####ValidateDocumentExtensionExistence
+>>** Descripción **
+Valida la existencia de [Document Extension](../../../LATAM-DocumentExtension/LATAM-DocumentExtension.md) para los documentos listados mas abajo y retorna el registro correspondiente. En el caso de órdenes, estos documentos contienen dos extensiones en el caso de ordenes de compra y venta tenemos la factura correspondiente y el remito de compra y ventas.  En el caso de las devoluciones tenemos los remitos de devolución de compra y ventas, para la recepción de los artículos, y la nota de crédito correspondiente. Hay una sobre carga de este procedimiento para que tome como entrada una cabecera de ventas o una de compras.
+Pero comparten el mismo comportamiento. Si la extensión o extensiones no existen el procedimiento carga en mediante `ErrorMessageManagement` el mensaje de error **_La extensión LATAM no existe._**. Este procedimiento no corta la ejecución para que pueda ser usada en conjunto con otras validaciones. 
+
+En la siguiente tabla se listan los documentos y las extensiones:
+	
+>>|Documento|extensión documento|
+|---------|-------------|
+Facturas de ventas|[Extensión Factura de ventas](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#factura-ventas)
+Facturas de servicio|[Extensión Factura de servicio](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#factura-de-servicio)
+Facturas de compras|[Extensión Factura de compras](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#factura-compras)
+Orden de ventas|[Extensión Remito](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#remito)
+Orden de ventas|[Extensión Factura de ventas](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#factura-ventas)
+Orden de compras|[Extensión Remito de compras](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#factura-ventas)
+Orden de compras|[Extensión Factura de compras](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#factura-ventas)
+Nota de crédito de ventas|[Extensión Notas de crédito de ventas](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#notas-de-credito-de-ventas)
+Nota de crédito de compra|[Extensión Notas de crédito de compras](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#remito)
+Orden de devoluciones de ventas|[Extensión Remito devolución venta](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#remito-devolucion)
+Orden de devoluciones de ventas|[Extensión Notas de crédito de ventas](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#notas-de-credito-de-ventas)
+Orden de devoluciones de Compras|[Extensión Remito devolución compras](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#remito-devolucion)
+Orden de devoluciones de Compras|[Extensión Notas de crédito de compras](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#remito-devolucion)
+
+<br>
+>>**Versión compras**
+>>>**Parámetros:**
+>>>>PurchaseHeader: **(entrada)** Record "Purchase Header"
+
+>>>>DocumentExtension_1: **(salida)** Record "LATAM Document Extension" - Si existe la extensión la carga en este registro.
+
+>>>>DocumentExtension_2: **(salida)** Record "LATAM Document Extension" - En los casos de ordenes que tiene dos documentos a generar. Si va a generar dos documentos la segunda extensión la carga acá. 
+
+>>**Versión ventas**
+>>>**Parámetros:**
+>>>>SalesHeader: **(entrada)** Record "Sales Header"
+
+>>>>DocumentExtension_1: **(salida)** Record "LATAM Document Extension" - Si existe la extensión la carga en este registro.
+
+>>>>DocumentExtension_2: **(salida)** Record "LATAM Document Extension" - En los casos de ordenes que tiene dos documentos a generar. Si va a generar dos documentos la segunda extensión la carga acá. 
+
+>>**Retorno**: `True` en el caso que la extensión exista. En el caso de dos extensiones. Si la orden va a generar los dos documentos, tienen que existir los dos para que retorne `true`. Sino retorna `false`.
+
+
+
+
+
+	procedure ValidateDocumentExtensionExistence(SalesHeader: Record "Sales Header"; var DocumentExtension: Record "LATAM Document Extension")
+    var
+        DocumentExtensionRec: Record "LATAM Document Extension";
+        ErrorMessageManagement: Codeunit "Error Message Management";
+        LATAMDocumentExtensionType: enum "LATAM DocumentExtensionType";
+        PostingType: Enum "LATAM PostingType";
+        LATAMTableExtension: Enum "LATAM TableExtension";
+        //EstadoAsignacion: Enum "LATAM AssignType";
+        Existe: Boolean;
+
+    begin
+        Existe := false;
+        LATAMDocumentExtensionType := GetDocumentExtensionType(SalesHeader, LATAMTableExtension::"Sales Header");
+        case SalesHeader."Document Type" of
+            SalesHeader."Document Type"::Order:
+                begin
+                    if SalesHeader.Ship then
+                        if DocumentExtensionRec.Get(SalesHeader."No.", SalesHeader."Document Type", PostingType::PackingSlip, LATAMDocumentExtensionType) then
+                            Existe := true;
+                    if SalesHeader.Invoice then
+                        if DocumentExtensionRec.Get(SalesHeader."No.", SalesHeader."Document Type", PostingType::Invoice, LATAMDocumentExtensionType) then
+                            Existe := true;
+                end;
+            SalesHeader."Document Type"::"Return Order":
+                begin
+                    if SalesHeader.Receive then
+                        if DocumentExtensionRec.Get(SalesHeader."No.", SalesHeader."Document Type", PostingType::PackingSlip, LATAMDocumentExtensionType) then
+                            Existe := true;
+                    if SalesHeader.Invoice then
+                        if DocumentExtensionRec.Get(SalesHeader."No.", SalesHeader."Document Type", PostingType::Invoice, LATAMDocumentExtensionType) then
+                            Existe := true;
+                end;
+            else
+                if DocumentExtensionRec.Get(SalesHeader."No.", SalesHeader."Document Type", PostingType::NoType, LATAMDocumentExtensionType) then
+                    Existe := true;
+        end;
+        if not Existe then
+            ErrorMessageManagement.LogError(SalesHeader,
+            DocumentExtensionNotExistErr,
+            SalesHeader."No.");
+        DocumentExtension := DocumentExtensionRec;
+    end;
+	
+	procedure ValidateDocumentExtensionExistence(PurchaseHeader: Record "Purchase Header"; var DocumentExtension: Record "LATAM Document Extension")
+    var
+        DocumentExtensionRec: Record "LATAM Document Extension";
+        ErrorMessageManagement: Codeunit "Error Message Management";
+        LATAMDocumentExtensionType: enum "LATAM DocumentExtensionType";
+        PostingType: Enum "LATAM PostingType";
+        LATAMTableExtension: Enum "LATAM TableExtension";
+        //EstadoAsignacion: Enum "LATAM AssignType";
+        Existe: Boolean;
+
+    begin
+        Existe := false;
+        LATAMDocumentExtensionType := GetDocumentExtensionType(PurchaseHeader, LATAMTableExtension::"Sales Header");
+        // if SalesHeader."Document Type" = SalesHeader."Document Type"::Order then begin
+        //     if SalesHeader.Ship then
+        //         if DocumentExtensionRec.Get(SalesHeader."No.", SalesHeader."Document Type", PostingType::PackingSlip, LATAMDocumentExtensionType) then
+        //             Existe := true;
+        //     if SalesHeader.Invoice then
+        //         if DocumentExtensionRec.Get(SalesHeader."No.", SalesHeader."Document Type", PostingType::Invoice, LATAMDocumentExtensionType) then
+        //             Existe := true;
+        // end
+        // else
+        if DocumentExtensionRec.Get(PurchaseHeader."No.", PurchaseHeader."Document Type", PostingType::NoType, LATAMDocumentExtensionType) then
+            Existe := true;
+        if not Existe then
+            ErrorMessageManagement.LogError(PurchaseHeader,
+            DocumentExtensionNotExistErr,
+            PurchaseHeader."No.");
+        DocumentExtension := DocumentExtensionRec;
+    end;
+	
+    procedure ValidateLATAMVoucherClassId(var DocumentExtension: Record "LATAM Document Extension")
+    begin
+        with DocumentExtension do begin
+            ClearPageFieldsVoucherClass(DocumentExtension);
+            DocumentExtension.CalcFields(LATAMVoucherClassName);
+        end;
+    end;
+
+    procedure ClearFieldsSalesPointId(var DocumentExtension: Record "LATAM Document Extension")
+    begin
+        DocumentExtension.LATAMCompleteVoucherNumber := '';
+        DocumentExtension.LATAMVoucherNumber := '';
+        DocumentExtension.LATAMDocumentDate := 0D;
+        DocumentExtension.LATAMSalesPointPrefix := '';
+        DocumentExtension.LATAMCa := '';
+        DocumentExtension.LATAMCAICAEDueDate := 0D;
+    end;
+
+    procedure ClearPageFieldsVoucherClass(var DocumentExtension: Record "LATAM Document Extension")
+    //field 1 = voucher 2 = LATAMCountryCode 3 = LATAMStateId
+    begin
+        with DocumentExtension do begin
+            //SetBehavior();
+            LATAMSalesPointId := '';
+            LATAMSalesPointPrefix := '';
+            LATAMCompleteVoucherNumber := '';
+            LATAMVoucherNumber := '';
+            LATAMTaxPayerTypeId := '';
+            LATAMName := '';
+            LATAMCountryCode := '';
+            ClearPageFieldsCountryCode(DocumentExtension);
+            LATAMStateDocNum := '';
+            LATAMListField01 := '';
+            LATAMListFieldCode01 := '';
+            LATAMListField02 := '';
+            LATAMListFieldCode02 := '';
+            LATAMListField03 := '';
+            LATAMListFieldCode03 := '';
+            LATAMListField04 := '';
+            LATAMListFieldCode04 := '';
+            LATAMListField05 := '';
+            LATAMListFieldCode05 := '';
+            LATAMListField06 := '';
+            LATAMListFieldCode06 := '';
+            LATAMListField07 := '';
+            LATAMListFieldCode07 := '';
+            LATAMListField08 := '';
+            LATAMListFieldCode08 := '';
+            LATAMListField09 := '';
+            LATAMListFieldCode09 := '';
+            LATAMListField10 := '';
+            LATAMListFieldCode10 := '';
+        end;
+    end;
+
+    local procedure ClearPageFieldsTaxPayer(var DocumentExtension: Record "LATAM Document Extension")
+    begin
+        with DocumentExtension do begin
+            LATAMCountryCode := '';
+            ClearPageFieldsCountryCode(DocumentExtension);
+        end;
+    end;
+
+    local procedure ClearPageFieldsCountryCode(var DocumentExtension: Record "LATAM Document Extension")
+    begin
+        with DocumentExtension do begin
+            LATAMCountryName := '';
+            LATAMCountryDocTypeId := '';
+            LATAMCountryDocNum := '';
+            LATAMStateId := '';
+            ClearPageFieldsStateCode(DocumentExtension);
+        end;
+    end;
+
+    local procedure ClearPageFieldsStateCode(var DocumentExtension: Record "LATAM Document Extension")
+    begin
+        with DocumentExtension do begin
+            LATAMStateDocTypeId := '';
+            LATAMNameState := '';
+            LATAMStateDocNum := '';
+        end;
+    end;
+
+
+
+    local procedure SetSalesPointID(var DocumentExtension: Record "LATAM Document Extension") error: Boolean
+    var
+        CUVoucherClass: Codeunit "LATAM VoucherClass";
+        EstadoAsignacion: Enum "LATAM AssignType";
+        Campo: Enum "LATAM ListFields";
+        FieldBehavior: Enum "LATAM AdditionalFieldBehavior";
+        PosEmptyMsg: label 'The sales point id is required.', comment = 'ESP="El punto de ventas es requerido."';
+        SalesPointMissingMsg: label 'The sale point does not exist', comment = 'ESP="El punto de venta no existe."';
+    begin
+        if (CUVoucherClass.GetFieldBehaviorForPage(DocumentExtension.LATAMVoucherClassId, Campo::LATAMSalesPointId, GetEntityType(DocumentExtension)) = FieldBehavior::Required) and (DocumentExtension.LATAMSalesPointId = '') then
+            DocumentExtension.FieldError(DocumentExtension.LATAMSalesPointPrefix, PosEmptyMsg);
+
+        GetVoucherNumOptionByEntityType(DocumentExtension);
+        GetPDVOptionByEntityType(DocumentExtension);
+
+        if (POSEntryType = POSEntryType::Automatic) then begin
+            if not SalesPointRecord.Get(DocumentExtension.LATAMSalesPointId) then
+                DocumentExtension.FieldError(LATAMSalesPointId, SalesPointMissingMsg);
+            DocumentExtension.LATAMSalesPointPrefix := SalesPointRecord.LATAMSalesPointPrefix;
+            DocumentExtension.Validate(DocumentExtension.LATAMSalesPointPrefix);
+        end;
+        CalculateVoucherNumber(DocumentExtension, EstadoAsignacion::BeforePost);
+        DocumentExtension.Validate(DocumentExtension.LATAMVoucherNumber);
+    end;
+
+    procedure CalculateVoucherNumber(var DocumentExtension: Record "LATAM Document Extension"; EstadoAsignacion: Enum "LATAM AssignType")
+    var
+        CUSalesPoint: Codeunit "LATAM SalesPoint";
+        CUNoSeriesManagement: Codeunit NoSeriesManagement;
+        SeriesNo: Code[20];
+        SeriesNoUsed: Code[20];
+        NextSeriesNo: Code[20];
+        SerialMissingMsg: label 'There is not a serie asociated to the point of sale and voucher class', comment = 'ESP="No existe una serie asociada el punto de venta y clase de comprobante"';
+    //accede a la serie que tiene configurada el pdv el voucher y la entidad. Para
+    //para calcular el proximo numero para la serie.
+    begin
+        GetVoucherNumOptionByEntityType(DocumentExtension);
+        case VoucherNumEntryType of
+            VoucherNumEntryType::Automatic:
+                if EstadoAsignacion = VoucherNumAssignType then begin
+                    NextSeriesNo := CUSalesPoint.GetSequenceNumber(DocumentExtension.LATAMSalesPointId, DocumentExtension.LATAMVoucherClassId, GetEntityType(DocumentExtension));
+                    if NextSeriesNo = '' then
+                        DocumentExtension.FieldError(DocumentExtension.LATAMSalesPointId, SerialMissingMsg);
+                    CUNoSeriesManagement.InitSeries(NextSeriesNo, '', System.Today(), SeriesNo, SeriesNoUsed);
+                    DocumentExtension.LATAMVoucherNumber := SeriesNo;
+                    DocumentExtension.Validate(DocumentExtension.LATAMVoucherNumber);
+                    exit;
+                end
+                else begin
+                    if (EstadoAsignacion = VoucherNumAssignType::BeforePost) and
+                        (VoucherNumAssignType = VoucherNumAssignType::AfterPost) then
+                        DocumentExtension.LATAMVoucherNumber := 'PEND';
+                    if (EstadoAsignacion = VoucherNumAssignType::BeforePost) and
+                        (VoucherNumAssignType = VoucherNumAssignType::FE) then
+                        DocumentExtension.LATAMVoucherNumber := 'PEND';
+                end;
+        end;
+    end;
+
+    local procedure SetSalesPointPrefix(var DocumentExtension: Record "LATAM Document Extension") error: Boolean
+    var
+        CUVoucherClass: Codeunit "LATAM VoucherClass";
+        //CUSalesPoint: Codeunit "LATAM SalesPoint";
+
+        FieldBehavior: Enum "LATAM AdditionalFieldBehavior";
+        Campo: Enum "LATAM ListFields";
+        PosPrefixRequiredMsg: label 'The sales point prefix is required.', comment = 'ESP="El prefijo del punto de ventas es requerido."';
+        PosPrefixMaskMsg: label 'The sales point prefix does not match the mask configured.', comment = 'ESP="El prefijo del punto de ventas no coincide con la máscara configurada."';
+    begin
+        GetPDVOptionByEntityType(DocumentExtension);
+        if (CUVoucherClass.GetFieldBehaviorForPage(DocumentExtension.LATAMVoucherClassId, Campo::LATAMSalesPointPrefix, GetEntityType(DocumentExtension)) = FieldBehavior::Required) and (DocumentExtension.LATAMSalesPointPrefix = '') then
+            DocumentExtension.FieldError(DocumentExtension.LATAMSalesPointPrefix, PosPrefixRequiredMsg);
+        ErrorIfEmptySalesPointPrefix(DocumentExtension);
+        if POSMask <> '' then
+            if ValidateMask(DocumentExtension.LATAMSalesPointPrefix, 0, POSLength, POSMask) = '' then begin
+                DocumentExtension.LATAMSalesPointId := '';
+                DocumentExtension.LATAMSalesPointPrefix := '';
+                DocumentExtension.FieldError(DocumentExtension.LATAMSalesPointPrefix, PosPrefixMaskMsg);
+                exit;
+            end;
+        DocumentExtension.ValidateLATAMSalesPointPrefix();
+    end;
+
+    procedure SetVoucherNumber(var DocumentExtension: Record "LATAM Document Extension" /*EntityType: Enum "LATAM EntityType";*/)
+    var
+        CUSalesPoint: Codeunit "LATAM SalesPoint";
+        CUVoucherClass: Codeunit "LATAM VoucherClass";
+        VoucherNumberMaskMsg: label 'The  sequence number associated does not match voucher class mask.', comment = 'ESP="La secuencia numérica no coincide con la máscara configurada."';
+
+    begin
+        GetVoucherNumOptionByEntityType(DocumentExtension);
+        case VoucherNumEntryType of
+            VoucherNumEntryType::Automatic:
+                if DocumentExtension.LATAMVoucherNumber <> 'PEND' then begin
+                    if MskDocNumNoValMask then
+                        if ValidateMask(DocumentExtension.LATAMVoucherNumber, 0, MskDocNumLength, MskDocNumMask) = '' then begin
+                            DocumentExtension.LATAMSalesPointId := '';
+                            DocumentExtension.LATAMSalesPointPrefix := '';
+                            DocumentExtension.FieldError(DocumentExtension.LATAMSalesPointId, VoucherNumberMaskMsg);
+                        end;
+
+                    /*if VoucherReqCA and SalesPointRecord.LATAMValidateCA then
+                        GetCAandDate(DocumentExtension, EntityType);
+                    */
+                    DocumentExtension.LATAMCompleteVoucherNumber := CUSalesPoint.GenerateCompleteVoucherNumber(CUVoucherClass.GetVoucherPrefix(DocumentExtension.LATAMVoucherClassId), LatamSeparator, DocumentExtension.LATAMSalesPointPrefix, DocumentExtension.LATAMVoucherNumber)
+                end
+                else
+                    DocumentExtension.LATAMCompleteVoucherNumber := 'PEND';
+            VoucherNumEntryType::Manual:
+                DocumentExtension.LATAMCompleteVoucherNumber := CUSalesPoint.GenerateCompleteVoucherNumber(CUVoucherClass.GetVoucherPrefix(DocumentExtension.LATAMVoucherClassId), LatamSeparator, DocumentExtension.LATAMSalesPointPrefix, DocumentExtension.LATAMVoucherNumber)
+
+        end;
+    end;
+
+    local procedure GetCAandDate(var DocumentExtension: Record "LATAM Document Extension"; EntityType: Enum "LATAM EntityType")
+    begin
+        //recuperar un case para el voucher, tipo de entidad,  punto de venta
+        //y que el numero de voucher este entre un desde y hasta 
+        //y la fecha tambien este entre el desde y hasta.
+
+    end;
+
+    local procedure GetSalesPointData(LATAMSalesPointId: Code[5]) error: boolean
+    begin
+        if LATAMSalesPointId = '' then begin
+            error := true;
+            exit;
+        end;
+        SalesPointRecord.Reset();
+        SalesPointRecord.Init();
+        if SalesPointRecord.Get(LATAMSalesPointId) then
+            error := true
+        else
+            error := false;
+    end;
+
+    local procedure GetVoucherNumOptionByEntityType(var DocumentExtension: Record "LATAM Document Extension")
+    var
+        VoucherClassRecord: Record "LATAM VoucherClass";
+
+    begin
+        VoucherClassRecord.Reset();
+        VoucherClassRecord.Init();
+        if VoucherClassRecord.Get(DocumentExtension.LATAMVoucherClassId) then
+            VoucherReqCA := VoucherClassRecord.LATAMReqCAE;
+        case EntityType of
+            EntityType::Customer:
+                begin
+                    VoucherNumEntryType := VoucherClassRecord.LATAMMskCustDocNumEntryType;
+                    VoucherNumAssignType := VoucherClassRecord.LATAMMskCustDocNumAssignType;
+                    MskDocNumNoValMask := VoucherClassRecord.LATAMMskCustDocNumNoValMask;
+                    MskDocNumLength := VoucherClassRecord.LATAMMskCustDocNumLength;
+                    MskDocNumMask := VoucherClassRecord.LATAMMskCustDocNumMask;
+                end;
+            EntityType::Vendor:
+                begin
+                    VoucherNumEntryType := VoucherClassRecord.LATAMMskVendDocNumEntryType;
+                    VoucherNumAssignType := VoucherClassRecord.LATAMMskVendDocNumAssignType;
+                    MskDocNumNoValMask := VoucherClassRecord.LATAMMskVendDocNumNoValMask;
+                    MskDocNumLength := VoucherClassRecord.LATAMMskVendDocNumLength;
+                    MskDocNumMask := VoucherClassRecord.LATAMMskVendDocNumMask;
+                end;
+            EntityType::Bank:
+                begin
+                    VoucherNumEntryType := VoucherClassRecord.LATAMMskBankDocNumEntryType;
+                    VoucherNumAssignType := VoucherClassRecord.LATAMMskBankDocNumAssignType;
+                    MskDocNumNoValMask := VoucherClassRecord.LATAMMskBnkDocNumNoValidateMsk;
+                    MskDocNumLength := VoucherClassRecord.LATAMMskBankDocNumLength;
+                    MskDocNumMask := VoucherClassRecord.LATAMMskBankDocNumMask;
+                end;
+            EntityType::Ledger:
+                begin
+                    VoucherNumEntryType := VoucherClassRecord.LATAMMskGLDocNumEntryType;
+                    VoucherNumAssignType := VoucherClassRecord.LATAMMskGLDocNumAssignType;
+                    MskDocNumNoValMask := VoucherClassRecord.LATAMMskGLDocNumNoValidateMask;
+                    MskDocNumLength := VoucherClassRecord.LATAMMskGLDocNumLength;
+                    MskDocNumMask := VoucherClassRecord.LATAMMskGLDocNumMask;
+                end;
+        end;
+        LatamSeparator := VoucherClassRecord.LATAMSeparator;
+    end;
+
+    local procedure GetPDVOptionByEntityType(var DocumentExtension: Record "LATAM Document Extension")
+    var
+        VoucherClassRecord: Record "LATAM VoucherClass";
+    begin
+        VoucherClassRecord.Reset();
+        VoucherClassRecord.Init();
+        if VoucherClassRecord.Get(DocumentExtension.LATAMVoucherClassId) then
+            case EntityType of
+                EntityType::Customer:
+                    begin
+                        PosEnabled := VoucherClassRecord.LATAMMskCustPOSEnabled;
+                        POSEntryType := VoucherClassRecord.LATAMMskCustPOSEntryType;
+                        POSLength := VoucherClassRecord.LATAMMskCustPOSLength;
+                        POSMask := VoucherClassRecord.LATAMMskCustPOSMask;
+                        POSMandatory := VoucherClassRecord.LATAMMskCustPOSMandatory;
+                    end;
+                EntityType::Vendor:
+                    begin
+                        PosEnabled := VoucherClassRecord.LATAMMskVendPOSEnabled;
+                        POSEntryType := VoucherClassRecord.LATAMMskVendPOSEntryType;
+                        POSLength := VoucherClassRecord.LATAMMskVendPOSLength;
+                        POSMask := VoucherClassRecord.LATAMMskVendPOSMask;
+                        POSMandatory := VoucherClassRecord.LATAMMskVendPOSMandatory;
+                    end;
+                EntityType::Bank:
+                    begin
+                        PosEnabled := VoucherClassRecord.LATAMMskBankPOSEnabled;
+                        POSEntryType := VoucherClassRecord.LATAMMskBankPOSEntryType;
+                        POSLength := VoucherClassRecord.LATAMMskBankPOSLength;
+                        POSMask := VoucherClassRecord.LATAMMskBankPOSMask;
+                        POSMandatory := VoucherClassRecord.LATAMMskBankPOSMandatory;
+                    end;
+                EntityType::Ledger:
+                    begin
+                        PosEnabled := VoucherClassRecord.LATAMMskGLPOSEnabled;
+                        POSEntryType := VoucherClassRecord.LATAMMskGLPOSEntryType;
+                        POSLength := VoucherClassRecord.LATAMMskGLPOSLength;
+                        POSMask := VoucherClassRecord.LATAMMskGLPOSMask;
+                        POSMandatory := VoucherClassRecord.LATAMMskGLPOSMandatory;
+                    end;
+            end;
+
+    end;
+
+    local procedure ValidateMask(User_input: Text;
+                                        Mask_Len_Min: Integer;
+                                        Mask_Len_Max: Integer;
+                                        Mask: Text[250]) User_Output: Text
+    var
+        LEN_USER_INPUT: Integer;
+        MASK_PATINDEX: Text;
+        FILL_SIMBOL: Text[3];
+        START_SIMBOL_1: Text[1];
+        chTab: Char;
+
+    //AWLA_INVALID_PREFIX_MASK 
+    begin
+        chTab := 9;
+        User_input := User_input.Trim();
+
+        MASK_PATINDEX := Mask;
+
+        User_Output := User_input;
+
+        FILL_SIMBOL := StrSubstNo('%1', chTab);
+
+        START_SIMBOL_1 := '@';
+
+        if StrPos(User_input, ' ') > 0 then begin
+            User_Output := '';
+            exit;
+        end;
+
+        //OBTENGO LA LONGITUD DEL STRING INGRESADO POR EL USUARIO
+        LEN_USER_INPUT := StrLen(User_input);
+
+        if LEN_USER_INPUT > MASK_LEN_MAX then begin
+            USER_OUTPUT := '';
+            exit;
+        end;
+
+
+        //OBTENGO EL PRIMER CARACTER DE LA MASCARA.SI ES UN SIMBOLO '@' TOMO EL QUE 
+        //SIGUE PARA RELLENAR A IZQUIERDA EN CASO QUE HAGA FALTA
+        if Mask.Substring(1, 1) = START_SIMBOL_1 then begin
+            FILL_SIMBOL := Mask.Substring(2, 1);
+            MASK_PATINDEX := Mask.Substring(3, (StrLen(Mask) - 2));
+        end;
+
+        //SI LA LONGITUD DE LO INGRESADO POR EL USER ES MENOR QUE LA MASCARA
+        //Y SI EXISTE CARACTER DE RELLENO, COMPLETO CON EL.SINO COMPLETO CON ESPACIOS.
+        if (LEN_USER_INPUT >= MASK_LEN_MIN) then
+            //COMPLETO CON CARACTER DE RELLENO A LA IZQUIERDA
+            USER_OUTPUT := PadStr(USER_OUTPUT, (MASK_LEN_MAX - LEN_USER_INPUT), FILL_SIMBOL) + User_input;
+
+        MASK_PATINDEX := MASK_PATINDEX.Trim();
+        USER_OUTPUT := USER_OUTPUT.Trim();
+    end;
+
+    local procedure ValidateVoucherClassEntered(var DocumentExtension: Record "LATAM Document Extension");
+    var
+        VoucherEmptyMsg: label 'Please enter a Voucher Class ID first', comment = 'ESP="Por favor, ingrese primero un N° de clase comprobante."';
+    begin
+        with DocumentExtension do
+            if LATAMVoucherClassId = '' then begin
+                LATAMSalesPointId := '';
+                FieldError(LATAMSalesPointId, VoucherEmptyMsg);
+                exit;
+            end;
+    end;
+
+    procedure ValidaSalesPointId(var DocumentExtension: Record "LATAM Document Extension")
+    begin
+        with DocumentExtension do begin
+            ValidateVoucherClassEntered(DocumentExtension);
+
+            if DocumentExtension.LATAMSalesPointId <> '' then
+                //TODO
+                // no contempla la devolucion del numerador en el caso de cambiar el pdv
+                SetSalesPointID(DocumentExtension)
+            else
+                ClearFieldsSalesPointId(DocumentExtension);
+        end;
+    end;
+
+    procedure ValidateLATAMSalesPointPrefix(var DocumentExtension: Record "LATAM Document Extension");
+    //var
+    //VoucherEmptyMsg: label 'Please enter a Voucher Class ID first', comment = 'ESP="Por favor, ingrese primero un N° de clase comprobante."';
+    begin
+        with DocumentExtension do begin
+            ErrorIfEmptySalesPointPrefix(DocumentExtension);
+            if DocumentExtension.LATAMVoucherNumber <> '' then
+                Validate(LATAMVoucherNumber);
+        end;
+    end;
+
+    procedure ValidateLATAMVoucherNumber(var DocumentExtension: Record "LATAM Document Extension");
+    /*var
+        CUSalesPoint: Codeunit "LATAM SalesPoint";
+        CUVoucherClass: Codeunit "LATAM VoucherClass";
+        VoucherNumberMaskMsg: label 'The  sequence number associated does not match voucher class mask.', comment = 'ESP="La secuencia numérica no coincide con la máscara configurada."';
+        EstadoAsignacion: Enum "LATAM AssignType";
+    */
+    begin
+        SetVoucherNumber(DocumentExtension);
+    end;
+
+    local procedure ErrorIfEmptySalesPointPrefix(var DocumentExtension: Record "LATAM Document Extension");
+    var
+        CULATAMVoucherClass: Codeunit "LATAM VoucherClass";
+        EntityTypeEnum: Enum "LATAM EntityType";
+        FieldBehavior: Enum "LATAM AdditionalFieldBehavior";
+    begin
+        EntityTypeEnum := GetEntityType(DocumentExtension);
+
+        with DocumentExtension do begin
+            FieldBehavior := CULATAMVoucherClass.GetFieldBehaviorForPage(LATAMVoucherClassId, "LATAM ListFields"::LATAMSalesPointPrefix, EntityTypeEnum);
+            if FieldBehavior = FieldBehavior::Required then
+                TestField(LATAMSalesPointPrefix);
+        end;
+
+    end;
+
+    procedure ValidateStateId(var DocumentExtension: Record "LATAM Document Extension");
+    begin
+        ClearPageFieldsStateCode(DocumentExtension);
+        DocumentExtension.CALCFIELDS(LATAMNameState);
+    end;
+
+    procedure ValidateLatamCountryCode(var DocumentExtension: Record "LATAM Document Extension");
+    begin
+        ClearPageFieldsCountryCode(DocumentExtension);
+        DocumentExtension.CALCFIELDS(DocumentExtension.LATAMCountryName);
+    end;
+
+    procedure ValidateTaxPayerTypeId(var DocumentExtension: Record "LATAM Document Extension");
+    begin
+        ClearPageFieldsTaxPayer(DocumentExtension);
+    end;
+
+    procedure GetDocumentExtensionType(SalesHeader: Record "Sales Header"; TabExtension: Enum "LATAM TableExtension") DocumentExtensionType: Enum "LATAM DocumentExtensionType";
+    var
+        SalesDocumentType: Option Quote,"Order",Invoice,"Credit Memo","Blanket Order","Return Order";
+
+    begin
+        case TabExtension of
+            TabExtension::"Sales Header":
+                case SalesHeader."Document Type" of
+                    SalesDocumentType::Order:
+                        //if SalesHeader.Ship then
+                        DocumentExtensionType := DocumentExtensionType::SalesOrder;
+                    //else
+                    //  DocumentExtensionType := DocumentExtensionType::SalesOrder;
+                    SalesDocumentType::Invoice:
+                        DocumentExtensionType := DocumentExtensionType::SalesInvoice;
+                    SalesDocumentType::"Credit Memo":
+                        DocumentExtensionType := DocumentExtensionType::SalesCreditNote;
+                    SalesDocumentType::"Return Order":
+                        DocumentExtensionType := DocumentExtensionType::SalesReturnOrder;
+                    else
+                        Error('Tipo Documento para Sales Header no soportado');
+                end;
+            else
+                Error('TabExtension no soportado');
+        end;
+    end;
+
+    procedure GetDocumentExtensionType(var PurchaseHeader: Record "Purchase Header"; TabExtension: Enum "LATAM TableExtension") DocumentExtensionType: Enum "LATAM DocumentExtensionType";
+    var
+        PurchaseDocumentType: Option Quote,"Order",Invoice,"Credit Memo","Blanket Order","Return Order";
+    begin
+        case TabExtension of
+            TabExtension::"Sales Header":
+                case PurchaseHeader."Document Type" of
+                    PurchaseDocumentType::Order:
+                        //if SalesHeader.Ship then
+                        Error('Tipo Documento para Sales Header no soportado');
+                    //else
+                    //  DocumentExtensionType := DocumentExtensionType::SalesOrder;
+                    PurchaseDocumentType::Invoice:
+                        DocumentExtensionType := DocumentExtensionType::PurchaseInvoice;
+                    PurchaseDocumentType::"Credit Memo":
+                        DocumentExtensionType := DocumentExtensionType::PurchaseCreditNote;
+                    else
+                        Error('Tipo Documento para Sales Header no soportado');
+                end;
+            else
+                Error('TabExtension no soportado');
+        end;
+    end;
+
+    procedure CreateExtension(var DocumentExtension: Record "LATAM Document Extension"; var DocumentToBeExtended: RecordRef);
+    begin
+        with DocumentExtension do begin
+            DocumentToBeExtended.Field(70378332)/*"LATAM No."*/.Validate("LATAM No.");
+            DocumentToBeExtended.Field(70378342)/*"LATAM Document Type"*/.Validate("LATAM Document Type");
+            DocumentToBeExtended.Field(70378352)/*LATAMPostingType*/.Validate(LATAMPostingType);
+            DocumentToBeExtended.Field(70378362)/*LATAMDocumentExtensionType*/.Validate(LATAMDocumentExtensionType);
+            DocumentToBeExtended.Field(70378372)/*LATAMCaiCae*/.Validate(LATAMCa);
+            DocumentToBeExtended.Field(70378382)/*LATAMCAICAEDueDate*/.Validate(LATAMCAICAEDueDate);
+            DocumentToBeExtended.Field(70378392)/*LATAMCompleteDocumentNum*/.Validate(LATAMCompleteVoucherNumber);
+            DocumentToBeExtended.Field(70378432)/*LATAMControlCode*/.Validate(LATAMControlCode);
+            DocumentToBeExtended.Field(70378442)/*LATAMCountryDocNum*/.Validate(LATAMCountryCode);
+            DocumentToBeExtended.Field(70378452)/*LATAMCountryDocTypeId*/.Validate(LATAMCountryDocTypeId);
+            DocumentToBeExtended.Field(70378462)/*LATAMListFieldCode01)*/.Validate(LATAMListFieldCode01);
+            DocumentToBeExtended.Field(70378482)/*LATAMListFieldCode02)*/.Validate(LATAMListFieldCode02);
+            DocumentToBeExtended.Field(70378502)/*LATAMListFieldCode03)*/.Validate(LATAMListFieldCode03);
+            DocumentToBeExtended.Field(70378522)/*LATAMListFieldCode04)*/.Validate(LATAMListFieldCode04);
+            DocumentToBeExtended.Field(70378542)/*LATAMListFieldCode05)*/.Validate(LATAMListFieldCode05);
+            DocumentToBeExtended.Field(70378562)/*LATAMListFieldCode06)*/.Validate(LATAMListFieldCode06);
+            DocumentToBeExtended.Field(70378582)/*LATAMListFieldCode07)*/.Validate(LATAMListFieldCode07);
+            DocumentToBeExtended.Field(70378602)/*LATAMListFieldCode08)*/.Validate(LATAMListFieldCode08);
+            DocumentToBeExtended.Field(70378622)/*LATAMListFieldCode09)*/.Validate(LATAMListFieldCode09);
+            DocumentToBeExtended.Field(70378642)/*LATAMListFieldCode10)*/.Validate(LATAMListFieldCode10);
+            DocumentToBeExtended.Field(70378662)/*LATAMName*/.Validate(LATAMName);
+            DocumentToBeExtended.Field(70378672)/*LATAMNote*/.Validate(LATAMNote);
+            DocumentToBeExtended.Field(70378682)/*LATAMSalesPointId*/.Validate(LATAMSalesPointId);
+            DocumentToBeExtended.Field(70378692)/*LATAMSalesPointPrefix*/.Validate(LATAMSalesPointPrefix);
+            DocumentToBeExtended.Field(70378702)/*LATAMStateDocNum*/.Validate(LATAMStateDocNum);
+            DocumentToBeExtended.Field(70378712)/*LATAMStateDocTypeId*/.Validate(LATAMStateDocTypeId);
+            DocumentToBeExtended.Field(70378722)/*LATAMTaxPayerTypeId*/.Validate(LATAMTaxPayerTypeId);
+            DocumentToBeExtended.Field(70378732)/*LATAMVoucherClassId*/.Validate(LATAMVoucherClassId);
+            DocumentToBeExtended.Field(70378742)/*"LATAMCountryCode")*/.Validate(LATAMCountryCode);
+            DocumentToBeExtended.Field(70378762)/*LATAMDocumentDate*/.Validate(LATAMDocumentDate);
+            DocumentToBeExtended.Field(70378772)/*LATAMDueDate*/.Validate(LATAMDueDate);
+            DocumentToBeExtended.Field(70378782)/*LATAMStateId*/.Validate(LATAMStateId);
+        end;
+
+
+    end;
+
+    
+
+    
+
+    procedure CheckMandatoryField(FieldValue: Code[250]; DocumentExtension: Record "LATAM Document Extension"; FieldNro: Integer; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType"; ErrorMessage: Text; Campo: Enum "LATAM ListFields")
+    var
+        ErrorMessageManagement: Codeunit "Error Message Management";
+        VoucherClass: Codeunit "LATAM VoucherClass";
+        FieldBehavior: Enum "LATAM AdditionalFieldBehavior";
+
+    begin
+        if Campo in [Campo::LATAMSalesPointId, Campo::LATAMSalesPointPrefix, Campo::LATAMVoucherNumber] then
+            FieldBehavior := VoucherClass.GetFieldBehavior(VoucherClassRec, Campo, EntityType)
+        else
+            FieldBehavior := VoucherClass.GetCustomFieldBehavior(VoucherClassRec, Campo);
+
+        if (FieldValue = '') and (FieldBehavior = FieldBehavior::Required) then
+            ErrorMessageManagement.LogContextFieldError(FieldNro,
+            ErrorMessage,
+            DocumentExtension,
+            FieldNro,
+            '');
+
+    end;
+
+    procedure CheckMandatorySalesPoint(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType")
+    var
+        Campo: Enum "LATAM ListFields";
+        LATAMSalesPointMandatoryErr: Label 'Sales point id can not be empty.'
+            , comment = 'ESP="El id de punto de venta no puede ser vacío"';
+
+    begin
+        CheckMandatoryField(DocumentExtension.LATAMSalesPointId,
+        DocumentExtension,
+        DocumentExtension.FieldNo(LATAMSalesPointId),
+        VoucherClassRec,
+        EntityType,
+        LATAMSalesPointMandatoryErr,
+        Campo::LATAMSalesPointId);
+    end;
+
+    procedure CheckMandatorySalesPointPrefix(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType")
+    var
+        Campo: Enum "LATAM ListFields";
+        LATAMSalesPointPrefixMandatoryErr: Label 'Sales point prefix can not be empty.'
+            , comment = 'ESP="El prefijo de punto de venta no puede ser vacío"';
+
+    begin
+        CheckMandatoryField(DocumentExtension.LATAMSalesPointPrefix,
+        DocumentExtension,
+        DocumentExtension.FieldNo(LATAMSalesPointPrefix),
+        VoucherClassRec,
+        EntityType,
+        LATAMSalesPointPrefixMandatoryErr,
+        Campo::LATAMSalesPointPrefix);
+    end;
+
+
+
+    procedure CheckMandatoryVoucherNumber(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType")
+    var
+        Campo: Enum "LATAM ListFields";
+        LATAMVoucherNumberMandatoryErr: Label 'Voucher number can not be empty.'
+            , comment = 'ESP="El número de documento no puede ser vacío."';
+    begin
+        CheckMandatoryField(DocumentExtension.LATAMVoucherNumber,
+            DocumentExtension,
+            DocumentExtension.FieldNo(LATAMVoucherNumber),
+            VoucherClassRec,
+            EntityType,
+            LATAMVoucherNumberMandatoryErr,
+            Campo::LATAMVoucherNumber);
+    end;
+
+    procedure CheckMandatoryVoucherClass(DocumentExtension: Record "LATAM Document Extension")
+    var
+        ErrorMessageManagement: Codeunit "Error Message Management";
+        LATAMVoucherClassMandatoryErr: Label 'Voucher class id can not be empty.'
+            , comment = 'ESP="Voucher class id no puede ser vacío"';
+
+    begin
+        if DocumentExtension.LATAMVoucherClassId = '' then
+            ErrorMessageManagement.LogError(DocumentExtension,
+           LATAMVoucherClassMandatoryErr,
+           DocumentExtension."LATAM No.");
+    end;
+
+    procedure CheckMandatoryTaxPayerTypeId(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType")
+    var
+        Campo: Enum "LATAM ListFields";
+        LATAMTaxPayerTypeIdMandatoryErr: Label 'Tax payer type id can not be empty.'
+            , comment = 'ESP="El id de tipo de contribuyente no puede ser vacío."';
+    begin
+        CheckMandatoryField(DocumentExtension.LATAMTaxPayerTypeId,
+            DocumentExtension,
+            DocumentExtension.FieldNo(LATAMTaxPayerTypeId),
+            VoucherClassRec,
+            EntityType,
+            LATAMTaxPayerTypeIdMandatoryErr,
+            Campo::LATAMTaxPayerTypeId);
+    end;
+
+    procedure CheckMandatoryLATAMName(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType")
+    var
+        Campo: Enum "LATAM ListFields";
+        LATAMNameMandatoryErr: Label 'Business name can not be empty.'
+            , comment = 'ESP="La razón social no puede ser vacío."';
+    begin
+        CheckMandatoryField(DocumentExtension.LATAMName,
+            DocumentExtension,
+            DocumentExtension.FieldNo(LATAMName),
+            VoucherClassRec,
+            EntityType,
+            LATAMNameMandatoryErr,
+            Campo::LATAMName);
+    end;
+
+    procedure CheckMandatoryLATAMCountryCode(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType")
+    var
+        Campo: Enum "LATAM ListFields";
+        LATAMCountryCodeMandatoryErr: Label 'Based in country can not be empty.'
+            , comment = 'ESP="Radicado en no puede ser vacío."';
+    begin
+        CheckMandatoryField(DocumentExtension.LATAMCountryCode,
+            DocumentExtension,
+            DocumentExtension.FieldNo(LATAMCountryCode),
+            VoucherClassRec,
+            EntityType,
+            LATAMCountryCodeMandatoryErr,
+            Campo::LATAMCountryCode);
+    end;
+
+    procedure CheckMandatoryLATAMCountryDocTypeId(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType")
+    var
+        Campo: Enum "LATAM ListFields";
+        LATAMCountryDocTypeIdMandatoryErr: Label 'Country Document Type can not be empty.'
+            , comment = 'ESP="Tipo documento país no puede ser vacío."';
+    begin
+        CheckMandatoryField(DocumentExtension.LATAMCountryDocTypeId,
+            DocumentExtension,
+            DocumentExtension.FieldNo(LATAMCountryDocTypeId),
+            VoucherClassRec,
+            EntityType,
+            LATAMCountryDocTypeIdMandatoryErr,
+            Campo::LATAMCountryDocTypeId);
+    end;
+
+    procedure CheckMandatoryLATAMCountryDocNum(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType")
+    var
+        Campo: Enum "LATAM ListFields";
+        LATAMCountryDocNumMandatoryErr: Label 'Country Document No. can not be empty.'
+            , comment = 'ESP="N° documento país no puede ser vacío."';
+    begin
+        CheckMandatoryField(DocumentExtension.LATAMCountryDocNum,
+            DocumentExtension,
+            DocumentExtension.FieldNo(LATAMCountryDocNum),
+            VoucherClassRec,
+            EntityType,
+            LATAMCountryDocNumMandatoryErr,
+            Campo::LATAMCountryDocNum);
+    end;
+
+    procedure CheckMandatoryLATAMStateId(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType")
+    var
+        Campo: Enum "LATAM ListFields";
+        LATAMStateIdMandatoryErr: Label 'Jurisdiction registered can not be empty.'
+            , comment = 'ESP="Inscripto en jurisdicción no puede ser vacío."';
+    begin
+        CheckMandatoryField(DocumentExtension.LATAMStateId,
+            DocumentExtension,
+            DocumentExtension.FieldNo(LATAMStateId),
+            VoucherClassRec,
+            EntityType,
+            LATAMStateIdMandatoryErr,
+            Campo::LATAMStateId);
+    end;
+
+    procedure CheckMandatoryLATAMStateDocTypeId(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType")
+    var
+        Campo: Enum "LATAM ListFields";
+        LATAMStateDocTypeIdMandatoryErr: Label 'State Document Type can not be empty.'
+            , comment = 'ESP="Tipo documento estado no puede ser vacío."';
+    begin
+        CheckMandatoryField(DocumentExtension.LATAMStateDocTypeId,
+            DocumentExtension,
+            DocumentExtension.FieldNo(LATAMStateDocTypeId),
+            VoucherClassRec,
+            EntityType,
+            LATAMStateDocTypeIdMandatoryErr,
+            Campo::LATAMStateDocTypeId);
+    end;
+
+    procedure CheckLATAMVoucherClassEnable(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass")
+    var
+        ErrorMessageManagement: Codeunit "Error Message Management";
+        LATAMVoucherClassEnableDisbleErr: Label 'Voucher class is disable.'
+            , comment = 'ESP="El comprobante esta deshabilitado"';
+    begin
+        if VoucherClassRec.LATAMInactive then
+            ErrorMessageManagement.LogContextFieldError(DocumentExtension.FieldNo(LATAMVoucherClassId),
+           LATAMVoucherClassEnableDisbleErr,
+           DocumentExtension,
+           DocumentExtension.FieldNo(LATAMVoucherClassId),
+           '');
+    end;
+
+    procedure CheckMandatoryLATAMStateDocNum(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType")
+    var
+        Campo: Enum "LATAM ListFields";
+        LATAMStateDocNumMandatoryErr: Label 'State Document can not be empty.'
+            , comment = 'ESP="Documento estado no puede ser vacío."';
+    begin
+        CheckMandatoryField(DocumentExtension.LATAMStateDocNum,
+            DocumentExtension,
+            DocumentExtension.FieldNo(LATAMStateDocNum),
+            VoucherClassRec,
+            EntityType,
+            LATAMStateDocNumMandatoryErr,
+            Campo::LATAMStateDocNum);
+    end;
+
+    procedure CheckMandatoryLATAMConcept1(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType")
+    var
+        Campo: Enum "LATAM ListFields";
+        LATAMConcept1MandatoryErr: Label 'Concept 1 can not be empty.'
+            , comment = 'ESP="Concepto 1 no puede ser vacío."';
+    begin
+        CheckMandatoryField(DocumentExtension.LATAMConcept1,
+            DocumentExtension,
+            DocumentExtension.FieldNo(LATAMConcept1),
+            VoucherClassRec,
+            EntityType,
+            LATAMConcept1MandatoryErr,
+            Campo::LATAMConcept1);
+    end;
+
+    procedure CheckMandatoryLATAMConcept2(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType")
+    var
+        Campo: Enum "LATAM ListFields";
+        LATAMConcept2MandatoryErr: Label 'Concept 2 can not be empty.'
+            , comment = 'ESP="Concepto 2 no puede ser vacío."';
+    begin
+        CheckMandatoryField(DocumentExtension.LATAMConcept2,
+            DocumentExtension,
+            DocumentExtension.FieldNo(LATAMConcept2),
+            VoucherClassRec,
+            EntityType,
+            LATAMConcept2MandatoryErr,
+            Campo::LATAMConcept2);
+    end;
+
+    procedure CheckMandatoryLATAMConcept3(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType")
+    var
+        Campo: Enum "LATAM ListFields";
+        LATAMConcept3MandatoryErr: Label 'Concept 3 can not be empty.'
+            , comment = 'ESP="Concepto 3 no puede ser vacío."';
+    begin
+        CheckMandatoryField(DocumentExtension.LATAMConcept3,
+            DocumentExtension,
+            DocumentExtension.FieldNo(LATAMConcept3),
+            VoucherClassRec,
+            EntityType,
+            LATAMConcept3MandatoryErr,
+            Campo::LATAMConcept3);
+    end;
+
+    procedure CheckMandatoryLATAMListFieldCode01(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType")
+    var
+        Campo: Enum "LATAM ListFields";
+        LATAMListFieldCode01MandatoryErr: Label 'Reference Code 1 can not be empty.'
+            , comment = 'ESP="Código de referencia 1 no puede ser vacío."';
+    begin
+        CheckMandatoryField(DocumentExtension.LATAMListFieldCode01,
+            DocumentExtension,
+            DocumentExtension.FieldNo(LATAMListFieldCode01),
+            VoucherClassRec,
+            EntityType,
+            LATAMListFieldCode01MandatoryErr,
+            Campo::LATAMListFieldCode01);
+    end;
+
+    procedure CheckMandatoryLATAMListFieldCode02(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType")
+    var
+        Campo: Enum "LATAM ListFields";
+        LATAMListFieldCode02MandatoryErr: Label 'Reference Code 2 can not be empty.'
+            , comment = 'ESP="Código de referencia 2 no puede ser vacío."';
+    begin
+        CheckMandatoryField(DocumentExtension.LATAMListFieldCode02,
+            DocumentExtension,
+            DocumentExtension.FieldNo(LATAMListFieldCode02),
+            VoucherClassRec,
+            EntityType,
+            LATAMListFieldCode02MandatoryErr,
+            Campo::LATAMListFieldCode02);
+    end;
+
+    procedure CheckMandatoryLATAMListFieldCode03(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType")
+    var
+        Campo: Enum "LATAM ListFields";
+        LATAMListFieldCode03MandatoryErr: Label 'Reference Code 3 can not be empty.'
+            , comment = 'ESP="Código de referencia 3 no puede ser vacío."';
+    begin
+        CheckMandatoryField(DocumentExtension.LATAMListFieldCode03,
+            DocumentExtension,
+            DocumentExtension.FieldNo(LATAMListFieldCode03),
+            VoucherClassRec,
+            EntityType,
+            LATAMListFieldCode03MandatoryErr,
+            Campo::LATAMListFieldCode03);
+    end;
+
+    procedure CheckMandatoryLATAMListFieldCode04(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType")
+    var
+        Campo: Enum "LATAM ListFields";
+        LATAMListFieldCode04MandatoryErr: Label 'Reference Code 4 can not be empty.'
+            , comment = 'ESP="Código de referencia 4 no puede ser vacío."';
+    begin
+        CheckMandatoryField(DocumentExtension.LATAMListFieldCode04,
+            DocumentExtension,
+            DocumentExtension.FieldNo(LATAMListFieldCode04),
+            VoucherClassRec,
+            EntityType,
+            LATAMListFieldCode04MandatoryErr,
+            Campo::LATAMListFieldCode04);
+    end;
+
+    procedure CheckMandatoryLATAMListFieldCode05(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType")
+    var
+        Campo: Enum "LATAM ListFields";
+        LATAMListFieldCode05MandatoryErr: Label 'Reference Code 5 can not be empty.'
+            , comment = 'ESP="Código de referencia 5 no puede ser vacío."';
+    begin
+        CheckMandatoryField(DocumentExtension.LATAMListFieldCode05,
+            DocumentExtension,
+            DocumentExtension.FieldNo(LATAMListFieldCode05),
+            VoucherClassRec,
+            EntityType,
+            LATAMListFieldCode05MandatoryErr,
+            Campo::LATAMListFieldCode05);
+    end;
+
+    procedure CheckMandatoryLATAMListFieldCode06(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType")
+    var
+        Campo: Enum "LATAM ListFields";
+        LATAMListFieldCode06MandatoryErr: Label 'Reference Code 6 can not be empty.'
+            , comment = 'ESP="Código de referencia 6 no puede ser vacío."';
+    begin
+        CheckMandatoryField(DocumentExtension.LATAMListFieldCode06,
+            DocumentExtension,
+            DocumentExtension.FieldNo(LATAMListFieldCode06),
+            VoucherClassRec,
+            EntityType,
+            LATAMListFieldCode06MandatoryErr,
+            Campo::LATAMListFieldCode06);
+    end;
+
+    procedure CheckMandatoryLATAMListFieldCode07(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType")
+    var
+        Campo: Enum "LATAM ListFields";
+        LATAMListFieldCode07MandatoryErr: Label 'Reference Code 7 can not be empty.'
+            , comment = 'ESP="Código de referencia 7 no puede ser vacío."';
+    begin
+        CheckMandatoryField(DocumentExtension.LATAMListFieldCode07,
+            DocumentExtension,
+            DocumentExtension.FieldNo(LATAMListFieldCode07),
+            VoucherClassRec,
+            EntityType,
+            LATAMListFieldCode07MandatoryErr,
+            Campo::LATAMListFieldCode07);
+    end;
+
+    procedure CheckMandatoryLATAMListFieldCode08(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType")
+    var
+        Campo: Enum "LATAM ListFields";
+        LATAMListFieldCode08MandatoryErr: Label 'Reference Code 8 can not be empty.'
+            , comment = 'ESP="Código de referencia 8 no puede ser vacío."';
+    begin
+        CheckMandatoryField(DocumentExtension.LATAMListFieldCode08,
+            DocumentExtension,
+            DocumentExtension.FieldNo(LATAMListFieldCode08),
+            VoucherClassRec,
+            EntityType,
+            LATAMListFieldCode08MandatoryErr,
+            Campo::LATAMListFieldCode08);
+    end;
+
+    procedure CheckMandatoryLATAMListFieldCode09(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType")
+    var
+        Campo: Enum "LATAM ListFields";
+        LATAMListFieldCode09MandatoryErr: Label 'Reference Code 9 can not be empty.'
+            , comment = 'ESP="Código de referencia 9 no puede ser vacío."';
+    begin
+        CheckMandatoryField(DocumentExtension.LATAMListFieldCode09,
+            DocumentExtension,
+            DocumentExtension.FieldNo(LATAMListFieldCode09),
+            VoucherClassRec,
+            EntityType,
+            LATAMListFieldCode09MandatoryErr,
+            Campo::LATAMListFieldCode09);
+    end;
+
+    procedure CheckMandatoryLATAMListFieldCode10(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType")
+    var
+        Campo: Enum "LATAM ListFields";
+        LATAMListFieldCode10MandatoryErr: Label 'Reference Code 10 can not be empty.'
+            , comment = 'ESP="Código de referencia 10 no puede ser vacío."';
+    begin
+        CheckMandatoryField(DocumentExtension.LATAMListFieldCode10,
+            DocumentExtension,
+            DocumentExtension.FieldNo(LATAMListFieldCode10),
+            VoucherClassRec,
+            EntityType,
+            LATAMListFieldCode10MandatoryErr,
+            Campo::LATAMListFieldCode10);
+    end;
+
+    procedure CheckMandatoryCheckMandatoryLATAMName(DocumentExtension: Record "LATAM Document Extension"; VoucherClassRec: Record "LATAM VoucherClass"; EntityType: Enum "LATAM EntityType")
+    var
+        Campo: Enum "LATAM ListFields";
+        LATAMTaxPayerTypeIdMandatoryErr: Label 'Company Name can not be empty.'
+            , comment = 'ESP="Razón Social no puede ser vacío."';
+    begin
+        CheckMandatoryField(DocumentExtension.LATAMName,
+            DocumentExtension,
+            DocumentExtension.FieldNo(LATAMName),
+            VoucherClassRec,
+            EntityType,
+            LATAMTaxPayerTypeIdMandatoryErr,
+            Campo::LATAMName);
+    end;
+
+    var
+        SalesPointRecord: Record "LATAM SalesPoint";
+        EntityType: Enum "LATAM EntityType";
+        VoucherNumAssignType: Enum "LATAM AssignType";
+        VoucherNumEntryType: Enum "LATAM EntryType";
+        LatamSeparator: Code[1];
+        PosEnabled: Boolean;
+        POSEntryType: Enum "LATAM EntryType";
+        POSLength: Integer;
+        POSMask: Text[250];
+        POSMandatory: Boolean;
+        VoucherReqCA: Boolean;
+        MskDocNumNoValMask: Boolean;
+        MskDocNumLength: Integer;
+        MskDocNumMask: Text[250];
+        DocumentExtensionNotExistErr: Label 'LATAM document extension does not exist.'
+            , comment = 'ESP="La La extensión LATAM no existe."';
+}
+
+***

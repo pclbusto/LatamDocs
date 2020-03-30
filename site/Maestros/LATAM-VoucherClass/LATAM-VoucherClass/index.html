@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Voucher Class - LATAM DOC</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Voucher Class";
+    var mkdocs_page_input_path = "Maestros\\LATAM-VoucherClass\\LATAM-VoucherClass.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> LATAM DOC</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Maestros</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../../../LATAM-Setup/LATAM-Setup/">Setup</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../LATAM-VoucherClassLetter/LATAM-VoucherClassLetter/">Voucher Class Letter</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../LATAM-VoucherClassType/LATAM-VoucherClassType/">Voucher Class Type</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Voucher Class</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#descripcion">Descripción</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#seccion-general">Sección General</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#campos">Campos</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#no">No.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#descripcion_1">Descripción</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#descripcion-legal">Descripción Legal</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tipo-clase-comprobantes">Tipo Clase Comprobantes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#letra">Letra</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#prefijo">Prefijo</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#inactivo">Inactivo</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#forzar">Forzar ...</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#calculo-de-retenciones">Cálculo de retenciones</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#separador">Separador</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#copiar-numero-de-documento">copiar número de documento</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#requiere-ca">Requiere CA</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#requiere-codigo-de-control">Requiere código de control</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tipo-de-codigo-de-control">Tipo de código de control</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#rotulo-de-concepto-1">Rótulo de concepto 1</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#rotulo-de-concepto-2">Rótulo de concepto 2</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#rotulo-de-concepto-3">Rótulo de concepto 3</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#reporte">Reporte</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tipo-transaccion-banco">Tipo transacción banco</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#detalla-contribuyente">Detalla contribuyente</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#incluye-impuestos">Incluye impuestos</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#seccion-datos-adicionales">Sección Datos Adicionales</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#descripcion_2">Descripción</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#campos_1">Campos</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#comportamiento-grupo-banco">Comportamiento grupo banco.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#grupo-contribuyente">Grupo contribuyente</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#seccion-mascara-documento">Sección Máscara Documento</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#descripcion_3">Descripción</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#sub-seccion-punto-de-ventas">Sub sección punto de ventas</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#habilitado">Habilitado.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#longitud">Longitud.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#obligatorio">Obligatorio.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mascara">Máscara.</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../LATAM-SalesPoint/LATAM-SalesPoint/">Sales Point</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../LATAM-DocumentType/LATAM-DocumentType/">Document Type</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../LATAM-TaxPayerType/LATAM-TaxPayerType/">Tax Payer Type</a>
+                    </li>
+                    <li class="toctree-l1"><a class="" href="../../LATAM-AccountTypeGroup/LATAM-AccountTypeGroup">Account Type Group</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Extensiones</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../LATAM-DocumentExtension/LATAM-DocumentExtension/">Document Extension</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Extensiones/LATAM-CompanyInformation/LATAM-CompanyInformation/">Compañía</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Extensiones/LATAM-Customer/LATAM-Customer/">Cliente</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Extensiones/LATAM-Vendor/LATAM-Vendor/">Proveedor</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Extensiones/LATAM-Bank/LATAM-Bank/">Banco</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Extensiones/LATAM-SalesOrder/LATAM-SalesOrder/">Ordenes de ventas</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Desarrollo</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Code Units</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Desarrollo/Code-Units/LATAM-SalesHeaderDocExt/LATAM-SalesHeaderDocExt/">LATAM SalesHeaderDocExt</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Desarrollo/Code-Units/LATAM-Document-Extension/LATAM-Document-Extension/">LATAM Document Extension</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Desarrollo/Code-Units/LATAM-SalesPostSubscribers/LATAM-SalesPostSubscribers/">LATAM Sales Post Subscribers</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Enums</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Desarrollo/Enums/LATAM-DocumentExtensionType/LATAM-DocumentExtensionType/">LATAM Document Extension Type</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Desarrollo/Enums/LATAM-EntityType/LATAM-EntityType/">LATAM Entity Type</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Queries</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Desarrollo/Queries/LATAM-VoucherClassLookup/LATAM-VoucherClassLookup/">LATAM Voucher Class Lookup</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Info Extra</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Info-Extra/Mascara/">Máscara Documentos</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../about/">About</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">LATAM DOC</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Maestros &raquo;</li>
+        
+      
+    
+    <li>Voucher Class</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="latam-clase-de-comprobante">LATAM Clase de comprobante</h1>
+<p><img alt="Ventana de configuración" src="MainPage.png" /></p>
+<h2 id="descripcion">Descripción</h2>
+<p>Maestro de clase de comprobante. Esta entidad es como un talonario, donde se configuran los campos que va a tener dicho talonario.  </p>
+<h2 id="seccion-general">Sección General</h2>
+<h3 id="campos">Campos</h3>
+<hr />
+<blockquote>
+<h4 id="no">No.</h4>
+<blockquote>
+<p><strong>Descripción</strong>: </p>
+<p><strong>Tipo</strong>:Code[15]</p>
+</blockquote>
+<h4 id="descripcion_1">Descripción</h4>
+<blockquote>
+<p><strong>Descripción</strong>: </p>
+<p><strong>Tipo</strong>:Code[30]</p>
+</blockquote>
+<h4 id="descripcion-legal">Descripción Legal</h4>
+<blockquote>
+<p><strong>Descripción</strong>: </p>
+<p><strong>Tipo</strong>:Code[5]</p>
+</blockquote>
+<h4 id="tipo-clase-comprobantes">Tipo Clase Comprobantes</h4>
+<blockquote>
+<p><strong>Descripción</strong>: id tipo clase de comprobante. Indica que comportamiento va a tener este comprobante, el cual esta supeditado a lo configurado en el <a href="../../LATAM-VoucherClassType/LATAM-VoucherClassType/">tipo clase comprobante</a></p>
+<p><strong>Tipo</strong>:Code[5]</p>
+</blockquote>
+<h4 id="letra">Letra</h4>
+<blockquote>
+<p><strong>Descripción</strong>: Letra que tiene asignada el comprobante. Esto permite identificar de otra forma los comprobantes. Por ejemplo Factura, pueden haber facturas 'A', 'B', 'C'. Este campo sirve para identificar esta tipificación.</p>
+<p><strong>Tipo</strong>:Code[5]</p>
+</blockquote>
+<h4 id="prefijo">Prefijo</h4>
+<blockquote>
+<p><strong>Descripción</strong>: Cadena de caracteres que forma parte del cálculo del <a href="../../../LATAM-DocumentExtension/LATAM-DocumentExtension/#numero-de-documento-completo">número completo de comprobante</a>. Este prefijo es formado por el <a href="../../LATAM-VoucherClassType/LATAM-VoucherClassType/#prefijo">prefijo del tipo de comprobante</a> y el <a href="">prefijo de la letra</a></p>
+<p><strong>Tipo</strong>:Code[5]</p>
+</blockquote>
+<h4 id="inactivo">Inactivo</h4>
+<blockquote>
+<p><strong>Descripción</strong>: </p>
+<p><strong>Tipo</strong>:Code[5]</p>
+</blockquote>
+<h4 id="forzar">Forzar ...</h4>
+<blockquote>
+<p><strong>Descripción</strong>: </p>
+<p><strong>Tipo</strong>:Code[5]</p>
+</blockquote>
+<h4 id="calculo-de-retenciones">Cálculo de retenciones</h4>
+<blockquote>
+<p><strong>Descripción</strong>: </p>
+<p><strong>Tipo</strong>:Code[5]</p>
+</blockquote>
+<h4 id="separador">Separador</h4>
+<blockquote>
+<p><strong>Descripción</strong>: Caracter que permite introducir un separador al crear el <a href="../../../LATAM-DocumentExtension/LATAM-DocumentExtension/#numero-de-documento-completo">número de comprobante completo en la Extensión de documentos</a>. por ejemplo '-'.</p>
+<p><strong>Tipo</strong>:Code[5]</p>
+</blockquote>
+<h4 id="copiar-numero-de-documento">copiar número de documento</h4>
+<blockquote>
+<p><strong>Descripción</strong>: </p>
+<p><strong>Tipo</strong>:Code[5]</p>
+</blockquote>
+<h4 id="requiere-ca">Requiere CA</h4>
+<blockquote>
+<p><strong>Descripción</strong>: </p>
+<p><strong>Tipo</strong>:Code[5]</p>
+</blockquote>
+<h4 id="requiere-codigo-de-control">Requiere código de control</h4>
+<blockquote>
+<p><strong>Descripción</strong>: </p>
+<p><strong>Tipo</strong>:Code[5]</p>
+</blockquote>
+<h4 id="tipo-de-codigo-de-control">Tipo de código de control</h4>
+<blockquote>
+<p><strong>Descripción</strong>: </p>
+<p><strong>Tipo</strong>:Code[5]</p>
+</blockquote>
+<h4 id="rotulo-de-concepto-1">Rótulo de concepto 1</h4>
+<blockquote>
+<p><strong>Descripción</strong>: </p>
+<p><strong>Tipo</strong>:Code[5]</p>
+</blockquote>
+<h4 id="rotulo-de-concepto-2">Rótulo de concepto 2</h4>
+<blockquote>
+<p><strong>Descripción</strong>: </p>
+<p><strong>Tipo</strong>:Code[5]</p>
+</blockquote>
+<h4 id="rotulo-de-concepto-3">Rótulo de concepto 3</h4>
+<blockquote>
+<p><strong>Descripción</strong>: </p>
+<p><strong>Tipo</strong>:Code[5]</p>
+</blockquote>
+<h4 id="reporte">Reporte</h4>
+<blockquote>
+<p><strong>Descripción</strong>: </p>
+<p><strong>Tipo</strong>:Code[5]</p>
+</blockquote>
+<h4 id="tipo-transaccion-banco">Tipo transacción banco</h4>
+<blockquote>
+<p><strong>Descripción</strong>: </p>
+<p><strong>Tipo</strong>:Code[5]</p>
+</blockquote>
+<h4 id="detalla-contribuyente">Detalla contribuyente</h4>
+<blockquote>
+<p><strong> Descripción </strong>:
+Si este campo esta marcado, cambia el comportamiento a requerido de los campos en el <a href="./#grupo-contribuyente">grupo de contribuyente</a> en la <a href="./#seccion-datos-adicionales">sección de datos adicionales</a> en la entidad comprobante  </p>
+<p><strong>Tipo</strong>:boolean</p>
+</blockquote>
+<h4 id="incluye-impuestos">Incluye impuestos</h4>
+<blockquote>
+<p><strong>Descripción</strong>: </p>
+<p><strong>Tipo</strong>:Code[5]</p>
+</blockquote>
+</blockquote>
+<hr />
+<h2 id="seccion-datos-adicionales">Sección Datos Adicionales</h2>
+<p><img alt="Ventana de configuración" src="AdditionalData.png" /></p>
+<h2 id="descripcion_2">Descripción</h2>
+<p>Configuración de campos adicionales. Esta sección permite configurar el comportamiento de los campos adicionales, los cuales aparecen en el formulario de <a href="../LATAM-DocumentExtension/LATAM-DocumentExtension.md">Extensión de Documentos</a>. Están agrupados por secciones que son las mismas que se tiene en la ventana <a href="../LATAM-DocumentExtension/LATAM-DocumentExtension.md">Extensión de Documentos</a>. Los comportamientos pueden ser:</p>
+<ul>
+<li><strong>Deshabilitado:</strong> El campo aparece deshabilitado.</li>
+<li><strong>Habilitado:</strong> El campo aparece como editable.</li>
+<li><strong>Requerido:</strong> El campo aparece como editable y requerido.  </li>
+</ul>
+<h3 id="campos_1">Campos</h3>
+<hr />
+<blockquote>
+<h4 id="comportamiento-grupo-banco">Comportamiento grupo banco.</h4>
+<blockquote>
+<p><strong>Descripción</strong>: </p>
+<p><strong>Tipo</strong>:Code[15]</p>
+</blockquote>
+<h4 id="grupo-contribuyente">Grupo contribuyente</h4>
+<blockquote>
+<h6 id="tipo-contribuyente">Tipo contribuyente</h6>
+<blockquote>
+<p><strong>Descripción</strong>: 
+Permite administrar el comportamiento de los campos en el grupo <a href="../../../LATAM-DocumentExtension/LATAM-DocumentExtension/#seccion-contribuyentes">contribuyente en la página extensión de documentos</a>. 
+<strong>Tipo</strong>:Code[15]</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<hr />
+<h2 id="seccion-mascara-documento">Sección Máscara Documento</h2>
+<p><img alt="Ventana de configuración" src="DocumentMask.png" /></p>
+<h2 id="descripcion_3">Descripción</h2>
+<p>Configuración de máscaras para el punto de venta y el comprobante. Cuando se usa el comprobante en la ventana <a href="../LATAM-DocumentExtension/LATAM-DocumentExtension.md">Extensión de Documentos</a>. Se disparan una series de comportamientos referidos al número de comprobante y punto de venta. Esta sección se sub divide a su vez por las entidades mensionadas anteriormente:</p>
+<ul>
+<li>Cuenta GL</li>
+<li>Cliente</li>
+<li>Proveedor</li>
+<li>Banco </li>
+<li>Activo Fijo</li>
+</ul>
+<p>cada una de estas secciones a su vez tiene dos secciones mas que son punto de venta y número de comprobante, pero el comportamiento que se describe se aplica a cada una de las secciones de las entidades.</p>
+<h3 id="sub-seccion-punto-de-ventas">Sub sección punto de ventas</h3>
+<hr />
+<blockquote>
+<h4 id="habilitado">Habilitado.</h4>
+<blockquote>
+<p><strong>Descripción</strong>: Habilita o no el uso de punto de venta. Si este campo esta en falso en la ventana de extensión de documento el punto de venta está deshabilitado, además de esto los campos obligatorio, longitud, máscara y entrada están deshabilitado. Si está en true el campo punto de venta estará  habilitado en la extensión de documento y se habilitan los campos obligatorio, longitud, máscara y entrada.</p>
+<p><strong>Tipo</strong>:boolean</p>
+</blockquote>
+<h4 id="longitud">Longitud.</h4>
+<blockquote>
+<p><strong>Descripción</strong>: Indica la longitud que debe tener el prefijo en <a href="../../LATAM-SalesPoint/LATAM-SalesPoint/#prefijo-punto-de-venta">Punto de venta</a>. Esta validación se ejecuta en el campo <a href="../../../LATAM-DocumentExtension/LATAM-DocumentExtension/#prefijo">prefijo de punto de venta en extensión de documentos</a></p>
+<p><strong>Habilitado</strong>: Si esta en true el campo Habilitado.</p>
+<p><strong>Tipo</strong>:Integer</p>
+</blockquote>
+<h4 id="obligatorio">Obligatorio.</h4>
+<blockquote>
+<p><strong>Descripción</strong>: Indica que el punto de venta o el prefijo de <a href="../../LATAM-SalesPoint/LATAM-SalesPoint/">Punto de venta</a>. es obligatorio.</p>
+<p><strong>Habilitado</strong>: Si esta en true el campo Habilitado.</p>
+<p><strong>Tipo</strong>:Integer</p>
+</blockquote>
+<h4 id="mascara">Máscara.</h4>
+<blockquote>
+<p><strong>Descripción</strong>: Mascara para validar el prefijo de <a href="../../LATAM-SalesPoint/LATAM-SalesPoint/">Punto de venta</a>.</p>
+<p><strong>Habilitado</strong>: Si esta en true el campo Habilitado.</p>
+<p><strong>Tipo</strong>:Integer</p>
+</blockquote>
+</blockquote>
+<hr />
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../LATAM-SalesPoint/LATAM-SalesPoint/" class="btn btn-neutral float-right" title="Sales Point">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../LATAM-VoucherClassType/LATAM-VoucherClassType/" class="btn btn-neutral" title="Voucher Class Type"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../LATAM-VoucherClassType/LATAM-VoucherClassType/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../LATAM-SalesPoint/LATAM-SalesPoint/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

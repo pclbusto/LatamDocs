@@ -1,0 +1,33 @@
+site_name: LATAM DOC
+nav:
+    - Home: index.md
+    - Maestros:
+        - Setup: LATAM-Setup/LATAM-Setup.md
+        - Voucher Class Letter: LATAM-VoucherClassLetter/LATAM-VoucherClassLetter.md
+        - Voucher Class Type: Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md
+        - Voucher Class: Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md
+        - Sales Point: Maestros/LATAM-SalesPoint/LATAM-SalesPoint.md
+        - Document Type: LATAM-DocumentType/LATAM-DocumentType.md
+        - Tax Payer Type: LATAM-TaxPayerType/LATAM-TaxPayerType.md
+        - Account Type Group: Maestros/LATAM-AccountTypeGroup/LATAM-AccountTypeGroup
+    - Extensiones:
+        - Document Extension: LATAM-DocumentExtension/LATAM-DocumentExtension.md
+        - Compañía: Extensiones/LATAM-CompanyInformation/LATAM-CompanyInformation.md
+        - Cliente: Extensiones/LATAM-Customer/LATAM-Customer.md
+        - Proveedor: Extensiones/LATAM-Vendor/LATAM-Vendor.md
+        - Banco: Extensiones/LATAM-Bank/LATAM-Bank.md
+        - Ordenes de ventas: Extensiones/LATAM-SalesOrder/LATAM-SalesOrder.md
+    - Desarrollo:
+        - Code Units:
+            - LATAM SalesHeaderDocExt: Desarrollo/Code-Units/LATAM-SalesHeaderDocExt/LATAM-SalesHeaderDocExt.md
+            - LATAM Document Extension: Desarrollo/Code-Units/LATAM-Document-Extension/LATAM-Document-Extension.md
+            - LATAM Sales Post Subscribers: Desarrollo/Code-Units/LATAM-SalesPostSubscribers/LATAM-SalesPostSubscribers.md
+        - Enums:
+            - LATAM Document Extension Type: Desarrollo/Enums/LATAM-DocumentExtensionType/LATAM-DocumentExtensionType.md
+            - LATAM Entity Type: Desarrollo/Enums/LATAM-EntityType/LATAM-EntityType.md
+        - Queries: 
+            - LATAM Voucher Class Lookup: Desarrollo/Queries/LATAM-VoucherClassLookup/LATAM-VoucherClassLookup.md
+    - Info Extra:
+        - Máscara Documentos: Info-Extra/Mascara.md
+    - About: about.md
+theme: readthedocs
