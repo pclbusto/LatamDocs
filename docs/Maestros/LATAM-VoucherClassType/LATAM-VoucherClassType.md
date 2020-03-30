@@ -25,9 +25,9 @@ Este maestro es una tipificación para las [clases de comprobantes](../Maestros/
 
 
 ## Sección Medio Cobro Pago
-![Ventana de configuración](Seccion-Collection-Payment-Document.png)
+![Ventana de configuración](Seccion-Collection-Payment-Document.PNG)
 ## Sección Facturas
-![Ventana de configuración](Seccion-Invoices.png)
+![Ventana de configuración](Seccion-Invoices.PNG)
 
 ### Campos
 >#### Factura Ventas
@@ -55,7 +55,7 @@ Este maestro es una tipificación para las [clases de comprobantes](../Maestros/
 >>**Tipo**:boolean
 
 ## Sección notas de crédito
-![Ventana de configuración](Seccion-CreditNote.png)
+![Ventana de configuración](Seccion-CreditNote.PNG)
 
 ### Campos
 >#### Notas de crédito de ventas
@@ -83,7 +83,7 @@ Este maestro es una tipificación para las [clases de comprobantes](../Maestros/
 >>**Tipo**:boolean
 
 ## Sección remito
-![Ventana de configuración](Seccion-PackingSlip.png)
+![Ventana de configuración](Seccion-PackingSlip.PNG)
 
 ### Campos
 >#### Remito
