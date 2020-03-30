@@ -27,147 +27,147 @@ Ventana de configuración que permite configurar comportamientos generales de la
 
 ### Sección definidos por usuario cliente
 ###Campos
->####Etiqueta concepto 1
+>#### Etiqueta concepto 1
 >>**Descripción**: 
 	Define la etiqueta que va a tener el [campo concepto 1 de la extensión cliente](../Extensiones/LATAM-Customer/LATAM-Customer.md#concepto-1). Es decir el valor que se de a este campo es la etiqueta que va a tomar en la extensión de la entidad clientes.
 	
 >>**Tipo**:Texto(20)
 
->####Etiqueta concepto 2
+>#### Etiqueta concepto 2
 >>**Descripción**: 
 	Define lo mismo que etiqueta concepto 1 pero para el [campo concepto 2 de la extensión cliente](../Extensiones/LATAM-Customer/LATAM-Customer.md#concepto-2).
 	
 >>**Tipo**:Texto(20)
 
->####Etiqueta concepto 3
+>#### Etiqueta concepto 3
 >>**Descripción**: 
 	Define lo mismo que etiqueta concepto 1 pero para el [campo concepto 3 de la extensión cliente](../Extensiones/LATAM-Customer/LATAM-Customer.md#concepto-3).
 	
 >>**Tipo**:Texto(20)
 
->####Etiqueta Nota 1
+>#### Etiqueta Nota 1
 >>**Descripción**: 
 	Define lo mismo que etiqueta concepto 1 pero para el [campo nota 1 de la extensión cliente](../Extensiones/LATAM-Customer/LATAM-Customer.md#nota-1).
 	
 >>**Tipo**:Texto(20)
 
->####Etiqueta Nota 2
+>#### Etiqueta Nota 2
 >>**Descripción**: 
 	Define lo mismo que etiqueta concepto 1 pero para el [campo nota 2 de la extensión cliente](../Extensiones/LATAM-Customer/LATAM-Customer.md#nota-2).
 	
 >>**Tipo**:Texto(20)
 
->####Etiqueta Nota 3
+>#### Etiqueta Nota 3
 >>**Descripción**: 
 	Define lo mismo que etiqueta concepto 1 pero para el [campo nota 3 de la extensión cliente](../Extensiones/LATAM-Customer/LATAM-Customer.md#nota-3).
 	
 >>**Tipo**:Texto(20)
 
 ### Sección definidos por usuario proveedor
->####Etiqueta concepto 1
+>#### Etiqueta concepto 1
 >>**Descripción**: 
 	Define la etiqueta que va a tener el [campo concepto 1 de la extensión proveedor](../Extensiones/LATAM-Vendor/LATAM-Vendor.md#concepto-1). Es decir el valor que se de a este campo es la etiqueta que va a tomar en la extensión de la entidad proveedor.
 	
 >>**Tipo**:Texto(20)
 
->####Etiqueta concepto 2
+>#### Etiqueta concepto 2
 >>**Descripción**: 
 	Define lo mismo que etiqueta concepto 1 pero para el [campo concepto 2 de la extensión proveedor](../Extensiones/LATAM-Vendor/LATAM-Vendor.md#concepto-2).
 	
 >>**Tipo**:Texto(20)
 
->####Etiqueta concepto 3
+>#### Etiqueta concepto 3
 >>**Descripción**: 
 	Define lo mismo que etiqueta concepto 1 pero para el [campo concepto 3 de la extensión proveedor](../Extensiones/LATAM-Vendor/LATAM-Vendor.md#concepto-3).
 	
 >>**Tipo**:Texto(20)
 
->####Etiqueta Nota 1
+>#### Etiqueta Nota 1
 >>**Descripción**: 
 	Define lo mismo que etiqueta concepto 1 pero para el [campo nota 1 de la extensión proveedor](../Extensiones/LATAM-Vendor/LATAM-Vendor.md#nota-1).
 	
 >>**Tipo**:Texto(20)
 
->####Etiqueta Nota 2
+>#### Etiqueta Nota 2
 >>**Descripción**: 
 	Define lo mismo que etiqueta concepto 1 pero para el [campo nota 2 de la extensión proveedor](../Extensiones/LATAM-Vendor/LATAM-Vendor.md#nota-2).
 	
 >>**Tipo**:Texto(20)
 
->####Etiqueta Nota 3
+>#### Etiqueta Nota 3
 >>**Descripción**: 
 	Define lo mismo que etiqueta concepto 1 pero para el [campo nota 3 de la extensión proveedor](../Extensiones/LATAM-Vendor/LATAM-Vendor.md#nota-3).
 	
 >>**Tipo**:Texto(20)
 
 ### Sección definidos por usuario banco
->####Etiqueta concepto 1
+>#### Etiqueta concepto 1
 >>**Descripción**: 
 	Define la etiqueta que va a tener el [campo concepto 1 de la extensión banco](../Extensiones/LATAM-Bank/LATAM-Bank.md#concepto-1). Es decir el valor que se de a este campo es la etiqueta que va a tomar en la extensión de la entidad proveedor.
 	
 >>**Tipo**:Texto(20)
 
->####Etiqueta concepto 2
+>#### Etiqueta concepto 2
 >>**Descripción**: 
 	Define lo mismo que etiqueta concepto 1 pero para el [campo concepto 2 de la extensión banco](../Extensiones/LATAM-Bank/LATAM-Bank.md#concepto-2).
 	
 >>**Tipo**:Texto(20)
 
->####Etiqueta concepto 3
+>#### Etiqueta concepto 3
 >>**Descripción**: 
 	Define lo mismo que etiqueta concepto 1 pero para el [campo concepto 3 de la extensión banco](../Extensiones/LATAM-Bank/LATAM-Bank.md#concepto-3).
 	
 >>**Tipo**:Texto(20)
 
->####Etiqueta Nota 1
+>#### Etiqueta Nota 1
 >>**Descripción**: 
 	Define lo mismo que etiqueta concepto 1 pero para el [campo nota 1 de la extensión banco](../Extensiones/LATAM-Bank/LATAM-Bank.md#nota-1).
 	
 >>**Tipo**:Texto(20)
 
->####Etiqueta Nota 2
+>#### Etiqueta Nota 2
 >>**Descripción**: 
 	Define lo mismo que etiqueta concepto 1 pero para el [campo nota 2 de la extensión banco](../Extensiones/LATAM-Bank/LATAM-Bank.md#nota-2).
 	
 >>**Tipo**:Texto(20)
 
->####Etiqueta Nota 3
+>#### Etiqueta Nota 3
 >>**Descripción**: 
 	Define lo mismo que etiqueta concepto 1 pero para el [campo nota 3 de la extensión banco](../Extensiones/LATAM-Bank/LATAM-Bank.md#nota-3).
 	
 >>**Tipo**:Texto(20)
 ### Sección definidos por usuario compañía
->####Etiqueta concepto 1
+>#### Etiqueta concepto 1
 >>**Descripción**: 
 	Define la etiqueta que va a tener el [campo concepto 1 de la extensión compañía](../Extensiones/LATAM-CompanyInformation/LATAM-CompanyInformation.md#concepto-1). Es decir el valor que se de a este campo es la etiqueta que va a tomar en la extensión de la entidad proveedor.
 	
 >>**Tipo**:Texto(20)
 
->####Etiqueta concepto 2
+>#### Etiqueta concepto 2
 >>**Descripción**: 
 	Define lo mismo que etiqueta concepto 1 pero para el [campo concepto 2 de la extensión compañía](../Extensiones/LATAM-CompanyInformation/LATAM-CompanyInformation.md#concepto-2).
 	
 >>**Tipo**:Texto(20)
 
->####Etiqueta concepto 3
+>#### Etiqueta concepto 3
 >>**Descripción**: 
 	Define lo mismo que etiqueta concepto 1 pero para el [campo concepto 3 de la extensión compañía](../Extensiones/LATAM-CompanyInformation/LATAM-CompanyInformation.md#concepto-3).
 	
 >>**Tipo**:Texto(20)
 
->####Etiqueta Nota 1
+>#### Etiqueta Nota 1
 >>**Descripción**: 
 	Define lo mismo que etiqueta concepto 1 pero para el [campo nota 1 de la extensión compañía](../Extensiones/LATAM-CompanyInformation/LATAM-CompanyInformation.md#nota-1).
 	
 >>**Tipo**:Texto(20)
 
->####Etiqueta Nota 2
+>#### Etiqueta Nota 2
 >>**Descripción**: 
 	Define lo mismo que etiqueta concepto 1 pero para el [campo nota 2 de la extensión compañía](../Extensiones/LATAM-CompanyInformation/LATAM-CompanyInformation.md#nota-2).
 	
 >>**Tipo**:Texto(20)
 
->####Etiqueta Nota 3
+>#### Etiqueta Nota 3
 >>**Descripción**: 
 	Define lo mismo que etiqueta concepto 1 pero para el [campo nota 3 de la extensión compañía](../Extensiones/LATAM-CompanyInformation/LATAM-CompanyInformation.md#nota-3).
 	
