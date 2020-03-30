@@ -1,64 +1,64 @@
-#LATAM Tax Payer Type
+# LATAM Tax Payer Type
 ![Ventana de configuración de tipo de contribuyente](MainPage.png)
-##Descripción
+## Descripción
 Ventana de configuración de tipo de contribuyente.
 
 ## Sección general
-###Campos
+### Campos
 
->####No.
+>#### No.
 >>**Descripcion**: 
 
 >>**Tipo**:Code
 
->####Descripción.
+>#### Descripción.
 >>**Descripcion**: 
 
 >>**Tipo**:Text
 
->####Valida código de autorización proveedor
+>#### Valida código de autorización proveedor
 >>**Descripcion**: 
 
 >>**Tipo**:Boolean
 
->####Contribuyente exterior
+>#### Contribuyente exterior
 >>**Descripcion**: 
 
 >>**Tipo**:Boolean
 
->####Contribuyente interno
+>#### Contribuyente interno
 >>**Descripcion**: 
 
 >>**Tipo**:Boolean
 
->####País de radicación requerido
+>#### País de radicación requerido
 >>**Descripcion**: 
 
 >>**Tipo**:Boolean
 
->####Documento estado requerido
+>#### Documento estado requerido
 >>**Descripcion**: 
 
 >>**Tipo**:Boolean
 
->####Juridiscción requerida
+>#### Juridiscción requerida
 >>**Descripcion**: 
 
 >>**Tipo**:Boolean
 
->####Documento estado requerido
+>#### Documento estado requerido
 >>**Descripcion**: 
 
 >>**Tipo**:Boolean
 
 ## Sección tipo documento contribuyente
-###Campos
->####Tipo documento
+### Campos
+>#### Tipo documento
 >>**Descripcion**: 
 	
 	
 >>**Tipo**:Code
->####Descripción
+>#### Descripción
 >>**Descripcion**: 
 	
 	

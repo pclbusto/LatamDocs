@@ -1,4 +1,4 @@
-#Definición de Máscara
+# Definición de Máscara
 
 Símbolos permitidos en la configuración de Mascaras.
  

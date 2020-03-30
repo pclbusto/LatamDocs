@@ -1,13 +1,13 @@
-#LATAM Letra de clase de comprobante
+# LATAM Letra de clase de comprobante
 ![Ventana de configuración](MainPage.png)
 
-##Descripción
+## Descripción
 Maestro de letra de clase de comprobante. Este maestro se usa en la generación del número completo de clase de comprobante, en las extensiones a los documentos nativos de Business Central. Por ejemplo en ordenes de compra, factura, devoluciones, remitos.
 
 ## Sección Grilla
-###Campos
+### Campos
 ***
->####No.
+>#### No.
 >>**Descripcion**: 
 	Es el identificador de la letra de clase de comprobante.
 	
@@ -16,13 +16,13 @@ Maestro de letra de clase de comprobante. Este maestro se usa en la generación 
 
 >>**Tipo**:Code[15]
 
->####Descripción
+>#### Descripción
 >>**Descripción**: 
 	Breve descripción en texto sobre la letra de comprobante. 
 	
 >>**Tipo**:Code[30]
 
->####Prefijo
+>#### Prefijo
 >>**Descripción**: 
 	Es el profijo que se usa en la generación de número completo de comprobante. Ver el campo Número de documento completo. Este campo tiene la validación que no puede superar la cantidad de caracteres especificada en el campo [Long. prefijo letra clase comprobante.](../LATAM-Setup/LATAM-Setup.md)
 	

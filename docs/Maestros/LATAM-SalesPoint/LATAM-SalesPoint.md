@@ -1,58 +1,58 @@
-#LATAM Setup
+# LATAM Setup
 ![Ventana Punto de Venta](MainPage.png)
-##Descripción
+## Descripción
 Maestro de entidad punto de venta.
 
 ## Sección General
-###Campos
+### Campos
 
->####No.
+>#### No.
 >>**Descripción**: Identificador único para el punto de venta.
 	
 >>**Tipo**:text
 
->####Descripción
+>#### Descripción
 >>**Descripción**:
 	
 >>**Tipo**:text
 
->####Valida autorización
+>#### Valida autorización
 >>**Descripción**:
 	
 >>**Tipo**:Entero
 
->####Prefijo Punto de Venta
+>#### Prefijo Punto de Venta
 >>**Descripción**:
 	
 >>**Tipo**:Entero
 
->####Pre impreso
+>#### Pre impreso
 >>**Descripción**:
 	
 >>**Tipo**:Entero
 
->####Auto Impreso
+>#### Auto Impreso
 >>**Descripción**:
 	
 >>**Tipo**:Entero
 
->####Impresora Fiscal
+>#### Impresora Fiscal
 >>**Descripción**:
 	
 >>**Tipo**:Entero
 
->####Reporte
+>#### Reporte
 >>**Descripción**:
 	
 >>**Tipo**:Entero
 
 ## Sección Depositos de punto de venta
-###Campos
->####Código Depósito
+### Campos
+>#### Código Depósito
 >>**Descripción**:
 	
 >>**Tipo**:Entero
->####Descripción
+>#### Descripción
 >>**Descripcion**: 
 	
 	
