@@ -1,5 +1,5 @@
 # LATAM Clase de comprobante
-![Ventana de configuración](MainPage.png)
+![Ventana de configuración](MainPage.PNG)
 
 ## Descripción
 Maestro de clase de comprobante. Esta entidad es como un talonario, donde se configuran los campos que va a tener dicho talonario.  
