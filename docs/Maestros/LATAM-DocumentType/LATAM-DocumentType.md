@@ -1,5 +1,5 @@
 # LATAM Tipo Documento
-![Ventana de configuración](LATAM-DocumentType-MainPage.png)
+![Ventana de configuración](../../Imagenes/LATAM-DocumentType-MainPage.PNG)
 ## Descripción
 Maestro de tipos de documentos. Permite especificar algunas características para los número de documentos ingresados por ejemplo formato, si usa o no algoritmo de verificación (CUIT, RUC), si es o no un documento del exterior, estado o país.
 
