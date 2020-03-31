@@ -1,5 +1,5 @@
 # LATAM Extension Banco
-![Ventana Extensión Banco](MainPage-bank_extension.png)
+![Ventana Extensión Banco](../../Imagenes/LATAM-Bank-Extension-MainPage.png)
 ## Descripción
 Extensión a la entidad banco de Business Central.
 
