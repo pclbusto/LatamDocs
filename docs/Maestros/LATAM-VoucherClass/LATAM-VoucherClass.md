@@ -1,5 +1,5 @@
 # LATAM Clase de comprobante
-![Ventana de configuración](MainPage.PNG)
+![Ventana de configuración](../../Imagenes/LATAM-VoucherClass-MainPage.PNG)
 
 ## Descripción
 Maestro de clase de comprobante. Esta entidad es como un talonario, donde se configuran los campos que va a tener dicho talonario.  
@@ -114,7 +114,7 @@ Si este campo esta marcado, cambia el comportamiento a requerido de los campos e
 >>**Tipo**:Code[5]
 ***
 ## Sección Datos Adicionales
-![Ventana de configuración](AdditionalData.png)
+![Ventana de configuración](../../Imagenes/LATAM-VoucherClass-AdditionalData.PNG)
 ## Descripción
 Configuración de campos adicionales. Esta sección permite configurar el comportamiento de los campos adicionales, los cuales aparecen en el formulario de [Extensión de Documentos](../LATAM-DocumentExtension/LATAM-DocumentExtension.md). Están agrupados por secciones que son las mismas que se tiene en la ventana [Extensión de Documentos](../LATAM-DocumentExtension/LATAM-DocumentExtension.md). Los comportamientos pueden ser:
 
@@ -135,7 +135,7 @@ Permite administrar el comportamiento de los campos en el grupo [contribuyente e
 >>**Tipo**:Code[15]
 ***
 ## Sección Máscara Documento
-![Ventana de configuración](DocumentMask.png)
+![Ventana de configuración](../../Imagenes/LATAM-VoucherClass-DocumentMask.PNG)
 ## Descripción
 Configuración de máscaras para el punto de venta y el comprobante. Cuando se usa el comprobante en la ventana [Extensión de Documentos](../LATAM-DocumentExtension/LATAM-DocumentExtension.md). Se disparan una series de comportamientos referidos al número de comprobante y punto de venta. Esta sección se sub divide a su vez por las entidades mensionadas anteriormente:
 

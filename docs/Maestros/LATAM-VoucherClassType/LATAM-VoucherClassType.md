@@ -1,5 +1,5 @@
 # LATAM Voucher Class Type
-![Ventana de configuración](MainPage.PNG)
+![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-MainPage.PNG)
 
 ## Descripción
 Este maestro es una tipificación para las [clases de comprobantes](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md). Hay varias secciones en esta entidad, cada una representa un tipo de documento que puede ser usada en distintas entidades por ejemplo el grupo facturas tiene facturas de ventas, factura de compras, factura de servicios. Cada uno de estos check representa que puede ser usada como la extension de un determinado documento.
@@ -25,87 +25,87 @@ Este maestro es una tipificación para las [clases de comprobantes](../Maestros/
 
 
 ## Sección Medio Cobro Pago
-![Ventana de configuración](Seccion-Collection-Payment-Document.PNG)
+![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-Collection-Payment-Document.PNG)
 ## Sección Facturas
-![Ventana de configuración](Seccion-Invoices.PNG)
+![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-Invoices.PNG)
 
 ### Campos
 >#### Factura Ventas
->>**Descripcion**: 
+>>**Descripción**: 
 	Indica que puede ser usado en facturas de ventas.
 	
 >>**Tipo**:boolean
 
 >#### Factura de servicio
->>**Descripcion**: 
+>>**Descripción**: 
 	Indica que puede ser usado en facturas de servicio.
 	
 >>**Tipo**:boolean
 
 >#### Factura Compras
->>**Descripcion**: 
+>>**Descripción**: 
 	Indica que puede ser usado en facturas de compra.
 	
 >>**Tipo**:boolean
 
 >#### Factura de proyecto
->>**Descripcion**: 
+>>**Descripción**: 
 	Indica que puede ser usado en facturas de proyecto.
 	
 >>**Tipo**:boolean
 
 ## Sección notas de crédito
-![Ventana de configuración](Seccion-CreditNote.PNG)
+![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-CreditNote.PNG)
 
 ### Campos
 >#### Notas de crédito de ventas
->>**Descripcion**: 
+>>**Descripción**: 
 	Indica que puede ser usado en notas de crédito de ventas.
 	
 >>**Tipo**:boolean
 
 >#### Notas de crédito de servicio
->>**Descripcion**: 
+>>**Descripción**: 
 	Indica que puede ser usado en notas de crédito de servicio.
 	
 >>**Tipo**:boolean
 
 >#### Notas de crédito de Compras
->>**Descripcion**: 
+>>**Descripción**: 
 	Indica que puede ser usado en notas de crédito de compra.
 	
 >>**Tipo**:boolean
 
 >#### Notas de crédito de proyecto
->>**Descripcion**: 
+>>**Descripción**: 
 	Indica que puede ser usado en notas de crédito de proyecto.
 	
 >>**Tipo**:boolean
 
 ## Sección remito
-![Ventana de configuración](Seccion-PackingSlip.PNG)
+![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-PackingSlip.PNG)
 
 ### Campos
 >#### Remito
->>**Descripcion**: 
+>>**Descripción**: 
 	Indica que puede ser usado en notas de crédito de ventas.
 	
 >>**Tipo**:boolean
 
 >#### Remito devolución
->>**Descripcion**: 
+>>**Descripción**: 
 	Indica que puede ser usado en notas de crédito de servicio.
 	
 >>**Tipo**:boolean
 
 >#### Remito transferencia de inventario
->>**Descripcion**: 
+>>**Descripción**: 
 	Indica que puede ser usado en notas de crédito de compra.
 	
 >>**Tipo**:boolean
 
 >#### Remito de proyecto
->>**Descripcion**: 
+>>**Descripción**: 
 	Indica que puede ser usado en notas de crédito de proyecto.
 	
 >>**Tipo**:boolean

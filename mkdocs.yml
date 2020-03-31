@@ -9,7 +9,7 @@ nav:
         - Sales Point: Maestros/LATAM-SalesPoint/LATAM-SalesPoint.md
         - Document Type: Maestros/LATAM-DocumentType/LATAM-DocumentType.md
         - Tax Payer Type: Maestros/LATAM-TaxPayerType/LATAM-TaxPayerType.md
-        - Account Type Group: Maestros/LATAM-AccountTypeGroup/LATAM-AccountTypeGroup
+        - Account Type Group: Maestros/LATAM-AccountTypeGroup/LATAM-AccountTypeGroup.md
     - Extensiones:
         - Document Extension: LATAM-DocumentExtension/LATAM-DocumentExtension.md
         - Compañía: Extensiones/LATAM-CompanyInformation/LATAM-CompanyInformation.md
