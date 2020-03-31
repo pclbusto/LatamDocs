@@ -1,5 +1,5 @@
 # LATAM Setup
-![Ventana Punto de Venta](MainPage.png)
+![Ventana Punto de Venta](../../Imagenes/LATAM-SalesPoint-MainPage.PNG)
 ## Descripción
 Maestro de entidad punto de venta.
 
@@ -53,7 +53,7 @@ Maestro de entidad punto de venta.
 	
 >>**Tipo**:Entero
 >#### Descripción
->>**Descripcion**: 
+>>**Descripción**: 
 	
 	
 >>**Tipo**:Entero
