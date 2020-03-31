@@ -16,7 +16,7 @@ Ventana de configuración que permite configurar comportamientos generales de la
 ### Campos
 >#### Long. prefijo letra clase comprobante
 >>**Descripcion**: 
-	Cantidad de caracteres que permite el campo letra de comprobante de la entidad [letra de comprobante](../LATAM-LATAMVoucherClassLetter/LATAM-LATAMVoucherClassLetter.md) letra de comprobante.
+	Cantidad de caracteres que permite el campo letra de comprobante de la entidad [letra de comprobante](../Maestros/LATAM-LATAMVoucherClassLetter/LATAM-LATAMVoucherClassLetter.md) letra de comprobante.
 	
 >>**Tipo**:Entero
 >#### Long. prefijo tipo clase comprobante
