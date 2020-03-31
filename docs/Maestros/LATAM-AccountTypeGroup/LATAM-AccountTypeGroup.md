@@ -1,5 +1,5 @@
 # LATAM Account Type Group
-![Ventana de configuración](MainPage.PNG)
+![Ventana de configuración](../../Imagenes/LATAM-AccountTypeGroup-MainPage.PNG)
 ## Descripción
 Mestro de grupo de tipo de cuenta. Crea una tipificación para un tipo de cuenta y asociar a este tipo un conjunto de [clases de comprobantes](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md) que tendrá acceso. Los tipos de cuenta son:
 
