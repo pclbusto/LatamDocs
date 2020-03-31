@@ -103,8 +103,8 @@ Maestro de clase de comprobante. Esta entidad es como un talonario, donde se con
 >>**Tipo**:Code[5]
 
 >#### Detalla contribuyente
->>** Descripción **:
-Si este campo esta marcado, cambia el comportamiento a requerido de los campos en el [grupo de contribuyente](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md# grupo-contribuyente) en la [sección de datos adicionales](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md# seccion-datos-adicionales) en la entidad comprobante  
+>>**Descripción**:
+Si este campo esta marcado, cambia el comportamiento a requerido de los campos en el [grupo de contribuyente](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md#grupo-contribuyente) en la [sección de datos adicionales](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md#seccion-datos-adicionales) en la entidad comprobante  
 	
 >>**Tipo**:boolean
 
