@@ -3,12 +3,12 @@ nav:
     - Home: index.md
     - Maestros:
         - Setup: LATAM-Setup/LATAM-Setup.md
-        - Voucher Class Letter: LATAM-VoucherClassLetter/LATAM-VoucherClassLetter.md
+        - Voucher Class Letter: Maestros/LATAM-VoucherClassLetter/LATAM-VoucherClassLetter.md
         - Voucher Class Type: Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md
         - Voucher Class: Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md
         - Sales Point: Maestros/LATAM-SalesPoint/LATAM-SalesPoint.md
-        - Document Type: LATAM-DocumentType/LATAM-DocumentType.md
-        - Tax Payer Type: LATAM-TaxPayerType/LATAM-TaxPayerType.md
+        - Document Type: Maestros/LATAM-DocumentType/LATAM-DocumentType.md
+        - Tax Payer Type: Maestros/LATAM-TaxPayerType/LATAM-TaxPayerType.md
         - Account Type Group: Maestros/LATAM-AccountTypeGroup/LATAM-AccountTypeGroup
     - Extensiones:
         - Document Extension: LATAM-DocumentExtension/LATAM-DocumentExtension.md
