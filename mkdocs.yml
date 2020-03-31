@@ -12,11 +12,11 @@ nav:
         - Account Type Group: Maestros/LATAM-AccountTypeGroup/LATAM-AccountTypeGroup.md
     - Extensiones:
         - Document Extension: LATAM-DocumentExtension/LATAM-DocumentExtension.md
-        - Compañía: Extensiones/LATAM-CompanyInformation/LATAM-CompanyInformation.md
-        - Cliente: Extensiones/LATAM-Customer/LATAM-Customer.md
-        - Proveedor: Extensiones/LATAM-Vendor/LATAM-Vendor.md
-        - Banco: Extensiones/LATAM-Bank/LATAM-Bank.md
-        - Ordenes de ventas: Extensiones/LATAM-SalesOrder/LATAM-SalesOrder.md
+        - Compañía: Extensiones/LATAM-CompanyInformation.md
+        - Cliente: Extensiones/LATAM-Customer.md
+        - Proveedor: Extensiones/LATAM-Vendor.md
+        - Banco: Extensiones/LATAM-Bank.md
+        - Ordenes de ventas: Extensiones/LATAM-SalesOrder.md
     - Desarrollo:
         - Code Units:
             - LATAM SalesHeaderDocExt: Desarrollo/Code-Units/LATAM-SalesHeaderDocExt/LATAM-SalesHeaderDocExt.md

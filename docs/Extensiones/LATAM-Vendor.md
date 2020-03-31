@@ -1,5 +1,5 @@
 # LATAM Extension Proveedor
-![Ventana de configuración](MainPage-vendor.png)
+![Ventana de configuración](LATAM-Vendor-Extension-MainPage.PNG)
 ## Descripción
 Extensión a los proveedor de Business Central.
 
@@ -12,13 +12,13 @@ Extensión a los proveedor de Business Central.
 
 >#### Grupo tipo de cuenta
 >>**Descripción**: 
-	Id. del grupo de tipo cuenta a la que pertenece el proveedor. Solo puede ser un grupo tipo cuenta cuyo tipo sea proveedor. Ver [tipo en grupo tipo cuenta](../../Maestros/LATAM-AccountTypeGroup/LATAM-AccountTypeGroup.md# tipo-de-cuenta)
+	Id. del grupo de tipo cuenta a la que pertenece el proveedor. Solo puede ser un grupo tipo cuenta cuyo tipo sea proveedor. Ver [tipo en grupo tipo cuenta](../../Maestros/LATAM-AccountTypeGroup/LATAM-AccountTypeGroup.md#tipo-de-cuenta)
 	
 >>**Tipo**:Entero
 
 >#### Concepto 1
 >>**Descripción**: 
-	Campo de texto libre. Puede tener el significado que el usuario decida darle mediante la etiqueta definida en la [sección definido usuario proveedor, concepto 1](../../LATAM-Setup/LATAM-Setup.md# etiqueta-concepto-1_1). El valor que se ingrese en esa configuración determina el rótulo que va a tener en esta ventana.
+	Campo de texto libre. Puede tener el significado que el usuario decida darle mediante la etiqueta definida en la [sección definido usuario proveedor, concepto 1](../../LATAM-Setup/LATAM-Setup.md#etiqueta-concepto-1_1). El valor que se ingrese en esa configuración determina el rótulo que va a tener en esta ventana.
 	
 >>**Tipo**:Texto(250)
 

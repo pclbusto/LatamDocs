@@ -1,7 +1,7 @@
-# LATAM Extension Customer
-![Ventana de configuración](MainPage-Customer.png)
+# LATAM Extension Company Information
+![Ventana de configuración](../../Imagenes/LATAM-CompanyInformation-Extension-MainPage.PNG)
 ## Descripción
-Extensión a los clientes de Business Central.
+Extensión a la entidad de información de compañía de Business Central.
 
 ### Campos
 
