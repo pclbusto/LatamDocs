@@ -1,5 +1,5 @@
 # LATAM Letra de clase de comprobante
-![Ventana de configuración](MainPage.png)
+![Ventana de configuración](../../Imagenes/LATAM-VoucherClassLetter-MainPage.PNG)
 
 ## Descripción
 Maestro de letra de clase de comprobante. Este maestro se usa en la generación del número completo de clase de comprobante, en las extensiones a los documentos nativos de Business Central. Por ejemplo en ordenes de compra, factura, devoluciones, remitos.
