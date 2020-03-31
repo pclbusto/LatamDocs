@@ -7,7 +7,7 @@ Ventana de configuración que permite configurar comportamientos generales de la
 ### Campos
 
 >#### LATAM habilitado
->>**Descripcion**: 
+>>**Descripción**: 
 	Habilita o deshabilita la localización. Si este campo esta en falso el código de la localización no debería ejecutarse. Esto implica extensiones a páginas o código que ejecuta en puntos de integración.
 	
 >>**Tipo**:Booleano
@@ -15,12 +15,12 @@ Ventana de configuración que permite configurar comportamientos generales de la
 ## Sección prefijo
 ### Campos
 >#### Long. prefijo letra clase comprobante
->>**Descripcion**: 
-	Cantidad de caracteres que permite el campo letra de comprobante de la entidad [letra de comprobante](../Maestros/LATAM-LATAMVoucherClassLetter/LATAM-LATAMVoucherClassLetter.md) letra de comprobante.
+>>**Descripción**: 
+	Cantidad de caracteres que permite el campo letra de comprobante de la entidad [letra de comprobante](../Maestros/LATAM-VoucherClassLetter/LATAM-VoucherClassLetter.md) letra de comprobante.
 	
 >>**Tipo**:Entero
 >#### Long. prefijo tipo clase comprobante
->>**Descripcion**: 
+>>**Descripción**: 
 	Cantidad de caracteres que permite el campo prefijo de clase de comprobante de la entidad clase de comprobante.
 	
 >>**Tipo**:Entero

@@ -8,7 +8,7 @@ Maestro de letra de clase de comprobante. Este maestro se usa en la generación 
 ### Campos
 ***
 >#### No.
->>**Descripcion**: 
+>>**Descripción**: 
 	Es el identificador de la letra de clase de comprobante.
 	
 >>**Uso**:
@@ -24,7 +24,7 @@ Maestro de letra de clase de comprobante. Este maestro se usa en la generación 
 
 >#### Prefijo
 >>**Descripción**: 
-	Es el profijo que se usa en la generación de número completo de comprobante. Ver el campo Número de documento completo. Este campo tiene la validación que no puede superar la cantidad de caracteres especificada en el campo [Long. prefijo letra clase comprobante.](../LATAM-Setup/LATAM-Setup.md)
+	Es el prefijo que se usa en la generación de número completo de comprobante. Ver el campo Número de documento completo. Este campo tiene la validación que no puede superar la cantidad de caracteres especificada en el campo [Long. prefijo letra clase comprobante.](../../LATAM-Setup/LATAM-Setup.md#long-prefijo-letra-clase-comprobante)
 	
 >>**Tipo**:Code[5]
 ***
