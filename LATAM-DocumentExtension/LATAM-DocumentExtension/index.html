@@ -55,19 +55,19 @@
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../../LATAM-Setup/LATAM-Setup/">Setup</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-VoucherClassLetter/LATAM-VoucherClassLetter/">Voucher Class Letter</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-VoucherClassLetter/">Voucher Class Letter</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType/">Voucher Class Type</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-VoucherClassType/">Voucher Class Type</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass/">Voucher Class</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-VoucherClass/">Voucher Class</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-SalesPoint/LATAM-SalesPoint/">Sales Point</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-SalesPoint/">Sales Point</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-DocumentType/LATAM-DocumentType/">Document Type</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-DocumentType/">Document Type</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-TaxPayerType/LATAM-TaxPayerType/">Tax Payer Type</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-TaxPayerType/">Tax Payer Type</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-AccountTypeGroup/LATAM-AccountTypeGroup/">Account Type Group</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-AccountTypeGroup/">Account Type Group</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Extensiones</span></p>
@@ -133,11 +133,11 @@
                 <ul>
                     <li class="toctree-l1"><a class="reference internal" href="#">Code Units</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../Desarrollo/Code-Units/LATAM-SalesHeaderDocExt/LATAM-SalesHeaderDocExt/">LATAM SalesHeaderDocExt</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../Desarrollo/Code-Units/LATAM-SalesHeaderDocExt/">LATAM SalesHeaderDocExt</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Desarrollo/Code-Units/LATAM-Document-Extension/LATAM-Document-Extension/">LATAM Document Extension</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../Desarrollo/Code-Units/LATAM-Document-Extension/">LATAM Document Extension</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Desarrollo/Code-Units/LATAM-SalesPostSubscribers/LATAM-SalesPostSubscribers/">LATAM Sales Post Subscribers</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../Desarrollo/Code-Units/LATAM-SalesPostSubscribers/">LATAM Sales Post Subscribers</a>
                 </li>
     </ul>
                     </li>
@@ -254,11 +254,11 @@
 <blockquote>
 <h4 id="clase-de-comprobante">Clase de comprobante</h4>
 <blockquote>
-<p><strong>Descripción</strong>: id de clase de comprobante ver <a href="../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass/">Clase de comprobante</a>. </p>
+<p><strong>Descripción</strong>: id de clase de comprobante ver <a href="../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md">Clase de comprobante</a>. </p>
 <p><strong>Tipo</strong>:Code[15]</p>
-<p><strong>Filtrado:</strong> Este lookup tiene un filtro complejo. Como primera estapa de filtrado, divide el grupo en dos parte. Una todo aquellos comprobantes que no son medios de cobro pago (MCP) y los que son ver <a href="../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass/">Clase de comprobante</a>.<br>
-Para los que no son MCP los comprobantes a mostrar van a depender de el tipo de documento que se este extendiendo. La clase de comprobante tiene una tipificación, esta tipificacion se la da el <a href="../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass/# tipo-clase-comprobantes">tipo de clase de comprobante cargada en la clase de comprobante</a>. Mediante este campo se especifica donde puede ser usado dicho comprobante. Por ejemplo Si estamos creando una factura de ventas, el tipo de la clase de comprobante en la sección de facturas debe tener marcado que es <a href="../../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType/# factura-ventas">Factura Ventas</a>. Este mismo comportamiento se aplica para los demás documentos. Esto forma parte del filtrado para comprobantes. Siguiendo con el ejemplo tenemos también la entidad que participa en el documento, en el ejemplo estamos en una factura de ventas entonces la entidad es cliente. El cliente en su extension tiene un campo que se llama <a href="../../Maestros/LATAM-AccountTypeGroup/LATAM-AccountTypeGroup/# seccion-clase-de-comprobante-clienteproveedor">grupo tipo cuenta</a>. En el maestro de grupo tipo de cuenta hay una lista de comprobantes. Ahora filtro toma en cuenta esta lista y solo va a mostrar aquellos comprobantes que esten en esta lista.
-Para resolver esta situación lo que se armó es una <a href="../../Desarrollo/Queries/LATAM-VoucherClassLookup/LATAM-VoucherClassLookup/">query</a> en AL/Code que hace un join entre las tablas de comprobante, tipo clase de comprobante, y los comprobantes que tiene asociado cada grupo de cliente o grupo de proveedor mediante la entidad <a href="../../Maestros/LATAM-AccountTypeGroup/LATAM-AccountTypeGroup/# seccion-clase-de-comprobante-clienteproveedor">grupo tipo cuenta</a>.
+<p><strong>Filtrado:</strong> Este lookup tiene un filtro complejo. Como primera estapa de filtrado, divide el grupo en dos parte. Una todo aquellos comprobantes que no son medios de cobro pago (MCP) y los que son ver <a href="../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md">Clase de comprobante</a>.<br>
+Para los que no son MCP los comprobantes a mostrar van a depender de el tipo de documento que se este extendiendo. La clase de comprobante tiene una tipificación, esta tipificacion se la da el <a href="../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md# tipo-clase-comprobantes">tipo de clase de comprobante cargada en la clase de comprobante</a>. Mediante este campo se especifica donde puede ser usado dicho comprobante. Por ejemplo Si estamos creando una factura de ventas, el tipo de la clase de comprobante en la sección de facturas debe tener marcado que es <a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md# factura-ventas">Factura Ventas</a>. Este mismo comportamiento se aplica para los demás documentos. Esto forma parte del filtrado para comprobantes. Siguiendo con el ejemplo tenemos también la entidad que participa en el documento, en el ejemplo estamos en una factura de ventas entonces la entidad es cliente. El cliente en su extension tiene un campo que se llama <a href="../Maestros/LATAM-AccountTypeGroup/LATAM-AccountTypeGroup.md# seccion-clase-de-comprobante-clienteproveedor">grupo tipo cuenta</a>. En el maestro de grupo tipo de cuenta hay una lista de comprobantes. Ahora filtro toma en cuenta esta lista y solo va a mostrar aquellos comprobantes que esten en esta lista.
+Para resolver esta situación lo que se armó es una <a href="../../Desarrollo/Queries/LATAM-VoucherClassLookup/LATAM-VoucherClassLookup/">query</a> en AL/Code que hace un join entre las tablas de comprobante, tipo clase de comprobante, y los comprobantes que tiene asociado cada grupo de cliente o grupo de proveedor mediante la entidad <a href="../Maestros/LATAM-AccountTypeGroup/LATAM-AccountTypeGroup.md# seccion-clase-de-comprobante-clienteproveedor">grupo tipo cuenta</a>.
 Dependiendo del documento en el que se este trabajando los comprobantes cuyo tipo sea compatible son:</p>
 <table>
 <thead>
@@ -272,79 +272,79 @@ Dependiendo del documento en el que se este trabajando los comprobantes cuyo tip
 <tr>
 <td>Facturas de ventas</td>
 <td></td>
-<td align="center"><a href="../../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType/# factura-ventas">Factura de ventas</a></td>
+<td align="center"><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md# factura-ventas">Factura de ventas</a></td>
 </tr>
 <tr>
 <td>Facturas de servicio</td>
 <td></td>
-<td align="center"><a href="../../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType/# factura-de-servicio">Factura de servicio</a></td>
+<td align="center"><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md# factura-de-servicio">Factura de servicio</a></td>
 </tr>
 <tr>
 <td>Facturas de compras</td>
 <td></td>
-<td align="center"><a href="../../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType/# factura-compras">Factura de compras</a></td>
+<td align="center"><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md# factura-compras">Factura de compras</a></td>
 </tr>
 <tr>
 <td>Orden de ventas</td>
 <td>Remito de ventas</td>
-<td align="center"><a href="../../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType/# remito">Remito</a></td>
+<td align="center"><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md# remito">Remito</a></td>
 </tr>
 <tr>
 <td>Orden de ventas</td>
 <td>Factura de ventas</td>
-<td align="center"><a href="../../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType/# factura-ventas">Factura de ventas</a></td>
+<td align="center"><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md# factura-ventas">Factura de ventas</a></td>
 </tr>
 <tr>
 <td>Orden de compras</td>
 <td>Remito de compras</td>
-<td align="center"><a href="../../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType/# factura-ventas">Remito de compras</a></td>
+<td align="center"><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md# factura-ventas">Remito de compras</a></td>
 </tr>
 <tr>
 <td>Orden de compras</td>
 <td>Factura de compras</td>
-<td align="center"><a href="../../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType/# factura-ventas">Factura de compras</a></td>
+<td align="center"><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md# factura-ventas">Factura de compras</a></td>
 </tr>
 <tr>
 <td>Nota de crédito de ventas</td>
 <td></td>
-<td align="center"><a href="../../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType/# notas-de-credito-de-ventas">Notas de crédito de ventas</a></td>
+<td align="center"><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md# notas-de-credito-de-ventas">Notas de crédito de ventas</a></td>
 </tr>
 <tr>
 <td>Nota de crédito de servicio</td>
 <td></td>
-<td align="center"><a href="../../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType/# notas-de-credito-de-servicio">Notas de crédito de servicio</a></td>
+<td align="center"><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md# notas-de-credito-de-servicio">Notas de crédito de servicio</a></td>
 </tr>
 <tr>
 <td>Nota de crédito de compra</td>
 <td></td>
-<td align="center"><a href="../../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType/# remito">Notas de crédito de compras</a></td>
+<td align="center"><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md# remito">Notas de crédito de compras</a></td>
 </tr>
 <tr>
 <td>Orden de devoluciones de ventas</td>
 <td>Remito devolución ventas</td>
-<td align="center"><a href="../../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType/# remito-devolucion">Remito devolución venta</a></td>
+<td align="center"><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md# remito-devolucion">Remito devolución venta</a></td>
 </tr>
 <tr>
 <td>Orden de devoluciones de ventas</td>
 <td>Nota de crédito</td>
-<td align="center"><a href="../../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType/# notas-de-credito-de-ventas">Notas de crédito de ventas</a></td>
+<td align="center"><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md# notas-de-credito-de-ventas">Notas de crédito de ventas</a></td>
 </tr>
 <tr>
 <td>Orden de devoluciones de Compras</td>
 <td>Remito devolución compras</td>
-<td align="center"><a href="../../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType/# remito-devolucion">Remito devolución compras</a></td>
+<td align="center"><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md# remito-devolucion">Remito devolución compras</a></td>
 </tr>
 <tr>
 <td>Orden de devoluciones de Compras</td>
 <td>Notas de crédito de compras</td>
-<td align="center"><a href="../../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType/# remito-devolucion">Notas de crédito de compras</a></td>
+<td align="center"><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md# remito-devolucion">Notas de crédito de compras</a></td>
 </tr>
 </tbody>
 </table>
 </blockquote>
 <h4 id="descripcion_1">Descripción</h4>
 <blockquote>
-<p><strong>Descripción</strong>: Descripción del Id de clase de comprobante <a href="../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass/">Clase de comprobante</a></p>
+<p><strong>Descripción</strong>: Descripción del Id de clase de comprobante <a href="../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md">Clase de comprobante</a></p>
 <p><strong>Tipo</strong>:Code[30]</p>
 </blockquote>
 <h4 id="punto-de-venta">Punto de venta</h4>
@@ -368,10 +368,10 @@ Dependiendo del documento en el que se este trabajando los comprobantes cuyo tip
 <blockquote>
 <ul>
 <li>
-<p><a href="../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass/# prefijo">prefijo del comprobante</a>: si el prefijo es ''. Y el prefijo mas el <a href="../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass/# separador">separador del comprobante</a> si es distinto de ''.</p>
+<p><a href="../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md# prefijo">prefijo del comprobante</a>: si el prefijo es ''. Y el prefijo mas el <a href="../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md# separador">separador del comprobante</a> si es distinto de ''.</p>
 </li>
 <li>
-<p>El <a href="./# prefijo">prefijo del punto de ventas</a>:  si el prefijo es ''. Y el prefijo mas el <a href="../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass/# separador">separador del comprobante</a> si es distinto de ''.</p>
+<p>El <a href="./# prefijo">prefijo del punto de ventas</a>:  si el prefijo es ''. Y el prefijo mas el <a href="../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md# separador">separador del comprobante</a> si es distinto de ''.</p>
 </li>
 <li>
 <p>El <a href="">número de comprobante</a>.</p>
@@ -395,7 +395,7 @@ Dependiendo del documento en el que se este trabajando los comprobantes cuyo tip
 <h2 id="seccion-contribuyentes">Sección contribuyentes</h2>
 <p><img alt="Ventana de configuración" src="Seccion-Contribuyentes.png" /></p>
 <h2 id="descripcion_2">Descripción</h2>
-<p>Esta sección contiene info adicional sobre el contribuyente. Puede ser habilitada mediante la configuración de detalla contribuyente en <a href="../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass/">Clase de comprobante</a>. Si se tiene marcada esta opción los campos de toda la sección deberían estar como requerido. Los campos de esta sección también pueden ser habilitados uno a uno, en la sección de datos adicionales en <a href="../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass/">Clase de comprobante</a>.</p>
+<p>Esta sección contiene info adicional sobre el contribuyente. Puede ser habilitada mediante la configuración de detalla contribuyente en <a href="../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md">Clase de comprobante</a>. Si se tiene marcada esta opción los campos de toda la sección deberían estar como requerido. Los campos de esta sección también pueden ser habilitados uno a uno, en la sección de datos adicionales en <a href="../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md">Clase de comprobante</a>.</p>
 <h3 id="campos_1">Campos</h3>
 <hr />
 <blockquote>
@@ -426,7 +426,7 @@ Dependiendo del documento en el que se este trabajando los comprobantes cuyo tip
         <a href="../../Extensiones/LATAM-CompanyInformation/" class="btn btn-neutral float-right" title="Compañía">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../Maestros/LATAM-AccountTypeGroup/LATAM-AccountTypeGroup/" class="btn btn-neutral" title="Account Type Group"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../Maestros/LATAM-AccountTypeGroup/" class="btn btn-neutral" title="Account Type Group"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -452,7 +452,7 @@ Dependiendo del documento en el que se este trabajando los comprobantes cuyo tip
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../Maestros/LATAM-AccountTypeGroup/LATAM-AccountTypeGroup/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../../Maestros/LATAM-AccountTypeGroup/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../../Extensiones/LATAM-CompanyInformation/" style="color: #fcfcfc">Next &raquo;</a></span>

@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Proveedor - LATAM DOC</title>
+  <title>Sales Point - LATAM DOC</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Proveedor";
-    var mkdocs_page_input_path = "Extensiones\\LATAM-Vendor.md";
+    var mkdocs_page_name = "Sales Point";
+    var mkdocs_page_input_path = "Maestros\\LATAM-SalesPoint.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -52,53 +52,50 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Maestros</span></p>
-                <ul>
+                <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="../../LATAM-Setup/LATAM-Setup/">Setup</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-VoucherClassLetter/">Voucher Class Letter</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-VoucherClassLetter/">Voucher Class Letter</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-VoucherClassType/">Voucher Class Type</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-VoucherClassType/">Voucher Class Type</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-VoucherClass/">Voucher Class</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-VoucherClass/">Voucher Class</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-SalesPoint/">Sales Point</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-DocumentType/">Document Type</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-TaxPayerType/">Tax Payer Type</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-AccountTypeGroup/">Account Type Group</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Extensiones</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../../LATAM-DocumentExtension/LATAM-DocumentExtension/">Document Extension</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-CompanyInformation/">Compañía</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-Customer/">Cliente</a>
-                    </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Proveedor</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Sales Point</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#descripcion">Descripción</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#seccion-general">Sección General</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#campos">Campos</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#tipo-de-contribuyente">Tipo de contribuyente</a>
+    <li class="toctree-l4"><a class="reference internal" href="#no">No.</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#grupo-tipo-de-cuenta">Grupo tipo de cuenta</a>
+    <li class="toctree-l4"><a class="reference internal" href="#descripcion_1">Descripción</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#concepto-1">Concepto 1</a>
+    <li class="toctree-l4"><a class="reference internal" href="#valida-autorizacion">Valida autorización</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#concepto-2">Concepto 2</a>
+    <li class="toctree-l4"><a class="reference internal" href="#prefijo-punto-de-venta">Prefijo Punto de Venta</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#concepto-3">Concepto 3</a>
+    <li class="toctree-l4"><a class="reference internal" href="#pre-impreso">Pre impreso</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#nota-1">Nota 1</a>
+    <li class="toctree-l4"><a class="reference internal" href="#auto-impreso">Auto Impreso</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#nota-2">Nota 2</a>
+    <li class="toctree-l4"><a class="reference internal" href="#impresora-fiscal">Impresora Fiscal</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#nota-3">Nota 3</a>
+    <li class="toctree-l4"><a class="reference internal" href="#reporte">Reporte</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#seccion-depositos-de-punto-de-venta">Sección Depositos de punto de venta</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#campos_1">Campos</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#codigo-deposito">Código Depósito</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#descripcion_2">Descripción</a>
     </li>
         </ul>
     </li>
@@ -106,9 +103,26 @@
     </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-Bank/">Banco</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-DocumentType/">Document Type</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-SalesOrder/">Ordenes de ventas</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-TaxPayerType/">Tax Payer Type</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-AccountTypeGroup/">Account Type Group</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Extensiones</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../LATAM-DocumentExtension/LATAM-DocumentExtension/">Document Extension</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Extensiones/LATAM-CompanyInformation/">Compañía</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Extensiones/LATAM-Customer/">Cliente</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Extensiones/LATAM-Vendor/">Proveedor</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Extensiones/LATAM-Bank/">Banco</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Extensiones/LATAM-SalesOrder/">Ordenes de ventas</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Desarrollo</span></p>
@@ -168,11 +182,11 @@
     
       
         
-          <li>Extensiones &raquo;</li>
+          <li>Maestros &raquo;</li>
         
       
     
-    <li>Proveedor</li>
+    <li>Sales Point</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -183,58 +197,66 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="latam-extension-proveedor">LATAM Extension Proveedor</h1>
-<p><img alt="Ventana de configuración" src="LATAM-Vendor-Extension-MainPage.PNG" /></p>
+                <h1 id="latam-setup">LATAM Setup</h1>
+<p><img alt="Ventana Punto de Venta" src="../../Imagenes/LATAM-SalesPoint-MainPage.PNG" /></p>
 <h2 id="descripcion">Descripción</h2>
-<p>Extensión a los proveedor de Business Central.</p>
+<p>Maestro de entidad punto de venta.</p>
+<h2 id="seccion-general">Sección General</h2>
 <h3 id="campos">Campos</h3>
 <blockquote>
-<h4 id="tipo-de-contribuyente">Tipo de contribuyente</h4>
+<h4 id="no">No.</h4>
 <blockquote>
-<p><strong>Descripción</strong>: </p>
-<p><strong>Tipo</strong>:Code</p>
+<p><strong>Descripción</strong>: Identificador único para el punto de venta.</p>
+<p><strong>Tipo</strong>:text</p>
 </blockquote>
-<h4 id="grupo-tipo-de-cuenta">Grupo tipo de cuenta</h4>
+<h4 id="descripcion_1">Descripción</h4>
 <blockquote>
-<p><strong>Descripción</strong>: 
-    Id. del grupo de tipo cuenta a la que pertenece el proveedor. Solo puede ser un grupo tipo cuenta cuyo tipo sea proveedor. Ver <a href="../../Maestros/LATAM-AccountTypeGroup/LATAM-AccountTypeGroup.md#tipo-de-cuenta">tipo en grupo tipo cuenta</a></p>
+<p><strong>Descripción</strong>:</p>
+<p><strong>Tipo</strong>:text</p>
+</blockquote>
+<h4 id="valida-autorizacion">Valida autorización</h4>
+<blockquote>
+<p><strong>Descripción</strong>:</p>
 <p><strong>Tipo</strong>:Entero</p>
 </blockquote>
-<h4 id="concepto-1">Concepto 1</h4>
+<h4 id="prefijo-punto-de-venta">Prefijo Punto de Venta</h4>
 <blockquote>
-<p><strong>Descripción</strong>: 
-    Campo de texto libre. Puede tener el significado que el usuario decida darle mediante la etiqueta definida en la <a href="../../LATAM-Setup/LATAM-Setup.md#etiqueta-concepto-1_1">sección definido usuario proveedor, concepto 1</a>. El valor que se ingrese en esa configuración determina el rótulo que va a tener en esta ventana.</p>
-<p><strong>Tipo</strong>:Texto(250)</p>
+<p><strong>Descripción</strong>:</p>
+<p><strong>Tipo</strong>:Entero</p>
 </blockquote>
-<h4 id="concepto-2">Concepto 2</h4>
+<h4 id="pre-impreso">Pre impreso</h4>
 <blockquote>
-<p><strong>Descripción</strong>: 
-    Mismo comportamiento que el campo concepto 1 pero para el campo concepto 2.</p>
-<p><strong>Tipo</strong>:Texto(250)</p>
+<p><strong>Descripción</strong>:</p>
+<p><strong>Tipo</strong>:Entero</p>
 </blockquote>
-<h4 id="concepto-3">Concepto 3</h4>
+<h4 id="auto-impreso">Auto Impreso</h4>
 <blockquote>
-<p><strong>Descripción</strong>: 
-    Mismo comportamiento que el campo concepto 1 pero para el campo concepto 3.</p>
-<p><strong>Tipo</strong>:Texto(250)</p>
+<p><strong>Descripción</strong>:</p>
+<p><strong>Tipo</strong>:Entero</p>
 </blockquote>
-<h4 id="nota-1">Nota 1</h4>
+<h4 id="impresora-fiscal">Impresora Fiscal</h4>
 <blockquote>
-<p><strong>Descripción</strong>: 
-    Mismo comportamiento que el campo concepto 1 pero para el campo nota 1.</p>
-<p><strong>Tipo</strong>:Texto(250)</p>
+<p><strong>Descripción</strong>:</p>
+<p><strong>Tipo</strong>:Entero</p>
 </blockquote>
-<h4 id="nota-2">Nota 2</h4>
+<h4 id="reporte">Reporte</h4>
 <blockquote>
-<p><strong>Descripción</strong>: 
-    Mismo comportamiento que el campo concepto 1 pero para el campo nota 2.</p>
-<p><strong>Tipo</strong>:Texto(250)</p>
+<p><strong>Descripción</strong>:</p>
+<p><strong>Tipo</strong>:Entero</p>
 </blockquote>
-<h4 id="nota-3">Nota 3</h4>
+</blockquote>
+<h2 id="seccion-depositos-de-punto-de-venta">Sección Depositos de punto de venta</h2>
+<h3 id="campos_1">Campos</h3>
 <blockquote>
-<p><strong>Descripción</strong>: 
-    Mismo comportamiento que el campo concepto 1 pero para el campo nota 3.</p>
-<p><strong>Tipo</strong>:Texto(250)</p>
+<h4 id="codigo-deposito">Código Depósito</h4>
+<blockquote>
+<p><strong>Descripción</strong>:</p>
+<p><strong>Tipo</strong>:Entero</p>
+</blockquote>
+<h4 id="descripcion_2">Descripción</h4>
+<blockquote>
+<p><strong>Descripción</strong>: </p>
+<p><strong>Tipo</strong>:Entero</p>
 </blockquote>
 </blockquote>
               
@@ -244,10 +266,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../LATAM-Bank/" class="btn btn-neutral float-right" title="Banco">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../LATAM-DocumentType/" class="btn btn-neutral float-right" title="Document Type">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../LATAM-Customer/" class="btn btn-neutral" title="Cliente"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../LATAM-VoucherClass/" class="btn btn-neutral" title="Voucher Class"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -273,10 +295,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../LATAM-Customer/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../LATAM-VoucherClass/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../LATAM-Bank/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../LATAM-DocumentType/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
