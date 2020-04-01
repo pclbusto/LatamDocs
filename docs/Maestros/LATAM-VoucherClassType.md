@@ -1,8 +1,8 @@
 # LATAM Voucher Class Type
-![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-MainPage.PNG)
+![Ventana de configuración](/Imagenes/LATAM-VoucherClassType-MainPage.PNG)
 
 ## Descripción
-Este maestro es una tipificación para las [clases de comprobantes](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md). Hay varias secciones en esta entidad, cada una representa un tipo de documento que puede ser usada en distintas entidades por ejemplo el grupo facturas tiene facturas de ventas, factura de compras, factura de servicios. Cada uno de estos check representa que puede ser usada como la extension de un determinado documento.
+Este maestro es una tipificación para las [clases de comprobantes](/Maestros/LATAM-VoucherClass). Hay varias secciones en esta entidad, cada una representa un tipo de documento que puede ser usada en distintas entidades por ejemplo el grupo facturas tiene facturas de ventas, factura de compras, factura de servicios. Cada uno de estos check representa que puede ser usada como la extension de un determinado documento.
 
 ## Sección General
 >#### No.
@@ -19,7 +19,7 @@ Este maestro es una tipificación para las [clases de comprobantes](../Maestros/
 
 >#### Prefijo
 >>**Descripción**: 
-	Cadena de caracteres limitada por el campo [long. prefijo tipo clase comprobante](../../LATAM-Setup/LATAM-Setup.md# long-prefijo-tipo-clase-comprobante), en la [configuración de latam](../../LATAM-Setup/LATAM-Setup.md)
+	Cadena de caracteres limitada por el campo [long. prefijo tipo clase comprobante](/LATAM-Setup/LATAM-Setup#long-prefijo-tipo-clase-comprobante), en la [configuración de latam](/LATAM-Setup/LATAM-Setup)
 	
 >>**Tipo**:boolean
 
