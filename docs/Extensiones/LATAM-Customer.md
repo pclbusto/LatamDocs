@@ -1,5 +1,5 @@
 # LATAM Extension Customer
-![Ventana de configuración](LATAM-Customer-Extension-MainPage.PNG)
+![Ventana de configuración](/Imagenes/LATAM-Customer-Extension-MainPage.PNG)
 ## Descripción
 Extensión a los clientes de Business Central.
 
@@ -12,13 +12,13 @@ Extensión a los clientes de Business Central.
 
 >#### Grupo tipo de cuenta
 >>**Descripción**: 
-	Id. del grupo de tipo cuenta a la que pertenece el cliente. Solo puede ser un grupo tipo cuenta cuyo tipo sea cliente. Ver [tipo en grupo tipo cuenta](../../Maestros/LATAM-AccountTypeGroup/LATAM-AccountTypeGroup.md# tipo-de-cuenta)
+	Id. del grupo de tipo cuenta a la que pertenece el cliente. Solo puede ser un grupo tipo cuenta cuyo tipo sea cliente. Ver [tipo en grupo tipo cuenta](../Maestros/LATAM-AccountTypeGroup/LATAM-AccountTypeGroup.md#tipo-de-cuenta)
 	
 >>**Tipo**:Entero
 
 >#### Concepto 1
 >>**Descripción**: 
-	Campo de texto libre. Puede tener el significado que el usuario decida darle mediante la etiqueta definida en la [sección definido usuario cliente, concepto 1](../../LATAM-Setup/LATAM-Setup.md# etiqueta-concepto-1). El valor que se ingrese en esa configuración determina el rótulo que va a tener en esta ventana.
+	Campo de texto libre. Puede tener el significado que el usuario decida darle mediante la etiqueta definida en la [sección definido usuario cliente, concepto 1](../LATAM-Setup/LATAM-Setup.md#etiqueta-concepto-1). El valor que se ingrese en esa configuración determina el rótulo que va a tener en esta ventana.
 	
 >>**Tipo**:Texto(250)
 
