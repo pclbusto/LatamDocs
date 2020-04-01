@@ -26,6 +26,24 @@ Este maestro es una tipificación para las [clases de comprobantes](../Maestros/
 
 ## Sección Medio Cobro Pago
 ![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-Collection-Payment-Document.PNG)
+>#### Medio de cobro/pago
+>>**Descripción**: 
+	Los comprobantes pueden ser agrupados en dos grandes conjuntos, un conjunto es el de comprobantes (facturas, remitos, notas de crédito) y otro es el de  medios de cobro pago. Todo comprobante que sea un medio de cobro pago debe tener un tipo de clase de comprobante con este flag en `true`
+	
+>>**Tipo**:boolean
+
+>#### Medio de cobro/pago único por comprobante
+>>**Descripción**: 
+	FALTA DEFINIR
+	
+>>**Tipo**:boolean
+
+>#### Hereda número de encabezado
+>>**Descripción**: 
+	FALTA DEFINIR
+	
+>>**Tipo**:boolean
+
 ## Sección Facturas
 ![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-Invoices.PNG)
 
