@@ -1,8 +1,8 @@
 # LATAM Voucher Class Type
-![Ventana de configuración](/Imagenes/LATAM-VoucherClassType-MainPage.PNG)
+![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-MainPage.PNG)
 
 ## Descripción
-Este maestro es una tipificación para las [clases de comprobantes](/Maestros/LATAM-VoucherClass). Hay varias secciones en esta entidad, cada una representa un tipo de documento que puede ser usada en distintas entidades por ejemplo el grupo facturas tiene facturas de ventas, factura de compras, factura de servicios. Cada uno de estos check representa que puede ser usada como la extension de un determinado documento.
+Este maestro es una tipificación para las [clases de comprobantes](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md). Hay varias secciones en esta entidad, cada una representa un tipo de documento que puede ser usada en distintas entidades por ejemplo el grupo facturas tiene facturas de ventas, factura de compras, factura de servicios. Cada uno de estos check representa que puede ser usada como la extension de un determinado documento.
 
 ## Sección General
 >#### No.
@@ -19,15 +19,15 @@ Este maestro es una tipificación para las [clases de comprobantes](/Maestros/LA
 
 >#### Prefijo
 >>**Descripción**: 
-	Cadena de caracteres limitada por el campo [long. prefijo tipo clase comprobante](/LATAM-Setup/LATAM-Setup#long-prefijo-tipo-clase-comprobante), en la [configuración de latam](/LATAM-Setup/LATAM-Setup)
+	Cadena de caracteres limitada por el campo [long. prefijo tipo clase comprobante](../../LATAM-Setup/LATAM-Setup.md# long-prefijo-tipo-clase-comprobante), en la [configuración de latam](../../LATAM-Setup/LATAM-Setup.md)
 	
 >>**Tipo**:boolean
 
 
 ## Sección Medio Cobro Pago
-![Ventana de configuración](/Imagenes/LATAM-VoucherClassType-Seccion-Collection-Payment-Document.PNG)
+![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-Collection-Payment-Document.PNG)
 ## Sección Facturas
-![Ventana de configuración](/Imagenes/LATAM-VoucherClassType-Seccion-Invoices.PNG)
+![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-Invoices.PNG)
 
 ### Campos
 >#### Factura Ventas
@@ -55,7 +55,7 @@ Este maestro es una tipificación para las [clases de comprobantes](/Maestros/LA
 >>**Tipo**:boolean
 
 ## Sección notas de crédito
-![Ventana de configuración](/Imagenes/LATAM-VoucherClassType-Seccion-CreditNote.PNG)
+![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-CreditNote.PNG)
 
 ### Campos
 >#### Notas de crédito de ventas
@@ -83,7 +83,7 @@ Este maestro es una tipificación para las [clases de comprobantes](/Maestros/LA
 >>**Tipo**:boolean
 
 ## Sección remito
-![Ventana de configuración](/Imagenes/LATAM-VoucherClassType-Seccion-PackingSlip.PNG)
+![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-PackingSlip.PNG)
 
 ### Campos
 >#### Remito
