@@ -25,9 +25,9 @@ Este maestro es una tipificación para las [clases de comprobantes](../Maestros/
 
 
 ## Sección Medio Cobro Pago
-![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-Collection-Payment-Document.PNG)
+![Ventana de configuración](/Imagenes/LATAM-VoucherClassType-Seccion-Collection-Payment-Document.PNG)
 ## Sección Facturas
-![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-Invoices.PNG)
+![Ventana de configuración](/Imagenes/LATAM-VoucherClassType-Seccion-Invoices.PNG)
 
 ### Campos
 >#### Factura Ventas
@@ -55,7 +55,7 @@ Este maestro es una tipificación para las [clases de comprobantes](../Maestros/
 >>**Tipo**:boolean
 
 ## Sección notas de crédito
-![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-CreditNote.PNG)
+![Ventana de configuración](/Imagenes/LATAM-VoucherClassType-Seccion-CreditNote.PNG)
 
 ### Campos
 >#### Notas de crédito de ventas
@@ -83,7 +83,7 @@ Este maestro es una tipificación para las [clases de comprobantes](../Maestros/
 >>**Tipo**:boolean
 
 ## Sección remito
-![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-PackingSlip.PNG)
+![Ventana de configuración](/Imagenes/LATAM-VoucherClassType-Seccion-PackingSlip.PNG)
 
 ### Campos
 >#### Remito

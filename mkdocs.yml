@@ -23,7 +23,7 @@ nav:
             - LATAM Document Extension: Desarrollo/Code-Units/LATAM-Document-Extension.md
             - LATAM Sales Post Subscribers: Desarrollo/Code-Units/LATAM-SalesPostSubscribers.md
         - Enums:
-            - LATAM Document Extension Type: Desarrollo/Enums/LATAM-DocumentExtensionType/LATAM-DocumentExtensionType.md
+            - LATAM Document Extension Type: Desarrollo/Enums/LATAM-DocumentExtensionType.md
             - LATAM Entity Type: Desarrollo/Enums/LATAM-EntityType/LATAM-EntityType.md
         - Queries: 
             - LATAM Voucher Class Lookup: Desarrollo/Queries/LATAM-VoucherClassLookup/LATAM-VoucherClassLookup.md

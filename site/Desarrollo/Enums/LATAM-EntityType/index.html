@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>LATAM SalesHeaderDocExt - LATAM DOC</title>
+  <title>LATAM EntityType - LATAM DOC</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "LATAM SalesHeaderDocExt";
-    var mkdocs_page_input_path = "Desarrollo\\Code-Units\\LATAM-SalesHeaderDocExt.md";
+    var mkdocs_page_name = "LATAM EntityType";
+    var mkdocs_page_input_path = "Desarrollo\\Enums\\LATAM-EntityType.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -86,40 +86,22 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Desarrollo</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Code Units</a>
-    <ul class="current">
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">LATAM SalesHeaderDocExt</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#descripcion">Descripción</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#procedimientos">procedimientos</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#check_exist_and_create">check_exist_and_create</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#deleteextension">DeleteExtension</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#getaccountgroupfromworkdocument">GetAccountGroupFromWorkDocument</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#getaccountgroupcustomer">GetAccountGroupCustomer</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#getaccountgroupvendor">GetAccountGroupVendor</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Code Units</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Code-Units/LATAM-SalesHeaderDocExt/">LATAM SalesHeaderDocExt</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../LATAM-Document-Extension/">LATAM Document Extension</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../Code-Units/LATAM-Document-Extension/">LATAM Document Extension</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../LATAM-SalesPostSubscribers/">LATAM Sales Post Subscribers</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../Code-Units/LATAM-SalesPostSubscribers/">LATAM Sales Post Subscribers</a>
                 </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="#">Enums</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../Enums/LATAM-DocumentExtensionType/">LATAM Document Extension Type</a>
+                <li class="toctree-l2"><a class="reference internal" href="../LATAM-DocumentExtensionType/">LATAM Document Extension Type</a>
                 </li>
-                <li class="toctree-l2"><a class="" href="../../Enums/LATAM-EntityType/LATAM-EntityType.md">LATAM Entity Type</a>
+                <li class="toctree-l2"><a class="" href="LATAM-EntityType.md">LATAM Entity Type</a>
                 </li>
     </ul>
                     </li>
@@ -159,16 +141,8 @@
     <li><a href="../../..">Docs</a> &raquo;</li>
     
       
-        
-          <li>Code Units &raquo;</li>
-        
-      
-        
-          <li>Desarrollo &raquo;</li>
-        
-      
     
-    <li>LATAM SalesHeaderDocExt</li>
+    <li>LATAM EntityType</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -179,72 +153,55 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="latam-salesheaderdocext">LATAM SalesHeaderDocExt</h1>
+                <h1 id="latam-entity-type">LATAM Entity Type</h1>
 <h2 id="descripcion">Descripción</h2>
-<p>Esta CU es la encargada de toda la funcionalidades de la entidad <a href="../../../LATAM-DocumentExtension/LATAM-DocumentExtension.md">Document Extension</a>. Posiblemente se una a la CU <a href="Desarrollo/Code-Units/LATAM-Document-Extension/LATAM-Document-Extension/">Document Extension</a>.</p>
-<h2 id="procedimientos">procedimientos</h2>
-<hr />
-<blockquote>
-<h4 id="check_exist_and_create">check_exist_and_create</h4>
-<blockquote>
-<p><strong>Parametros:</strong></p>
-<p><strong>Descripcion</strong>: </p>
-</blockquote>
-<h4 id="deleteextension">DeleteExtension</h4>
-<blockquote>
-<p><strong>Parametros:</strong></p>
-<p><strong>Descripción</strong>:</p>
-</blockquote>
-<h4 id="getaccountgroupfromworkdocument">GetAccountGroupFromWorkDocument</h4>
-<blockquote>
-<p><strong>Parametros:</strong> </p>
-<blockquote>
-<ul>
-<li><strong>"No." <em>Code[20]</em></strong> Número del documento. Tanto para ventas como para compras la clave para el documento es No. y "Document type" con este valor mas el tipo vamos a recuperar la entidad que participa en el documento correspondaiente.</li>
-<li><strong>"Document Type" <em>Option</em></strong>: indica el tipo de documento. Tanto para ventas como para compras la clave para el documento es No. y "Document type" con este valor mas el numerador vamos a recuperar la entidad que participa en el documento correspondaiente.</li>
-<li><strong>LATAMDocumentExtensionType <em>Enum <a href="../../../Desarrollo/Enums/LATAM-DocumentExtensionType/LATAM-DocumentExtensionType.md">"LATAM DocumentExtensionType"</a></em></strong>: Este parámetro permite saber de donde tomar el id de la entidad. Si este parámetro tiene algún valore relacionado a ventas sabemos que lo que tenemos que buscar el un cliente. Por el contrario si es algun valor relacionado a compras este procedimiento busca el grupo de proveedor.</li>
-</ul>
-</blockquote>
-<p><strong>Retorna</strong>:</p>
-<blockquote>
-<ul>
-<li>LATAMAccountTypeGroupId <strong>(Code [20])</strong></li>
-</ul>
-</blockquote>
-<p><strong>Descripción</strong>:Cada documento tiene una entidad (cliente, proveedor, etc), cada una de estas entidades tiene asoaciada un <a href="../../../Maestros/LATAM-AccountTypeGroup/LATAM-AccountTypeGroup.md">grupo de tipo de cuenta</a>, en ese grupo uno configura lista de comprobantes a las cuales tiene acceso. Este procedimiento retorna el Id de grupo asociado a la entidad que participe en el documento.</p>
-</blockquote>
-<h4 id="getaccountgroupcustomer">GetAccountGroupCustomer</h4>
-<blockquote>
-<p><strong>Parametros:</strong></p>
-<p><strong>Retorna</strong>:</p>
-<blockquote>
-<ul>
-<li>LATAMAccountTypeGroupId <strong>(Code [20])</strong></li>
-</ul>
-</blockquote>
-<p><strong>Descripción</strong>: 
-    Retorna el id de grupo asociado al cliente.</p>
-</blockquote>
-<h4 id="getaccountgroupvendor">GetAccountGroupVendor</h4>
-<blockquote>
-<p><strong>Parametros:</strong></p>
-<p><strong>Descripción</strong>: </p>
-</blockquote>
-</blockquote>
-<hr />
+<p>Representa los tipo de entidades que participan en los distintos documentos.</p>
+<table>
+<thead>
+<tr>
+<th>Nro</th>
+<th>valor</th>
+<th align="center">Caption Eng</th>
+<th align="center">Caption Esp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Customer</td>
+<td align="center">'Customer'</td>
+<td align="center">Cliente"</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Vendor</td>
+<td align="center">'Vendor'</td>
+<td align="center">Proveedor"</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Bank</td>
+<td align="center">'Bank'</td>
+<td align="center">Banco"</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Ledger</td>
+<td align="center">'Ledger'</td>
+<td align="center">Contabilidad"</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Inventory</td>
+<td align="center">'Inventory'</td>
+<td align="center">Inventario"</td>
+</tr>
+</tbody>
+</table>
               
             </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../LATAM-Document-Extension/" class="btn btn-neutral float-right" title="LATAM Document Extension">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../../../Extensiones/LATAM-SalesOrder/" class="btn btn-neutral" title="Ordenes de ventas"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
@@ -268,10 +225,6 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../../Extensiones/LATAM-SalesOrder/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../LATAM-Document-Extension/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

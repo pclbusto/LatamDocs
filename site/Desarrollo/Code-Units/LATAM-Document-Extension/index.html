@@ -111,9 +111,9 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="#">Enums</a>
     <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../Enums/LATAM-DocumentExtensionType/LATAM-DocumentExtensionType/">LATAM Document Extension Type</a>
+                <li class="toctree-l2"><a class="reference internal" href="../../Enums/LATAM-DocumentExtensionType/">LATAM Document Extension Type</a>
                 </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Enums/LATAM-EntityType/LATAM-EntityType/">LATAM Entity Type</a>
+                <li class="toctree-l2"><a class="" href="../../Enums/LATAM-EntityType/LATAM-EntityType.md">LATAM Entity Type</a>
                 </li>
     </ul>
                     </li>
@@ -175,15 +175,15 @@
               
                 <h1 id="latam-document-extension">LATAM Document Extension</h1>
 <h2 id="descripcion">Descripción</h2>
-<p>Esta CU es la encargada de toda la funcionalidades de la entidad <a href="../../../LATAM-DocumentExtension/LATAM-DocumentExtension.md">Document Extension</a></p>
+<p>Esta CU es la encargada de toda la funcionalidades de la entidad <a href="../../../LATAM-DocumentExtension/LATAM-DocumentExtension/">Document Extension</a></p>
 <h2 id="procedimientos">Procedimientos</h2>
 <hr />
 <blockquote>
 <h4 id="getentitytype">GetEntityType</h4>
 <blockquote>
 <p><strong> Descripción </strong>
-Recuperar el tipo de entidad que participa en <a href="../../../LATAM-DocumentExtension/LATAM-DocumentExtension.md">Document Extension</a> dependiendo del <a href="../../../Desarrollo/Enums/LATAM-DocumentExtensionType/LATAM-DocumentExtensionType.md">tipo de extensión</a>. Si el tipo de extensión es <code>SalesCreditNote</code>,<code>SalesInvoice</code>, <code>SalesOrder</code>, <code>SalesReturnOrder</code> o <code>ServiceInvoices</code> retorna el <a href="../../../Desarrollo/Enums/LATAM-EntityType/LATAM-EntityType.md">tipo de entidad</a> <code>Customer</code>. En caso que el tipo de extensión sea <code>PurchaseInvoice</code>, <code>PurchaseCreditNote</code>, <code>PurchaseOrder</code> o <code>PurchaseReturnOrder</code> retorna el <a href="../../../Desarrollo/Enums/LATAM-EntityType/LATAM-EntityType.md">tipo de entidad</a> <code>Vendor</code>. En caso que el tipo de extensión no sea uno de los mencionados muestra el mensaje <code>'GetEntityType: Tipo de extension no reconocido'</code></p>
-<p><strong>Parametros:</strong> </p>
+Recuperar el tipo de entidad que participa en <a href="../../../LATAM-DocumentExtension/LATAM-DocumentExtension/">Document Extension</a> dependiendo del <a href="../../Enums/LATAM-DocumentExtensionType/">tipo de extensión</a>. Si el tipo de extensión es <code>SalesCreditNote</code>,<code>SalesInvoice</code>, <code>SalesOrder</code>, <code>SalesReturnOrder</code> o <code>ServiceInvoices</code> retorna el <a href="../../Enums/LATAM-EntityType/">tipo de entidad</a> <code>Customer</code>. En caso que el tipo de extensión sea <code>PurchaseInvoice</code>, <code>PurchaseCreditNote</code>, <code>PurchaseOrder</code> o <code>PurchaseReturnOrder</code> retorna el <a href="../../../Desarrollo/Enums/LATAM-EntityType.md">tipo de entidad</a> <code>Vendor</code>. En caso que el tipo de extensión no sea uno de los mencionados muestra el mensaje <code>'GetEntityType: Tipo de extension no reconocido'</code></p>
+<p><strong>Parámetros:</strong> </p>
 <blockquote>
 <p>DocumentExtension: <strong>Record "LATAM Document Extension"</strong>) </p>
 </blockquote>
@@ -195,7 +195,7 @@ Recuperar el tipo de entidad que participa en <a href="../../../LATAM-DocumentEx
 <h4 id="validatedocumentextensionexistence">ValidateDocumentExtensionExistence</h4>
 <blockquote>
 <p><strong> Descripción </strong>
-Valida la existencia de <a href="../../../LATAM-DocumentExtension/LATAM-DocumentExtension.md">Document Extension</a> para los documentos listados mas abajo y retorna el registro correspondiente. En el caso de órdenes, estos documentos contienen dos extensiones en el caso de ordenes de compra y venta tenemos la factura correspondiente y el remito de compra y ventas.  En el caso de las devoluciones tenemos los remitos de devolución de compra y ventas, para la recepción de los artículos, y la nota de crédito correspondiente. Hay una sobre carga de este procedimiento para que tome como entrada una cabecera de ventas o una de compras.
+Valida la existencia de <a href="../../../LATAM-DocumentExtension/LATAM-DocumentExtension/">Document Extension</a> para los documentos listados mas abajo y retorna el registro correspondiente. En el caso de órdenes, estos documentos contienen dos extensiones en el caso de ordenes de compra y venta tenemos la factura correspondiente y el remito de compra y ventas.  En el caso de las devoluciones tenemos los remitos de devolución de compra y ventas, para la recepción de los artículos, y la nota de crédito correspondiente. Hay una sobre carga de este procedimiento para que tome como entrada una cabecera de ventas o una de compras.
 Pero comparten el mismo comportamiento. Si la extensión o extensiones no existen el procedimiento carga en mediante <code>ErrorMessageManagement</code> el mensaje de error <strong><em>La extensión LATAM no existe.</em></strong>. Este procedimiento no corta la ejecución para que pueda ser usada en conjunto con otras validaciones. </p>
 </blockquote>
 </blockquote>
@@ -212,55 +212,55 @@ Pero comparten el mismo comportamiento. Si la extensión o extensiones no existe
 <tbody>
 <tr>
 <td>Facturas de ventas</td>
-<td><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#factura-ventas">Extensión Factura de ventas</a></td>
+<td><a href="../../../Maestros/LATAM-VoucherClassType/#factura-ventas">Extensión Factura de ventas</a></td>
 </tr>
 <tr>
 <td>Facturas de servicio</td>
-<td><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#factura-de-servicio">Extensión Factura de servicio</a></td>
+<td><a href="../../../Maestros/LATAM-VoucherClassType/#factura-de-servicio">Extensión Factura de servicio</a></td>
 </tr>
 <tr>
 <td>Facturas de compras</td>
-<td><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#factura-compras">Extensión Factura de compras</a></td>
+<td><a href="../../../Maestros/LATAM-VoucherClassType/#factura-compras">Extensión Factura de compras</a></td>
 </tr>
 <tr>
 <td>Orden de ventas</td>
-<td><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#remito">Extensión Remito</a></td>
+<td><a href="../../../Maestros/LATAM-VoucherClassType/#remito">Extensión Remito</a></td>
 </tr>
 <tr>
 <td>Orden de ventas</td>
-<td><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#factura-ventas">Extensión Factura de ventas</a></td>
+<td><a href="../../../Maestros/LATAM-VoucherClassType/#factura-ventas">Extensión Factura de ventas</a></td>
 </tr>
 <tr>
 <td>Orden de compras</td>
-<td><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#factura-ventas">Extensión Remito de compras</a></td>
+<td><a href="../../../Maestros/LATAM-VoucherClassType/#factura-ventas">Extensión Remito de compras</a></td>
 </tr>
 <tr>
 <td>Orden de compras</td>
-<td><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#factura-ventas">Extensión Factura de compras</a></td>
+<td><a href="../../../Maestros/LATAM-VoucherClassType/#factura-ventas">Extensión Factura de compras</a></td>
 </tr>
 <tr>
 <td>Nota de crédito de ventas</td>
-<td><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#notas-de-credito-de-ventas">Extensión Notas de crédito de ventas</a></td>
+<td><a href="../../../Maestros/LATAM-VoucherClassType/#notas-de-credito-de-ventas">Extensión Notas de crédito de ventas</a></td>
 </tr>
 <tr>
 <td>Nota de crédito de compra</td>
-<td><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#remito">Extensión Notas de crédito de compras</a></td>
+<td><a href="../../../Maestros/LATAM-VoucherClassType/#remito">Extensión Notas de crédito de compras</a></td>
 </tr>
 <tr>
 <td>Orden de devoluciones de ventas</td>
-<td><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#remito-devolucion">Extensión Remito devolución venta</a></td>
+<td><a href="../../../Maestros/LATAM-VoucherClassType/#remito-devolucion">Extensión Remito devolución venta</a></td>
 </tr>
 <tr>
 <td>Orden de devoluciones de ventas</td>
-<td><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#notas-de-credito-de-ventas">Extensión Notas de crédito de ventas</a></td>
+<td><a href="../../../Maestros/LATAM-VoucherClassType/#notas-de-credito-de-ventas">Extensión Notas de crédito de ventas</a></td>
 </tr>
 <tr>
 <td>Orden de devoluciones de Compras</td>
-<td><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#remito-devolucion">Extensión Remito devolución compras</a></td>
+<td><a href="../../../Maestros/LATAM-VoucherClassType/#remito-devolucion">Extensión Remito devolución compras</a></td>
 </tr>
 <tr>
 <td>Orden de devoluciones de Compras</td>
-<td><a href="../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#remito-devolucion">Extensión Notas de crédito de compras</a></td>
+<td><a href="../../../Maestros/LATAM-VoucherClassType/#remito-devolucion">Extensión Notas de crédito de compras</a></td>
 </tr>
 </tbody>
 </table>
