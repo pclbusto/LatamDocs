@@ -1,15 +1,15 @@
 #LATAM Document Extension
 ##Descripción
-Esta CU es la encargada de toda la funcionalidades de la entidad [Document Extension](../../../LATAM-DocumentExtension/LATAM-DocumentExtension.md)
+Esta CU es la encargada de toda la funcionalidades de la entidad [Document Extension](../../LATAM-DocumentExtension/LATAM-DocumentExtension.md)
 
 ##Procedimientos
 ***
 >####GetEntityType
 >>** Descripción **
-Recuperar el tipo de entidad que participa en [Document Extension](../../../LATAM-DocumentExtension/LATAM-DocumentExtension.md) dependiendo del [tipo de extensión](../../../Desarrollo/Enums/LATAM-DocumentExtensionType/LATAM-DocumentExtensionType.md). Si el tipo de extensión es `SalesCreditNote`,`SalesInvoice`, `SalesOrder`, `SalesReturnOrder` o `ServiceInvoices` retorna el [tipo de entidad](../../../Desarrollo/Enums/LATAM-EntityType/LATAM-EntityType.md) `Customer`. En caso que el tipo de extensión sea `PurchaseInvoice`, `PurchaseCreditNote`, `PurchaseOrder` o `PurchaseReturnOrder` retorna el [tipo de entidad](../../../Desarrollo/Enums/LATAM-EntityType/LATAM-EntityType.md) `Vendor`. En caso que el tipo de extensión no sea uno de los mencionados muestra el mensaje `'GetEntityType: Tipo de extension no reconocido'`
+Recuperar el tipo de entidad que participa en [Document Extension](../../LATAM-DocumentExtension/LATAM-DocumentExtension.md) dependiendo del [tipo de extensión](../../Desarrollo/Enums/LATAM-DocumentExtensionType.md). Si el tipo de extensión es `SalesCreditNote`,`SalesInvoice`, `SalesOrder`, `SalesReturnOrder` o `ServiceInvoices` retorna el [tipo de entidad](../../Desarrollo/Enums/LATAM-EntityType.md) `Customer`. En caso que el tipo de extensión sea `PurchaseInvoice`, `PurchaseCreditNote`, `PurchaseOrder` o `PurchaseReturnOrder` retorna el [tipo de entidad](../../../Desarrollo/Enums/LATAM-EntityType.md) `Vendor`. En caso que el tipo de extensión no sea uno de los mencionados muestra el mensaje `'GetEntityType: Tipo de extension no reconocido'`
 
 
->>**Parametros:** 
+>>**Parámetros:** 
 >>>DocumentExtension: **Record "LATAM Document Extension"**) 
 
 >>**Retorna**: 
@@ -17,26 +17,26 @@ Recuperar el tipo de entidad que participa en [Document Extension](../../../LATA
     
 >####ValidateDocumentExtensionExistence
 >>** Descripción **
-Valida la existencia de [Document Extension](../../../LATAM-DocumentExtension/LATAM-DocumentExtension.md) para los documentos listados mas abajo y retorna el registro correspondiente. En el caso de órdenes, estos documentos contienen dos extensiones en el caso de ordenes de compra y venta tenemos la factura correspondiente y el remito de compra y ventas.  En el caso de las devoluciones tenemos los remitos de devolución de compra y ventas, para la recepción de los artículos, y la nota de crédito correspondiente. Hay una sobre carga de este procedimiento para que tome como entrada una cabecera de ventas o una de compras.
+Valida la existencia de [Document Extension](../../LATAM-DocumentExtension/LATAM-DocumentExtension.md) para los documentos listados mas abajo y retorna el registro correspondiente. En el caso de órdenes, estos documentos contienen dos extensiones en el caso de ordenes de compra y venta tenemos la factura correspondiente y el remito de compra y ventas.  En el caso de las devoluciones tenemos los remitos de devolución de compra y ventas, para la recepción de los artículos, y la nota de crédito correspondiente. Hay una sobre carga de este procedimiento para que tome como entrada una cabecera de ventas o una de compras.
 Pero comparten el mismo comportamiento. Si la extensión o extensiones no existen el procedimiento carga en mediante `ErrorMessageManagement` el mensaje de error **_La extensión LATAM no existe._**. Este procedimiento no corta la ejecución para que pueda ser usada en conjunto con otras validaciones. 
 
 En la siguiente tabla se listan los documentos y las extensiones:
 	
 >>|Documento|extensión documento|
 |---------|-------------|
-Facturas de ventas|[Extensión Factura de ventas](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#factura-ventas)
-Facturas de servicio|[Extensión Factura de servicio](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#factura-de-servicio)
-Facturas de compras|[Extensión Factura de compras](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#factura-compras)
-Orden de ventas|[Extensión Remito](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#remito)
-Orden de ventas|[Extensión Factura de ventas](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#factura-ventas)
-Orden de compras|[Extensión Remito de compras](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#factura-ventas)
-Orden de compras|[Extensión Factura de compras](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#factura-ventas)
-Nota de crédito de ventas|[Extensión Notas de crédito de ventas](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#notas-de-credito-de-ventas)
-Nota de crédito de compra|[Extensión Notas de crédito de compras](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#remito)
-Orden de devoluciones de ventas|[Extensión Remito devolución venta](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#remito-devolucion)
-Orden de devoluciones de ventas|[Extensión Notas de crédito de ventas](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#notas-de-credito-de-ventas)
-Orden de devoluciones de Compras|[Extensión Remito devolución compras](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#remito-devolucion)
-Orden de devoluciones de Compras|[Extensión Notas de crédito de compras](../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md#remito-devolucion)
+Facturas de ventas|[Extensión Factura de ventas](../../Maestros/LATAM-VoucherClassType.md#factura-ventas)
+Facturas de servicio|[Extensión Factura de servicio](../../Maestros/LATAM-VoucherClassType.md#factura-de-servicio)
+Facturas de compras|[Extensión Factura de compras](../../Maestros/LATAM-VoucherClassType.md#factura-compras)
+Orden de ventas|[Extensión Remito](../../Maestros/LATAM-VoucherClassType.md#remito)
+Orden de ventas|[Extensión Factura de ventas](../../Maestros/LATAM-VoucherClassType.md#factura-ventas)
+Orden de compras|[Extensión Remito de compras](../../Maestros/LATAM-VoucherClassType.md#factura-ventas)
+Orden de compras|[Extensión Factura de compras](../../Maestros/LATAM-VoucherClassType.md#factura-ventas)
+Nota de crédito de ventas|[Extensión Notas de crédito de ventas](../../Maestros/LATAM-VoucherClassType.md#notas-de-credito-de-ventas)
+Nota de crédito de compra|[Extensión Notas de crédito de compras](../../Maestros/LATAM-VoucherClassType.md#remito)
+Orden de devoluciones de ventas|[Extensión Remito devolución venta](../../Maestros/LATAM-VoucherClassType.md#remito-devolucion)
+Orden de devoluciones de ventas|[Extensión Notas de crédito de ventas](../../Maestros/LATAM-VoucherClassType.md#notas-de-credito-de-ventas)
+Orden de devoluciones de Compras|[Extensión Remito devolución compras](../../Maestros/LATAM-VoucherClassType.md#remito-devolucion)
+Orden de devoluciones de Compras|[Extensión Notas de crédito de compras](../../Maestros/LATAM-VoucherClassType.md#remito-devolucion)
 
 <br>
 >>**Versión compras**

@@ -3,13 +3,13 @@ nav:
     - Home: index.md
     - Maestros:
         - Setup: LATAM-Setup/LATAM-Setup.md
-        - Voucher Class Letter: Maestros/LATAM-VoucherClassLetter/LATAM-VoucherClassLetter.md
-        - Voucher Class Type: Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md
-        - Voucher Class: Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md
-        - Sales Point: Maestros/LATAM-SalesPoint/LATAM-SalesPoint.md
-        - Document Type: Maestros/LATAM-DocumentType/LATAM-DocumentType.md
-        - Tax Payer Type: Maestros/LATAM-TaxPayerType/LATAM-TaxPayerType.md
-        - Account Type Group: Maestros/LATAM-AccountTypeGroup/LATAM-AccountTypeGroup.md
+        - Voucher Class Letter: Maestros/LATAM-VoucherClassLetter.md
+        - Voucher Class Type: Maestros/LATAM-VoucherClassType.md
+        - Voucher Class: Maestros/LATAM-VoucherClass.md
+        - Sales Point: Maestros/LATAM-SalesPoint.md
+        - Document Type: Maestros/LATAM-DocumentType.md
+        - Tax Payer Type: Maestros/LATAM-TaxPayerType.md
+        - Account Type Group: Maestros/LATAM-AccountTypeGroup.md
     - Extensiones:
         - Document Extension: LATAM-DocumentExtension/LATAM-DocumentExtension.md
         - Compañía: Extensiones/LATAM-CompanyInformation.md
@@ -19,9 +19,9 @@ nav:
         - Ordenes de ventas: Extensiones/LATAM-SalesOrder.md
     - Desarrollo:
         - Code Units:
-            - LATAM SalesHeaderDocExt: Desarrollo/Code-Units/LATAM-SalesHeaderDocExt/LATAM-SalesHeaderDocExt.md
-            - LATAM Document Extension: Desarrollo/Code-Units/LATAM-Document-Extension/LATAM-Document-Extension.md
-            - LATAM Sales Post Subscribers: Desarrollo/Code-Units/LATAM-SalesPostSubscribers/LATAM-SalesPostSubscribers.md
+            - LATAM SalesHeaderDocExt: Desarrollo/Code-Units/LATAM-SalesHeaderDocExt.md
+            - LATAM Document Extension: Desarrollo/Code-Units/LATAM-Document-Extension.md
+            - LATAM Sales Post Subscribers: Desarrollo/Code-Units/LATAM-SalesPostSubscribers.md
         - Enums:
             - LATAM Document Extension Type: Desarrollo/Enums/LATAM-DocumentExtensionType/LATAM-DocumentExtensionType.md
             - LATAM Entity Type: Desarrollo/Enums/LATAM-EntityType/LATAM-EntityType.md
