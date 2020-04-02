@@ -105,7 +105,7 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#factura-de-servicio">Factura de servicio</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#remito-de-servicio">Remito de servicio</a>
+    <li class="toctree-l4"><a class="reference internal" href="#remito-de-zona-franca">Remito de zona franca</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#remito">Remito</a>
     </li>
@@ -115,9 +115,9 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#remito-de-proyecto">Remito de proyecto</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#remision-de-devolucion-de-proyecto">Remisión de devolución de proyecto</a>
+    <li class="toctree-l4"><a class="reference internal" href="#remito-de-devolucion-proyecto">Remito de devolución proyecto</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#remision-de-reembolso">Remisión de reembolso</a>
+    <li class="toctree-l4"><a class="reference internal" href="#remito-de-reembolso">Remito de reembolso</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#nota-de-credito-de-venta">Nota de crédito de venta</a>
     </li>
@@ -143,9 +143,7 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#factura-de-compra">Factura de compra</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#remision-de-reembolso_1">Remisión de reembolso</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#diario-de-debito_1">Diario de débito</a>
+    <li class="toctree-l4"><a class="reference internal" href="#remito-de-reembolso_1">Remito de reembolso</a>
     </li>
         </ul>
     </li>
@@ -241,16 +239,27 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="latam-account-type-group">LATAM Account Type Group</h1>
+                <h1 id="grupo-de-tipo-de-cuenta">Grupo de tipo de cuenta</h1>
 <p><img alt="Ventana de configuración" src="../../Imagenes/LATAM-AccountTypeGroup-MainPage.PNG" /></p>
 <h2 id="descripcion">Descripción</h2>
-<p>Mestro de grupo de tipo de cuenta. Crea una tipificación para un tipo de cuenta y asociar a este tipo un conjunto de <a href="../LATAM-VoucherClass/">clases de comprobantes</a> que tendrá acceso. Los tipos de cuenta son:</p>
+<p>Maestro de grupo de tipo de cuenta. Crea una tipificación para un tipo de cuenta. 
+Los tipos de cuenta son:</p>
 <ul>
 <li>Cliente</li>
 <li>Proveedor</li>
 <li>banco</li>
 <li>Inventario</li>
 <li>Ledger??</li>
+</ul>
+<p>Esta tipificación permite asociar o definir un conjunto de <a href="../LATAM-VoucherClass/">clases de comprobantes</a>, de tal modo que toda cuenta que use esta tipificación  tendrá acceso a los comprobantes que tenga este grupo. 
+Además de esto permite definir comprobantes por defecto para algunos documentos o transacciones. Por ejemplo si se define el comprobante <code>FACTURA A</code> como comprobante por defecto para factura de cliente. Al momento de cargar una factura para un cliente que tenga este grupo, el comprobante <code>FACTURA A</code> debe estar pre cargado en el campo <a href="../../LATAM-DocumentExtension/LATAM-DocumentExtension/#clase-de-comprobante">clase de comprobante del formulario Extensión de documento</a>. Este mismo comportamiento aplica para otros documentos y otras entidades que se detallan mas abajo. en la secciones </p>
+<ul>
+<li>
+<p><a href="./#seccion-clase-de-comprobante-por-defecto-de-cliente">Clase de comprobantes por defecto de cliente</a></p>
+</li>
+<li>
+<p><a href="./#seccion-clase-de-comprobante-por-defecto-de-proveedor">Clase de comprobantes por defecto de proveedor</a></p>
+</li>
 </ul>
 <h2 id="seccion-general">Sección General</h2>
 <h3 id="campos">Campos</h3>
@@ -307,7 +316,7 @@
 <h4 id="nota-de-credito-de-servicio">Nota de crédito de servicio</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
-    Id de <a href="../LATAM-VoucherClass/">clases de comprobantes</a> que será propuesto como clase de comprobante por defecto al crear una nota de crédito de servicio. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el <a href="../LATAM-VoucherClassType/#notas-de-credito-de-servicio">check Notas de crédito de servicio</a></p>
+    Id de <a href="../LATAM-VoucherClass/">clases de comprobantes</a> que será propuesto como clase de comprobante por defecto al crear una nota de crédito de servicio. En este campo solo     se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el <a href="../LATAM-VoucherClassType/#notas-de-credito-de-servicio">check Notas de crédito de servicio</a></p>
 <p><strong>Tipo</strong>:Code[15]</p>
 </blockquote>
 <h4 id="factura-de-servicio">Factura de servicio</h4>
@@ -316,7 +325,7 @@
     Id de <a href="../LATAM-VoucherClass/">clases de comprobantes</a> que será propuesto como clase de comprobante por defecto al crear una factura de servicio. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el <a href="../LATAM-VoucherClassType/#factura-de-servicio">check Factura de servicio</a> </p>
 <p><strong>Tipo</strong>:Code[15]</p>
 </blockquote>
-<h4 id="remito-de-servicio">Remito de servicio</h4>
+<h4 id="remito-de-zona-franca">Remito de zona franca</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
     Id de <a href="../LATAM-VoucherClass/">clases de comprobantes</a> que será propuesto como clase de comprobante por defecto al crear un remito de servicio. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el <a href="../LATAM-VoucherClassType/#remito">check Remito</a>  </p>
@@ -346,17 +355,17 @@
     Id de <a href="../LATAM-VoucherClass/">clases de comprobantes</a> que será propuesto como clase de comprobante por defecto al crear un remito de proyecto. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el <a href="../LATAM-VoucherClassType/#remito-de-proyecto">check Remito de proyecto</a></p>
 <p><strong>Tipo</strong>:Code[15]</p>
 </blockquote>
-<h4 id="remision-de-devolucion-de-proyecto">Remisión de devolución de proyecto</h4>
+<h4 id="remito-de-devolucion-proyecto">Remito de devolución proyecto</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
-    Id de <a href="../LATAM-VoucherClass/">clases de comprobantes</a> que será propuesto como clase de comprobante por defecto al crear una devolución de proyecto. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el <a href="../LATAM-VoucherClassType/#remito-devolucion">check Remito de devolución</a></p>
+    Id de <a href="../LATAM-VoucherClass/">clases de comprobantes</a> que será propuesto como clase de comprobante por defecto al crear una devolución de proyecto. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el <a href="../LATAM-VoucherClassType/#remito-de-devolucion-proyecto">check Remito de devolución proyecto</a></p>
 <p><strong>Tipo</strong>:Code[15]</p>
 </blockquote>
-<h4 id="remision-de-reembolso">Remisión de reembolso</h4>
+<h4 id="remito-de-reembolso">Remito de reembolso</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
-    Id de <a href="../LATAM-VoucherClass/">clases de comprobantes</a> que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el FALTA </p>
-<p><strong>Tipo</strong>:Code[15]</p>
+    Id de <a href="../LATAM-VoucherClass/">clases de comprobantes</a> que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el <a href="../LATAM-VoucherClassType/#remito-de-devolucion">check Remito de devolución</a>
+<strong>Tipo</strong>:Code[15]</p>
 </blockquote>
 <h4 id="nota-de-credito-de-venta">Nota de crédito de venta</h4>
 <blockquote>
@@ -377,50 +386,44 @@
 <h4 id="diario-de-credito">Diario de crédito</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
-    Id de <a href="../LATAM-VoucherClass/">clases de comprobantes</a> que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el check </p>
+    Id de <a href="../LATAM-VoucherClass/">clases de comprobantes</a> que será propuesto como clase de comprobante por defecto al crear una entrada en el diario del proveedor al crédito. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el check <a href="../LATAM-VoucherClassType/#linea-de-credito-de-diario-de-proveedor">Línea de crédito de diario de proveedor</a> </p>
 <p><strong>Tipo</strong>:Code[15]</p>
 </blockquote>
 <h4 id="diario-de-debito">Diario de débito</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
-    Id de <a href="../LATAM-VoucherClass/">clases de comprobantes</a> que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el check </p>
+    Id de <a href="../LATAM-VoucherClass/">clases de comprobantes</a> que será propuesto como clase de comprobante por defecto al crear una entrada  en el diario del proveedor al débito. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el check <a href="../LATAM-VoucherClassType/#linea-de-debito-de-diario-de-proveedor">Línea de débito de diario de proveedor</a></p>
 <p><strong>Tipo</strong>:Code[15]</p>
 </blockquote>
 <h4 id="medio-de-pago-predeterminado">Medio de pago predeterminado</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
-    Id de <a href="../LATAM-VoucherClass/">clases de comprobantes</a> que será propuesto como clase de comprobante por defecto al crear un medio de cobro pago. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el check </p>
+    Id de <a href="../LATAM-VoucherClass/">clases de comprobantes</a> que será propuesto como clase de comprobante por defecto al crear un medio de cobro pago para un proveedor. En este campo solo se pueden cargar comprobante que tenga marcado el <a href="../LATAM-VoucherClassType/#medio-de-cobropago">Medio de cobro/pago</a></p>
 <p><strong>Tipo</strong>:Code[15]</p>
 </blockquote>
 <h4 id="remito_1">Remito</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
-    Id de <a href="../LATAM-VoucherClass/">clases de comprobantes</a> que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el check </p>
+    Id de <a href="../LATAM-VoucherClass/">clases de comprobantes</a> que será propuesto como clase de comprobante por defecto al crear un remito de compras. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el <a href="../LATAM-VoucherClassType/#remito">check Remito</a></p>
 <p><strong>Tipo</strong>:Code[15]</p>
 </blockquote>
 <h4 id="nota-de-credito-de-compra">Nota de crédito de compra</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
-    Id de <a href="../LATAM-VoucherClass/">clases de comprobantes</a> que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el check </p>
+    Id de <a href="../LATAM-VoucherClass/">clases de comprobantes</a> que será propuesto como clase de comprobante por defecto al crear una nota de crédito de compras. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el <a href="../LATAM-VoucherClassType/#notas-de-credito-de-compras">check Nota de crédito de compra</a>  </p>
 <p><strong>Tipo</strong>:Code[15]</p>
 </blockquote>
 <h4 id="factura-de-compra">Factura de compra</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
-    Id de <a href="../LATAM-VoucherClass/">clases de comprobantes</a> que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el check </p>
+    Id de <a href="../LATAM-VoucherClass/">clases de comprobantes</a> que será propuesto como clase de comprobante por defecto al crear una factura de compras. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el <a href="../LATAM-VoucherClassType/#factura-compras">check Factura compra</a>   </p>
 <p><strong>Tipo</strong>:Code[15]</p>
 </blockquote>
-<h4 id="remision-de-reembolso_1">Remisión de reembolso</h4>
+<h4 id="remito-de-reembolso_1">Remito de reembolso</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
-    Id de <a href="../LATAM-VoucherClass/">clases de comprobantes</a> que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el check </p>
-<p><strong>Tipo</strong>:Code[15]</p>
-</blockquote>
-<h4 id="diario-de-debito_1">Diario de débito</h4>
-<blockquote>
-<p><strong>Descripción</strong>: 
-    Id de <a href="../LATAM-VoucherClass/">clases de comprobantes</a> que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el check </p>
-<p><strong>Tipo</strong>:Code[15]</p>
+    Id de <a href="../LATAM-VoucherClass/">clases de comprobantes</a> que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el <a href="../LATAM-VoucherClassType/#remito-de-devolucion">check Remito de devolución</a> <br />
+<strong>Tipo</strong>:Code[15]</p>
 </blockquote>
 </blockquote>
               
