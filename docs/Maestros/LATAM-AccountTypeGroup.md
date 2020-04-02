@@ -19,6 +19,7 @@ Además de esto permite definir comprobantes por defecto para algunos documentos
 
 
 ## Sección General
+![Ventana de configuración](../../Imagenes/LATAM-AccountTypeGroup-Seccion-General.PNG)
 ### Campos
 
 >#### Tipo de cuenta
@@ -44,6 +45,7 @@ un grupo tipo cuenta cuyo tipo cuenta es `cliente` solo puede ser usado en la ex
 >>**Tipo**:Code
 
 ## Sección clase de comprobante Cliente/Proveedor 
+![Ventana de comprobantes](../../Imagenes/LATAM-AccountTypeGroup-CustVendVouchers.PNG)
 ### Campos
 >#### Clase de comprobante
 >>**Descripción**: 
@@ -58,6 +60,7 @@ un grupo tipo cuenta cuyo tipo cuenta es `cliente` solo puede ser usado en la ex
 >>**Tipo**:Text
 
 ## Sección Clase de comprobante por defecto de cliente
+![Ventana de comprobantes defecto cliente](../../Imagenes/LATAM-AccountTypeGroup-Seccion-DefaultCustVouchers.PNG)
 ### Campos
 >#### Nota de crédito de servicio
 >>**Descripción**: 
@@ -128,6 +131,7 @@ un grupo tipo cuenta cuyo tipo cuenta es `cliente` solo puede ser usado en la ex
 
 
 ## Sección Clase de comprobante por defecto de proveedor
+![Ventana de comprobantes defecto proveedor](../../Imagenes/LATAM-AccountTypeGroup-Seccion-DefaultVendVouchers.PNG)
 ### Campos
 >#### Diario de crédito
 >>**Descripción**: 
