@@ -106,24 +106,182 @@ Este maestro es una tipificación para las [clases de comprobantes](../Maestros/
 ### Campos
 >#### Remito
 >>**Descripción**: 
-	Indica que puede ser usado en notas de crédito de ventas.
+	Indica que puede ser usado como remito.
 	
 >>**Tipo**:boolean
 
->#### Remito devolución
+>#### Remito de devolución
 >>**Descripción**: 
-	Indica que puede ser usado en notas de crédito de servicio.
+	Indica que puede ser usado como remito de devolución.
 	
 >>**Tipo**:boolean
 
->#### Remito transferencia de inventario
+>#### Remito de transferencia de inventario
 >>**Descripción**: 
-	Indica que puede ser usado en notas de crédito de compra.
+	Indica que puede ser usado como remito de transferencia de inventario.
 	
 >>**Tipo**:boolean
 
 >#### Remito de proyecto
 >>**Descripción**: 
-	Indica que puede ser usado en notas de crédito de proyecto.
+	Indica que puede ser usado como remito de proyecto.
 	
 >>**Tipo**:boolean
+
+>#### Remito de devolución proyecto
+>>**Descripción**: 
+	Indica que puede ser usado como remito de devolución de proyecto.
+	
+>>**Tipo**:boolean
+
+## Sección Diario
+
+>### Diario Mayor General
+![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-GeneralLedger.PNG)
+
+>>### Campos
+>>>>#### Línea de débito de diario de GL
+
+>>>>**Descripción**: 
+	Indica que puede ser usado como una línea de débito de diario GL.
+	
+>>>>**Tipo**: boolean
+
+>>>>#### Línea de crédito de diario de GL
+
+>>>>**Descripción**: 
+	Indica que puede ser usado como una línea de crédito de diario GL.
+	
+>>>>**Tipo**: boolean
+
+>>>>#### Reversa de recibo de línea GL
+
+>>>>**Descripción**: 
+	Indica que puede ser usado como reversa de recibo de línea GL.
+	
+>>>>**Tipo**: boolean
+
+>### Diario Proveedor
+![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-VendorJournal.PNG)
+
+>>### Campos
+>>>>#### Línea de débito de diario de proveedor
+
+>>>>**Descripción**: 
+	Indica que puede ser usado como una línea de débito de diario de proveedor.
+	
+>>>>**Tipo**: boolean
+
+>>>>#### Línea de crédito de diario de proveedor
+
+>>>>**Descripción**: 
+	Indica que puede ser usado como una línea de crédito de diario proveedor.
+	
+>>>>**Tipo**: boolean
+
+>>>>#### Reversa de recibo de línea proveedor
+
+>>>>**Descripción**: 
+	Indica que puede ser usado como reversa de recibo de línea proveedor.
+	
+>>>>**Tipo**: boolean
+
+>### Diario Proyecto
+![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-ProjectJournal.PNG)
+
+>>### Campos
+>>>>#### Línea de débito de diario de proyecto
+
+>>>>**Descripción**: 
+	Indica que puede ser usado como una línea de débito de diario proyecto.
+	
+>>>>**Tipo**: boolean
+
+>>>>#### Línea de crédito de diario de proyecto
+
+>>>>**Descripción**: 
+	Indica que puede ser usado como una línea de crédito de diario proyecto.
+	
+>>>>**Tipo**: boolean
+
+>>>>#### Reversa de recibo de línea proyecto
+
+>>>>**Descripción**: 
+	Indica que puede ser usado como reversa de recibo de línea proyecto.
+	
+>>>>**Tipo**: boolean
+
+>### Diario Cliente
+![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-CustomerJournal.PNG)
+
+>>### Campos
+>>>>#### Línea de débito de diario de cliente
+
+>>>>**Descripción**: 
+	Indica que puede ser usado como una línea de débito de diario cliente.
+	
+>>>>**Tipo**: boolean
+
+>>>>#### Línea de crédito de diario de cliente
+
+>>>>**Descripción**: 
+	Indica que puede ser usado como una línea de crédito de diario cliente.
+	
+>>>>**Tipo**: boolean
+
+>>>>#### Reversa de recibo de línea cliente
+
+>>>>**Descripción**: 
+	Indica que puede ser usado como reversa de recibo de línea cliente.
+	
+>>>>**Tipo**: boolean
+
+>### Diario AF
+![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-AFJournal.PNG)
+
+>>### Campos
+>>>>#### Línea de débito de diario de AF
+
+>>>>**Descripción**: 
+	Indica que puede ser usado como una línea de débito de diario AF.
+	
+>>>>**Tipo**: boolean
+
+>>>>#### Línea de crédito de diario de AF
+
+>>>>**Descripción**: 
+	Indica que puede ser usado como una línea de crédito de diario AF.
+	
+>>>>**Tipo**: boolean
+
+>>>>#### Reversa de recibo de línea AF
+
+>>>>**Descripción**: 
+	Indica que puede ser usado como reversa de recibo de línea AF.
+	
+>>>>**Tipo**: boolean
+
+>### Diario Banco
+![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-BankJournal.PNG)
+
+>>### Campos
+>>>>#### Línea de débito de diario de Banco
+
+>>>>**Descripción**: 
+	Indica que puede ser usado como una línea de débito de diario Banco.
+	
+>>>>**Tipo**: boolean
+
+>>>>#### Línea de crédito de diario de Banco
+
+>>>>**Descripción**: 
+	Indica que puede ser usado como una línea de crédito de diario Banco.
+	
+>>>>**Tipo**: boolean
+
+>>>>#### Reversa de recibo de línea Banco
+
+>>>>**Descripción**: 
+	Indica que puede ser usado como reversa de recibo de línea Banco.
+	
+>>>>**Tipo**: boolean
