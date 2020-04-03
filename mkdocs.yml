@@ -2,9 +2,9 @@ site_name: LATAM DOC
 nav:
     - Home: index.md
     - Maestros:
-        - Setup: LATAM-Setup/LATAM-Setup.md
-        - Voucher Class Letter: Maestros/LATAM-VoucherClassLetter.md
-        - Voucher Class Type: Maestros/LATAM-VoucherClassType.md
+        - Configuración: LATAM-Setup/LATAM-Setup.md
+        - Letra de clase de comprobante: Maestros/LATAM-VoucherClassLetter.md
+        - Tipo de clase de comprobante: Maestros/LATAM-VoucherClassType.md
         - Voucher Class: Maestros/LATAM-VoucherClass.md
         - Sales Point: Maestros/LATAM-SalesPoint.md
         - Document Type: Maestros/LATAM-DocumentType.md
