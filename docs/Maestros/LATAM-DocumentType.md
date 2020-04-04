@@ -1,5 +1,5 @@
 # LATAM Tipo Documento
-![Ventana de configuración](../../Imagenes/LATAM-DocumentType-MainPage.PNG)
+![Ventana de configuración](../Imagenes/LATAM-DocumentType-MainPage.PNG)
 ## Descripción
 Maestro de tipos de documentos. Permite especificar algunas características para los número de documentos ingresados por ejemplo formato, si usa o no algoritmo de verificación (CUIT, RUC), si es o no un documento del exterior, estado o país.
 
@@ -8,23 +8,28 @@ Maestro de tipos de documentos. Permite especificar algunas características par
 
 >#### No.
 >>**Descripción**: 
-	Habilita o deshabilita la localización. Si este campo esta en falso el código de la localización no debería ejecutarse. Esto implica extensiones a páginas o código que ejecuta en puntos de integración.
+	Id de la entidad.
 	
->>**Tipo**:Code
+>#### Descripción
+>>**Descripción**: 
+	Breve descripción de tipo de documento.
+	
+>>**Tipo**:text
 
 ## Sección configuración
 ### Campos
->#### Descripción
->>**Descripción**: 
-	Cantidad de caracteres que permite el campo letra de comprobante de la entidad [letra de comprobante](../LATAM-LATAMVoucherClassLetter/LATAM-LATAMVoucherClassLetter.md) letra de comprobante.
-	
->>**Tipo**:Entero
 
+>#### Validar máscara
+>>**Descripción**: 
+	Indica si hay que validar o no la mascara. Si esta deshabilitado el campo máscara se habilitará y deshabilitado en caso que este en `false`.
+	
+>>**Tipo**:boolean
+	
 >#### Verifica método
 >>**Descripción**: 
-	Si tiene implementado un metodo de verificación, ejecuta dicho método para verificar si el número de documento ingresado es correcto.
-	
->>**Tipo**:Entero
+	Si tiene implementado un método de verificación, ejecuta dicho método para verificar si el número de documento ingresado es correcto.
+
+>>**Tipo**:boolean
 
 >#### Máscara
 >>**Descripción**: 
@@ -34,19 +39,13 @@ Maestro de tipos de documentos. Permite especificar algunas características par
 
 >#### Longitud máscara
 >>**Descripción**: 
-	Cantidad maxima de caracteres que permite la máscara.
+	Cantidad máxima de caracteres que permite la máscara.
 	
 >>**Tipo**:Entero
 
->#### Valida máscara
->>**Descripción**: 
-	Indica si hay que validar o no la mascara. Si esta deshabilitado los campos longitud máscara y máscara deben estar deshabilitados.
-	
->>**Tipo**:boolean
-
 >#### Tipo documento país
 >>**Descripción**: 
-	Indica que este tipo de documento es de país. En la ventana de configuración de tipo de contribuyente ()
+	Indica que este tipo de documento es de país.
 	
 >>**Tipo**:boolean
 

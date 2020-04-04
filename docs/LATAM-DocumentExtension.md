@@ -111,7 +111,7 @@ Orden de devoluciones de Compras|Notas de crédito de compras|[Notas de crédito
 >>**Tipo**:Code[30]
 ***
 ## Sección contribuyentes
-![Ventana de configuración](../../Imagenes/LATAM-DocumentExtension-Seccion-Taxpayer.PNG)
+![Ventana de configuración](../Imagenes/LATAM-DocumentExtension-Seccion-Taxpayer.PNG)
 ## Descripción
 Esta sección contiene info adicional sobre el contribuyente. Puede ser habilitada mediante la configuración de detalla contribuyente en [Clase de comprobante](../Maestros/LATAM-VoucherClass.md). Si se tiene marcada esta opción los campos de toda la sección deberían estar como requerido. Los campos de esta sección también pueden ser habilitados uno a uno, en la sección de datos adicionales en [Clase de comprobante](../Maestros/LATAM-VoucherClass.md).
 

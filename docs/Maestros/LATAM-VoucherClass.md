@@ -23,7 +23,7 @@ Maestro de clase de comprobante. Esta entidad es como un talonario, donde se con
 >>**Tipo**:Code[5]
 
 >#### Tipo Clase Comprobantes
->>**Descripción**: id tipo clase de comprobante. Indica que comportamiento va a tener este comprobante, el cual esta supeditado a lo configurado en el [tipo clase comprobante](../../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md)
+>>**Descripción**: id tipo clase de comprobante. Indica que comportamiento va a tener este comprobante, el cual esta supeditado a lo configurado en el [tipo clase comprobante](LATAM-VoucherClassType.md)
 	
 >>**Tipo**:Code[5]
 
@@ -33,7 +33,7 @@ Maestro de clase de comprobante. Esta entidad es como un talonario, donde se con
 >>**Tipo**:Code[5]
 
 >#### Prefijo
->>**Descripción**: Cadena de caracteres que forma parte del cálculo del [número completo de comprobante](../../LATAM-DocumentExtension/LATAM-DocumentExtension.md# numero-de-documento-completo). Este prefijo es formado por el [prefijo del tipo de comprobante](../../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md# prefijo) y el [prefijo de la letra]()
+>>**Descripción**: Cadena de caracteres que forma parte del cálculo del [número de comprobante completo](../LATAM-DocumentExtension.md#numero-de-documento-completo). Este prefijo es formado por el [prefijo del tipo de comprobante](LATAM-VoucherClassType.md#prefijo) y el [prefijo de la letra](../Maestros/LATAM-VoucherClassLetter.md#prefijo)
 	
 >>**Tipo**:Code[5]
 
@@ -53,7 +53,7 @@ Maestro de clase de comprobante. Esta entidad es como un talonario, donde se con
 >>**Tipo**:Code[5]
 
 >#### Separador
->>**Descripción**: Caracter que permite introducir un separador al crear el [número de comprobante completo en la Extensión de documentos](../../LATAM-DocumentExtension/LATAM-DocumentExtension.md# numero-de-documento-completo). por ejemplo '-'.
+>>**Descripción**: Caracter que permite introducir un separador al crear el [número de comprobante completo en la Extensión de documentos](../LATAM-DocumentExtension.md#numero-de-documento-completo). por ejemplo '-'.
 	
 >>**Tipo**:Code[5]
 
@@ -104,7 +104,7 @@ Maestro de clase de comprobante. Esta entidad es como un talonario, donde se con
 
 >#### Detalla contribuyente
 >>**Descripción**:
-Si este campo esta marcado, cambia el comportamiento a requerido de los campos en el [grupo de contribuyente](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md#grupo-contribuyente) en la [sección de datos adicionales](../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md#seccion-datos-adicionales) en la entidad comprobante  
+Si este campo esta marcado, cambia el comportamiento a requerido de los campos en el [grupo de contribuyente](../Maestros/LATAM-VoucherClass.md#grupo-contribuyente) en la [sección de datos adicionales](../Maestros/LATAM-VoucherClass.md#seccion-datos-adicionales) en la entidad comprobante  
 	
 >>**Tipo**:boolean
 
@@ -116,7 +116,7 @@ Si este campo esta marcado, cambia el comportamiento a requerido de los campos e
 ## Sección Datos Adicionales
 ![Ventana de configuración](../../Imagenes/LATAM-VoucherClass-AdditionalData.PNG)
 ## Descripción
-Configuración de campos adicionales. Esta sección permite configurar el comportamiento de los campos adicionales, los cuales aparecen en el formulario de [Extensión de Documentos](../LATAM-DocumentExtension/LATAM-DocumentExtension.md). Están agrupados por secciones que son las mismas que se tiene en la ventana [Extensión de Documentos](../LATAM-DocumentExtension/LATAM-DocumentExtension.md). Los comportamientos pueden ser:
+Configuración de campos adicionales. Esta sección permite configurar el comportamiento de los campos adicionales, los cuales aparecen en el formulario de [Extensión de Documentos](../LATAM-DocumentExtension.md). Están agrupados por secciones que son las mismas que tiene esta sección. Los comportamientos pueden ser:
 
 * **Deshabilitado:** El campo aparece deshabilitado.
 * **Habilitado:** El campo aparece como editable.
@@ -131,13 +131,13 @@ Configuración de campos adicionales. Esta sección permite configurar el compor
 >#### Grupo contribuyente
 >>######	Tipo contribuyente
 >>>**Descripción**: 
-Permite administrar el comportamiento de los campos en el grupo [contribuyente en la página extensión de documentos](../../LATAM-DocumentExtension/LATAM-DocumentExtension.md# seccion-contribuyentes). 
+Permite administrar el comportamiento de los campos en el grupo [contribuyente en la página extensión de documentos](../LATAM-DocumentExtension.md#seccion-contribuyentes). 
 >>**Tipo**:Code[15]
 ***
 ## Sección Máscara Documento
 ![Ventana de configuración](../../Imagenes/LATAM-VoucherClass-DocumentMask.PNG)
 ## Descripción
-Configuración de máscaras para el punto de venta y el comprobante. Cuando se usa el comprobante en la ventana [Extensión de Documentos](../LATAM-DocumentExtension/LATAM-DocumentExtension.md). Se disparan una series de comportamientos referidos al número de comprobante y punto de venta. Esta sección se sub divide a su vez por las entidades mensionadas anteriormente:
+Configuración de máscaras para el punto de venta y el comprobante. Cuando se usa el comprobante en la ventana [Extensión de Documentos](../LATAM-DocumentExtension.md). Se disparan una series de comportamientos referidos al número de comprobante y punto de venta. Esta sección se sub divide a su vez por las entidades mensionadas anteriormente:
 
 * Cuenta GL
 * Cliente
@@ -157,23 +157,23 @@ cada una de estas secciones a su vez tiene dos secciones mas que son punto de ve
 
 
 >#### Longitud.
->>**Descripción**: Indica la longitud que debe tener el prefijo en [Punto de venta](../../Maestros/LATAM-SalesPoint/LATAM-SalesPoint.md# prefijo-punto-de-venta). Esta validación se ejecuta en el campo [prefijo de punto de venta en extensión de documentos](../../LATAM-DocumentExtension/LATAM-DocumentExtension.md# prefijo)
+>>**Descripción**: Indica la longitud que debe tener el prefijo en [Punto de venta](../Maestros/LATAM-SalesPoint.md#prefijo-punto-de-venta). Esta validación se ejecuta en el campo [prefijo de punto de venta en extensión de documentos](../LATAM-DocumentExtension.md#prefijo)
 
 >>**Habilitado**: Si esta en true el campo Habilitado.
 
->>**Tipo**:Integer
+>>**Tipo**:boolean
 
 >#### Obligatorio.
->>**Descripción**: Indica que el punto de venta o el prefijo de [Punto de venta](../LATAM-SalesPoint/LATAM-SalesPoint.md). es obligatorio.
+>>**Descripción**: Indica que el punto de venta o el [prefijo de Punto de venta](../Maestros/LATAM-SalesPoint.md). es obligatorio.
 
 >>**Habilitado**: Si esta en true el campo Habilitado.
 
->>**Tipo**:Integer
+>>**Tipo**:boolean
 
 >#### Máscara.
->>**Descripción**: Mascara para validar el prefijo de [Punto de venta](../LATAM-SalesPoint/LATAM-SalesPoint.md).
+>>**Descripción**: Mascara para validar el prefijo de [Punto de venta](../Maestros/LATAM-SalesPoint.md).
 
 >>**Habilitado**: Si esta en true el campo Habilitado.
 
->>**Tipo**:Integer
+>>**Tipo**:boolean
 ***

@@ -1,4 +1,4 @@
-# LATAM Setup
+# LATAM Configuración
 ![Ventana de configuración](../Imagenes/LATAM-Setup-MainPage.PNG)
 ## Descripción
 Ventana de configuración que permite configurar comportamientos generales de la localización. Por ejemplo si la localización esta o no activada.

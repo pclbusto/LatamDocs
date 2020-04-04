@@ -5,13 +5,14 @@ nav:
         - Configuración: LATAM-Setup/LATAM-Setup.md
         - Letra de clase de comprobante: Maestros/LATAM-VoucherClassLetter.md
         - Tipo de clase de comprobante: Maestros/LATAM-VoucherClassType.md
-        - Voucher Class: Maestros/LATAM-VoucherClass.md
-        - Sales Point: Maestros/LATAM-SalesPoint.md
-        - Document Type: Maestros/LATAM-DocumentType.md
-        - Tax Payer Type: Maestros/LATAM-TaxPayerType.md
-        - Account Type Group: Maestros/LATAM-AccountTypeGroup.md
+        - Clase de comprobante: Maestros/LATAM-VoucherClass.md
+        - Punto de ventas: Maestros/LATAM-SalesPoint.md
+        - Tipo documento: Maestros/LATAM-DocumentType.md
+        - Tipo contribuyente: Maestros/LATAM-TaxPayerType.md
+        - Grupo tipo de cuenta: Maestros/LATAM-AccountTypeGroup.md
+        - Estado: Maestros/LATAM-State.md
     - Extensiones:
-        - Document Extension: LATAM-DocumentExtension/LATAM-DocumentExtension.md
+        - Exntesión de documento: LATAM-DocumentExtension.md
         - Compañía: Extensiones/LATAM-CompanyInformation.md
         - Cliente: Extensiones/LATAM-Customer.md
         - Proveedor: Extensiones/LATAM-Vendor.md
@@ -29,5 +30,5 @@ nav:
             - LATAM Voucher Class Lookup: Desarrollo/Queries/LATAM-VoucherClassLookup/LATAM-VoucherClassLookup.md
     - Info Extra:
         - Máscara Documentos: Info-Extra/Mascara.md
-    - About: about.md
+    - Acerca de: about.md
 theme: readthedocs

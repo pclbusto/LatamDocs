@@ -25,7 +25,7 @@ Este maestro es una tipificación para las [clases de comprobantes](../Maestros/
 
 
 ## Sección Medio Cobro Pago
-![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-Collection-Payment-Document.PNG)
+![Ventana de configuración](../Imagenes/LATAM-VoucherClassType-Seccion-Collection-Payment-Document.PNG)
 >#### Medio de cobro/pago
 >>**Descripción**: 
 	Los comprobantes pueden ser agrupados en dos grandes conjuntos, un conjunto es el de comprobantes (facturas, remitos, notas de crédito) y otro es el de  medios de cobro pago. Todo comprobante que sea un medio de cobro pago debe tener un tipo de clase de comprobante con este flag en `true`
@@ -45,7 +45,7 @@ Este maestro es una tipificación para las [clases de comprobantes](../Maestros/
 >>**Tipo**:boolean
 
 ## Sección Facturas
-![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-Invoices.PNG)
+![Ventana de configuración](../Imagenes/LATAM-VoucherClassType-Seccion-Invoices.PNG)
 
 ### Campos
 >#### Factura Ventas
@@ -73,7 +73,7 @@ Este maestro es una tipificación para las [clases de comprobantes](../Maestros/
 >>**Tipo**:boolean
 
 ## Sección notas de crédito
-![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-CreditNote.PNG)
+![Ventana de configuración](../Imagenes/LATAM-VoucherClassType-Seccion-CreditNote.PNG)
 
 ### Campos
 >#### Notas de crédito de ventas
@@ -101,7 +101,7 @@ Este maestro es una tipificación para las [clases de comprobantes](../Maestros/
 >>**Tipo**:boolean
 
 ## Sección remito
-![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-PackingSlip.PNG)
+![Ventana de configuración](../Imagenes/LATAM-VoucherClassType-Seccion-PackingSlip.PNG)
 
 ### Campos
 >#### Remito
@@ -137,7 +137,7 @@ Este maestro es una tipificación para las [clases de comprobantes](../Maestros/
 ## Sección Diario
 
 >### Diario Mayor General
-![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-GeneralLedger.PNG)
+![Ventana de configuración](../Imagenes/LATAM-VoucherClassType-Seccion-GeneralLedger.PNG)
 
 >>### Campos
 >>>>#### Línea de débito de diario de GL
@@ -162,7 +162,7 @@ Este maestro es una tipificación para las [clases de comprobantes](../Maestros/
 >>>>**Tipo**: boolean
 
 >### Diario Proveedor
-![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-VendorJournal.PNG)
+![Ventana de configuración](../Imagenes/LATAM-VoucherClassType-Seccion-VendorJournal.PNG)
 
 >>### Campos
 >>>>#### Línea de débito de diario de proveedor
@@ -187,7 +187,7 @@ Este maestro es una tipificación para las [clases de comprobantes](../Maestros/
 >>>>**Tipo**: boolean
 
 >### Diario Proyecto
-![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-ProjectJournal.PNG)
+![Ventana de configuración](../Imagenes/LATAM-VoucherClassType-Seccion-ProjectJournal.PNG)
 
 >>### Campos
 >>>>#### Línea de débito de diario de proyecto
@@ -212,7 +212,7 @@ Este maestro es una tipificación para las [clases de comprobantes](../Maestros/
 >>>>**Tipo**: boolean
 
 >### Diario Cliente
-![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-CustomerJournal.PNG)
+![Ventana de configuración](../Imagenes/LATAM-VoucherClassType-Seccion-CustomerJournal.PNG)
 
 >>### Campos
 >>>>#### Línea de débito de diario de cliente
@@ -237,7 +237,7 @@ Este maestro es una tipificación para las [clases de comprobantes](../Maestros/
 >>>>**Tipo**: boolean
 
 >### Diario AF
-![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-AFJournal.PNG)
+![Ventana de configuración](../Imagenes/LATAM-VoucherClassType-Seccion-AFJournal.PNG)
 
 >>### Campos
 >>>>#### Línea de débito de diario de AF
@@ -262,7 +262,7 @@ Este maestro es una tipificación para las [clases de comprobantes](../Maestros/
 >>>>**Tipo**: boolean
 
 >### Diario Banco
-![Ventana de configuración](../../Imagenes/LATAM-VoucherClassType-Seccion-BankJournal.PNG)
+![Ventana de configuración](../Imagenes/LATAM-VoucherClassType-Seccion-BankJournal.PNG)
 
 >>### Campos
 >>>>#### Línea de débito de diario de Banco
