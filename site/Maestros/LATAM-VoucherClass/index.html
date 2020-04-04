@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Voucher Class - LATAM DOC</title>
+  <title>Clase de comprobante - LATAM DOC</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Voucher Class";
+    var mkdocs_page_name = "Clase de comprobante";
     var mkdocs_page_input_path = "Maestros\\LATAM-VoucherClass.md";
     var mkdocs_page_url = null;
   </script>
@@ -59,7 +59,7 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../LATAM-VoucherClassType/">Tipo de clase de comprobante</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Voucher Class</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Clase de comprobante</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#descripcion">Descripción</a>
     </li>
@@ -147,18 +147,20 @@
     </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-SalesPoint/">Sales Point</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-SalesPoint/">Punto de ventas</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-DocumentType/">Document Type</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-DocumentType/">Tipo documento</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-TaxPayerType/">Tax Payer Type</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-TaxPayerType/">Tipo contribuyente</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-AccountTypeGroup/">Account Type Group</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-AccountTypeGroup/">Grupo tipo de cuenta</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-State/">Estado</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Extensiones</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../LATAM-DocumentExtension/LATAM-DocumentExtension/">Document Extension</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../LATAM-DocumentExtension/">Exntesión de documento</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../Extensiones/LATAM-CompanyInformation/">Compañía</a>
                     </li>
@@ -204,7 +206,7 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/">Acerca de</a>
                     </li>
                 </ul>
       </div>
@@ -232,7 +234,7 @@
         
       
     
-    <li>Voucher Class</li>
+    <li>Clase de comprobante</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -268,7 +270,7 @@
 </blockquote>
 <h4 id="tipo-clase-comprobantes">Tipo Clase Comprobantes</h4>
 <blockquote>
-<p><strong>Descripción</strong>: id tipo clase de comprobante. Indica que comportamiento va a tener este comprobante, el cual esta supeditado a lo configurado en el <a href="../../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md">tipo clase comprobante</a></p>
+<p><strong>Descripción</strong>: id tipo clase de comprobante. Indica que comportamiento va a tener este comprobante, el cual esta supeditado a lo configurado en el <a href="../LATAM-VoucherClassType/">tipo clase comprobante</a></p>
 <p><strong>Tipo</strong>:Code[5]</p>
 </blockquote>
 <h4 id="letra">Letra</h4>
@@ -278,7 +280,7 @@
 </blockquote>
 <h4 id="prefijo">Prefijo</h4>
 <blockquote>
-<p><strong>Descripción</strong>: Cadena de caracteres que forma parte del cálculo del <a href="../../LATAM-DocumentExtension/LATAM-DocumentExtension.md# numero-de-documento-completo">número completo de comprobante</a>. Este prefijo es formado por el <a href="../../Maestros/LATAM-VoucherClassType/LATAM-VoucherClassType.md# prefijo">prefijo del tipo de comprobante</a> y el <a href="">prefijo de la letra</a></p>
+<p><strong>Descripción</strong>: Cadena de caracteres que forma parte del cálculo del <a href="../../LATAM-DocumentExtension/#numero-de-documento-completo">número de comprobante completo</a>. Este prefijo es formado por el <a href="../LATAM-VoucherClassType/#prefijo">prefijo del tipo de comprobante</a> y el <a href="../LATAM-VoucherClassLetter/#prefijo">prefijo de la letra</a></p>
 <p><strong>Tipo</strong>:Code[5]</p>
 </blockquote>
 <h4 id="inactivo">Inactivo</h4>
@@ -298,7 +300,7 @@
 </blockquote>
 <h4 id="separador">Separador</h4>
 <blockquote>
-<p><strong>Descripción</strong>: Caracter que permite introducir un separador al crear el <a href="../../LATAM-DocumentExtension/LATAM-DocumentExtension.md# numero-de-documento-completo">número de comprobante completo en la Extensión de documentos</a>. por ejemplo '-'.</p>
+<p><strong>Descripción</strong>: Caracter que permite introducir un separador al crear el <a href="../../LATAM-DocumentExtension/#numero-de-documento-completo">número de comprobante completo en la Extensión de documentos</a>. por ejemplo '-'.</p>
 <p><strong>Tipo</strong>:Code[5]</p>
 </blockquote>
 <h4 id="copiar-numero-de-documento">copiar número de documento</h4>
@@ -349,7 +351,7 @@
 <h4 id="detalla-contribuyente">Detalla contribuyente</h4>
 <blockquote>
 <p><strong>Descripción</strong>:
-Si este campo esta marcado, cambia el comportamiento a requerido de los campos en el <a href="../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md#grupo-contribuyente">grupo de contribuyente</a> en la <a href="../../Maestros/LATAM-VoucherClass/LATAM-VoucherClass.md#seccion-datos-adicionales">sección de datos adicionales</a> en la entidad comprobante  </p>
+Si este campo esta marcado, cambia el comportamiento a requerido de los campos en el <a href="./#grupo-contribuyente">grupo de contribuyente</a> en la <a href="./#seccion-datos-adicionales">sección de datos adicionales</a> en la entidad comprobante  </p>
 <p><strong>Tipo</strong>:boolean</p>
 </blockquote>
 <h4 id="incluye-impuestos">Incluye impuestos</h4>
@@ -362,7 +364,7 @@ Si este campo esta marcado, cambia el comportamiento a requerido de los campos e
 <h2 id="seccion-datos-adicionales">Sección Datos Adicionales</h2>
 <p><img alt="Ventana de configuración" src="../../Imagenes/LATAM-VoucherClass-AdditionalData.PNG" /></p>
 <h2 id="descripcion_2">Descripción</h2>
-<p>Configuración de campos adicionales. Esta sección permite configurar el comportamiento de los campos adicionales, los cuales aparecen en el formulario de <a href="../../LATAM-DocumentExtension/LATAM-DocumentExtension/">Extensión de Documentos</a>. Están agrupados por secciones que son las mismas que se tiene en la ventana <a href="../../LATAM-DocumentExtension/LATAM-DocumentExtension/">Extensión de Documentos</a>. Los comportamientos pueden ser:</p>
+<p>Configuración de campos adicionales. Esta sección permite configurar el comportamiento de los campos adicionales, los cuales aparecen en el formulario de <a href="../../LATAM-DocumentExtension/">Extensión de Documentos</a>. Están agrupados por secciones que son las mismas que tiene esta sección. Los comportamientos pueden ser:</p>
 <ul>
 <li><strong>Deshabilitado:</strong> El campo aparece deshabilitado.</li>
 <li><strong>Habilitado:</strong> El campo aparece como editable.</li>
@@ -381,7 +383,7 @@ Si este campo esta marcado, cambia el comportamiento a requerido de los campos e
 <h6 id="tipo-contribuyente">Tipo contribuyente</h6>
 <blockquote>
 <p><strong>Descripción</strong>: 
-Permite administrar el comportamiento de los campos en el grupo <a href="../../LATAM-DocumentExtension/LATAM-DocumentExtension.md# seccion-contribuyentes">contribuyente en la página extensión de documentos</a>. 
+Permite administrar el comportamiento de los campos en el grupo <a href="../../LATAM-DocumentExtension/#seccion-contribuyentes">contribuyente en la página extensión de documentos</a>. 
 <strong>Tipo</strong>:Code[15]</p>
 </blockquote>
 </blockquote>
@@ -390,7 +392,7 @@ Permite administrar el comportamiento de los campos en el grupo <a href="../../L
 <h2 id="seccion-mascara-documento">Sección Máscara Documento</h2>
 <p><img alt="Ventana de configuración" src="../../Imagenes/LATAM-VoucherClass-DocumentMask.PNG" /></p>
 <h2 id="descripcion_3">Descripción</h2>
-<p>Configuración de máscaras para el punto de venta y el comprobante. Cuando se usa el comprobante en la ventana <a href="../../LATAM-DocumentExtension/LATAM-DocumentExtension/">Extensión de Documentos</a>. Se disparan una series de comportamientos referidos al número de comprobante y punto de venta. Esta sección se sub divide a su vez por las entidades mensionadas anteriormente:</p>
+<p>Configuración de máscaras para el punto de venta y el comprobante. Cuando se usa el comprobante en la ventana <a href="../../LATAM-DocumentExtension/">Extensión de Documentos</a>. Se disparan una series de comportamientos referidos al número de comprobante y punto de venta. Esta sección se sub divide a su vez por las entidades mensionadas anteriormente:</p>
 <ul>
 <li>Cuenta GL</li>
 <li>Cliente</li>
@@ -409,21 +411,21 @@ Permite administrar el comportamiento de los campos en el grupo <a href="../../L
 </blockquote>
 <h4 id="longitud">Longitud.</h4>
 <blockquote>
-<p><strong>Descripción</strong>: Indica la longitud que debe tener el prefijo en <a href="../../Maestros/LATAM-SalesPoint/LATAM-SalesPoint.md# prefijo-punto-de-venta">Punto de venta</a>. Esta validación se ejecuta en el campo <a href="../../LATAM-DocumentExtension/LATAM-DocumentExtension.md# prefijo">prefijo de punto de venta en extensión de documentos</a></p>
+<p><strong>Descripción</strong>: Indica la longitud que debe tener el prefijo en <a href="../LATAM-SalesPoint/#prefijo-punto-de-venta">Punto de venta</a>. Esta validación se ejecuta en el campo <a href="../../LATAM-DocumentExtension/#prefijo">prefijo de punto de venta en extensión de documentos</a></p>
 <p><strong>Habilitado</strong>: Si esta en true el campo Habilitado.</p>
-<p><strong>Tipo</strong>:Integer</p>
+<p><strong>Tipo</strong>:boolean</p>
 </blockquote>
 <h4 id="obligatorio">Obligatorio.</h4>
 <blockquote>
-<p><strong>Descripción</strong>: Indica que el punto de venta o el prefijo de <a href="../LATAM-SalesPoint/LATAM-SalesPoint.md">Punto de venta</a>. es obligatorio.</p>
+<p><strong>Descripción</strong>: Indica que el punto de venta o el <a href="../LATAM-SalesPoint/">prefijo de Punto de venta</a>. es obligatorio.</p>
 <p><strong>Habilitado</strong>: Si esta en true el campo Habilitado.</p>
-<p><strong>Tipo</strong>:Integer</p>
+<p><strong>Tipo</strong>:boolean</p>
 </blockquote>
 <h4 id="mascara">Máscara.</h4>
 <blockquote>
-<p><strong>Descripción</strong>: Mascara para validar el prefijo de <a href="../LATAM-SalesPoint/LATAM-SalesPoint.md">Punto de venta</a>.</p>
+<p><strong>Descripción</strong>: Mascara para validar el prefijo de <a href="../LATAM-SalesPoint/">Punto de venta</a>.</p>
 <p><strong>Habilitado</strong>: Si esta en true el campo Habilitado.</p>
-<p><strong>Tipo</strong>:Integer</p>
+<p><strong>Tipo</strong>:boolean</p>
 </blockquote>
 </blockquote>
 <hr />
@@ -434,7 +436,7 @@ Permite administrar el comportamiento de los campos en el grupo <a href="../../L
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../LATAM-SalesPoint/" class="btn btn-neutral float-right" title="Sales Point">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../LATAM-SalesPoint/" class="btn btn-neutral float-right" title="Punto de ventas">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../LATAM-VoucherClassType/" class="btn btn-neutral" title="Tipo de clase de comprobante"><span class="icon icon-circle-arrow-left"></span> Previous</a>

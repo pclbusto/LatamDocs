@@ -59,20 +59,22 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-VoucherClassType/">Tipo de clase de comprobante</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-VoucherClass/">Voucher Class</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-VoucherClass/">Clase de comprobante</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-SalesPoint/">Sales Point</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-SalesPoint/">Punto de ventas</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-DocumentType/">Document Type</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-DocumentType/">Tipo documento</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-TaxPayerType/">Tax Payer Type</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-TaxPayerType/">Tipo contribuyente</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-AccountTypeGroup/">Account Type Group</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-AccountTypeGroup/">Grupo tipo de cuenta</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Maestros/LATAM-State/">Estado</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Extensiones</span></p>
                 <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../../LATAM-DocumentExtension/LATAM-DocumentExtension/">Document Extension</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../LATAM-DocumentExtension/">Exntesión de documento</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../LATAM-CompanyInformation/">Compañía</a>
                     </li>
@@ -83,6 +85,18 @@
     <li class="toctree-l3"><a class="reference internal" href="#campos">Campos</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#tipo-de-contribuyente">Tipo de contribuyente</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#pais-de-radicacion">País de radicación</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tipo-documento-pais">Tipo documento país</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#n-documento-pais">"N° documento país</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#inscripto-en-jurisdiccion">Inscripto en jurisdicción</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tipo-documento-estado">Tipo documento estado</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#n-documento-estado">"N° documento estado</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#grupo-tipo-de-cuenta">Grupo tipo de cuenta</a>
     </li>
@@ -144,7 +158,7 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/">Acerca de</a>
                     </li>
                 </ul>
       </div>
@@ -193,6 +207,41 @@
 <blockquote>
 <p><strong>Descripción</strong>: </p>
 <p><strong>Tipo</strong>:Code</p>
+</blockquote>
+<h4 id="pais-de-radicacion">País de radicación</h4>
+<blockquote>
+<p><strong>Descripción</strong>: 
+    Id de país que indica donde esta radicado el cliente.</p>
+<p><strong>Tipo</strong>:Code</p>
+</blockquote>
+<h4 id="tipo-documento-pais">Tipo documento país</h4>
+<blockquote>
+<p><strong>Descripción</strong>: 
+    Id a tipo de documento. Solo pueden cargarse tipos de documentos que tenga el flag <a href="../../Maestros/LATAM-DocumentType/#tipo-documento-pais">tipo documento país</a> en <code>true</code></p>
+<p><strong>Tipo</strong>:Code</p>
+</blockquote>
+<h4 id="n-documento-pais">"N° documento país</h4>
+<blockquote>
+<p><strong>Descripción</strong>: 
+    Número de documento del contribuyente. Si el tipo de documento tiene marcado <a href="../../Maestros/LATAM-DocumentType/#validar-mascara">Validar máscara</a> o <a href="../../Maestros/LATAM-DocumentType/#verifica-metodo">Verifica método</a>. Este valor debe ser validado.</p>
+<p><strong>Tipo</strong>:Text[30]</p>
+</blockquote>
+<h4 id="inscripto-en-jurisdiccion">Inscripto en jurisdicción</h4>
+<blockquote>
+<p><strong>Descripción</strong>: 
+    Id <a href="../../Maestros/LATAM-State/">Estado</a> en que está inscripto.</p>
+<p><strong>Tipo</strong>:Code</p>
+</blockquote>
+<h4 id="tipo-documento-estado">Tipo documento estado</h4>
+<blockquote>
+<p><strong>Descripción</strong>: 
+    Id a tipo de documento. Solo pueden cargarse tipos de documentos que tenga el flag <a href="../../Maestros/LATAM-DocumentType/#tipo-documento-estado">tipo documento estado</a> en <code>true</code></p>
+<p><strong>Tipo</strong>:Code</p>
+</blockquote>
+<h4 id="n-documento-estado">"N° documento estado</h4>
+<blockquote>
+<p><strong>Descripción</strong>: 
+    Número de documento del contribuyente. Si el tipo de documento tiene marcado <a href="../../Maestros/LATAM-DocumentType/#validar-mascara">Validar máscara</a> o <a href="../../Maestros/LATAM-DocumentType/#verifica-metodo">Verifica método</a>. Este valor debe ser validado.</p>
 </blockquote>
 <h4 id="grupo-tipo-de-cuenta">Grupo tipo de cuenta</h4>
 <blockquote>
