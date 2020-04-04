@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Document Type - LATAM DOC</title>
+  <title>Tipo documento - LATAM DOC</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../css/theme.css" />
@@ -18,7 +18,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Document Type";
+    var mkdocs_page_name = "Tipo documento";
     var mkdocs_page_input_path = "Maestros\\LATAM-DocumentType.md";
     var mkdocs_page_url = null;
   </script>
@@ -59,11 +59,11 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../LATAM-VoucherClassType/">Tipo de clase de comprobante</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-VoucherClass/">Voucher Class</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-VoucherClass/">Clase de comprobante</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-SalesPoint/">Sales Point</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-SalesPoint/">Punto de ventas</a>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Document Type</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Tipo documento</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#descripcion">Descripción</a>
     </li>
@@ -73,6 +73,8 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#no">No.</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#descripcion_1">Descripción</a>
+    </li>
         </ul>
     </li>
         </ul>
@@ -81,15 +83,13 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#campos_1">Campos</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#descripcion_1">Descripción</a>
+    <li class="toctree-l4"><a class="reference internal" href="#validar-mascara">Validar máscara</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#verifica-metodo">Verifica método</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#mascara">Máscara</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#longitud-mascara">Longitud máscara</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#valida-mascara">Valida máscara</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#tipo-documento-pais">Tipo documento país</a>
     </li>
@@ -103,14 +103,16 @@
     </li>
     </ul>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-TaxPayerType/">Tax Payer Type</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-TaxPayerType/">Tipo contribuyente</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-AccountTypeGroup/">Account Type Group</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-AccountTypeGroup/">Grupo tipo de cuenta</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-State/">Estado</a>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Extensiones</span></p>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../LATAM-DocumentExtension/LATAM-DocumentExtension/">Document Extension</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../LATAM-DocumentExtension/">Exntesión de documento</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../Extensiones/LATAM-CompanyInformation/">Compañía</a>
                     </li>
@@ -156,7 +158,7 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../about/">About</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/">Acerca de</a>
                     </li>
                 </ul>
       </div>
@@ -184,7 +186,7 @@
         
       
     
-    <li>Document Type</li>
+    <li>Tipo documento</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -205,24 +207,29 @@
 <h4 id="no">No.</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
-    Habilita o deshabilita la localización. Si este campo esta en falso el código de la localización no debería ejecutarse. Esto implica extensiones a páginas o código que ejecuta en puntos de integración.</p>
-<p><strong>Tipo</strong>:Code</p>
+    Id de la entidad.</p>
+</blockquote>
+<h4 id="descripcion_1">Descripción</h4>
+<blockquote>
+<p><strong>Descripción</strong>: 
+    Breve descripción de tipo de documento.</p>
+<p><strong>Tipo</strong>:text</p>
 </blockquote>
 </blockquote>
 <h2 id="seccion-configuracion">Sección configuración</h2>
 <h3 id="campos_1">Campos</h3>
 <blockquote>
-<h4 id="descripcion_1">Descripción</h4>
+<h4 id="validar-mascara">Validar máscara</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
-    Cantidad de caracteres que permite el campo letra de comprobante de la entidad <a href="../LATAM-LATAMVoucherClassLetter/LATAM-LATAMVoucherClassLetter.md">letra de comprobante</a> letra de comprobante.</p>
-<p><strong>Tipo</strong>:Entero</p>
+    Indica si hay que validar o no la mascara. Si esta deshabilitado el campo máscara se habilitará y deshabilitado en caso que este en <code>false</code>.</p>
+<p><strong>Tipo</strong>:boolean</p>
 </blockquote>
 <h4 id="verifica-metodo">Verifica método</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
-    Si tiene implementado un metodo de verificación, ejecuta dicho método para verificar si el número de documento ingresado es correcto.</p>
-<p><strong>Tipo</strong>:Entero</p>
+    Si tiene implementado un método de verificación, ejecuta dicho método para verificar si el número de documento ingresado es correcto.</p>
+<p><strong>Tipo</strong>:boolean</p>
 </blockquote>
 <h4 id="mascara">Máscara</h4>
 <blockquote>
@@ -233,19 +240,13 @@
 <h4 id="longitud-mascara">Longitud máscara</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
-    Cantidad maxima de caracteres que permite la máscara.</p>
+    Cantidad máxima de caracteres que permite la máscara.</p>
 <p><strong>Tipo</strong>:Entero</p>
-</blockquote>
-<h4 id="valida-mascara">Valida máscara</h4>
-<blockquote>
-<p><strong>Descripción</strong>: 
-    Indica si hay que validar o no la mascara. Si esta deshabilitado los campos longitud máscara y máscara deben estar deshabilitados.</p>
-<p><strong>Tipo</strong>:boolean</p>
 </blockquote>
 <h4 id="tipo-documento-pais">Tipo documento país</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
-    Indica que este tipo de documento es de país. En la ventana de configuración de tipo de contribuyente ()</p>
+    Indica que este tipo de documento es de país.</p>
 <p><strong>Tipo</strong>:boolean</p>
 </blockquote>
 <h4 id="tipo-documento-estado">Tipo documento estado</h4>
@@ -268,10 +269,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../LATAM-TaxPayerType/" class="btn btn-neutral float-right" title="Tax Payer Type">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../LATAM-TaxPayerType/" class="btn btn-neutral float-right" title="Tipo contribuyente">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../LATAM-SalesPoint/" class="btn btn-neutral" title="Sales Point"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../LATAM-SalesPoint/" class="btn btn-neutral" title="Punto de ventas"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
