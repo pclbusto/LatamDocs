@@ -1,4 +1,4 @@
-# Grupo de tipo de cuenta 11111
+# Grupo de tipo de cuenta 
 ![Ventana de configuración](../Imagenes/LATAM-AccountTypeGroup-MainPage.PNG)
 ## Descripción
 Maestro de grupo de tipo de cuenta. Crea una tipificación para un tipo de cuenta. 
@@ -46,6 +46,7 @@ un grupo tipo cuenta cuyo tipo cuenta es `cliente` solo puede ser usado en la ex
 
 ## Sección clase de comprobante Cliente/Proveedor 
 ![Ventana de comprobantes](../Imagenes/LATAM-AccountTypeGroup-CustVendVouchers.PNG)
+Define los comprobantes a los que va a tener acceso la entidad que use este grupo tipo de cuenta.
 ### Campos
 >#### Clase de comprobante
 >>**Descripción**: 
@@ -61,69 +62,70 @@ un grupo tipo cuenta cuyo tipo cuenta es `cliente` solo puede ser usado en la ex
 
 ## Sección Clase de comprobante por defecto de cliente
 ![Ventana de comprobantes defecto cliente](../Imagenes/LATAM-AccountTypeGroup-Seccion-DefaultCustVouchers.PNG)
+ 
 ### Campos
 >#### Nota de crédito de servicio
 >>**Descripción**: 
-	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una nota de crédito de servicio. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Notas de crédito de servicio](../Maestros/LATAM-VoucherClassType.md#notas-de-credito-de-servicio)
+	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una nota de crédito de servicio. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Notas de crédito de servicio](../Maestros/LATAM-VoucherClassType.md#notas-de-credito-de-servicio) y estén cargados en en la sección [Sección clase de comprobante Cliente/Proveedor](#seccion-clase-de-comprobante-clienteproveedor)
 	
 >>**Tipo**:Code[15]
 
 >#### Factura de servicio
 >>**Descripción**: 
-	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una factura de servicio. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Factura de servicio](../Maestros/LATAM-VoucherClassType.md#factura-de-servicio) y estén cargados en los comprobantes a los que tiene acceso [Sección clase de comprobante Cliente/Proveedor](#seccion-clase-de-comprobante-clienteproveedor). 
+	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una factura de servicio. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Factura de servicio](../Maestros/LATAM-VoucherClassType.md#factura-de-servicio) y estén cargados en en la sección [Sección clase de comprobante Cliente/Proveedor](#seccion-clase-de-comprobante-clienteproveedor)
 	
 >>**Tipo**:Code[15]
 
 >#### Remito de zona franca
 >>**Descripción**: 
-	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear un remito de servicio. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Remito](../Maestros/LATAM-VoucherClassType.md#remito)  
+	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear un remito de servicio. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Remito](../Maestros/LATAM-VoucherClassType.md#remito) y estén cargados en en la sección [Sección clase de comprobante Cliente/Proveedor](#seccion-clase-de-comprobante-clienteproveedor)
 	
 >>**Tipo**:Code[15]
 
 >#### Remito
 >>**Descripción**: 
-	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear un remito de compra/ventas. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Remito](../Maestros/LATAM-VoucherClassType.md#remito)
+	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear un remito de compra/ventas. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Remito](../Maestros/LATAM-VoucherClassType.md#remito) y estén cargados en en la sección [Sección clase de comprobante Cliente/Proveedor](#seccion-clase-de-comprobante-clienteproveedor)
 	
 >>**Tipo**:Code[15]
 
 >#### Nota de crédito de proyecto
 >>**Descripción**: 
-	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una nota de crédito de proyecto. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check nota de crédito de proyecto](../Maestros/LATAM-VoucherClassType.md#notas-de-credito-de-proyecto) 
+	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una nota de crédito de proyecto. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check nota de crédito de proyecto](../Maestros/LATAM-VoucherClassType.md#notas-de-credito-de-proyecto) y estén cargados en en la sección [Sección clase de comprobante Cliente/Proveedor](#seccion-clase-de-comprobante-clienteproveedor)
 	
 >>**Tipo**:Code[15]
 
 >#### Factura de proyecto
 >>**Descripción**: 
-	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una factura de proyecto. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Factura de proyecto](../Maestros/LATAM-VoucherClassType.md#factura-de-proyecto) 
+	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una factura de proyecto. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Factura de proyecto](../Maestros/LATAM-VoucherClassType.md#factura-de-proyecto) y estén cargados en en la sección [Sección clase de comprobante Cliente/Proveedor](#seccion-clase-de-comprobante-clienteproveedor)
 	
 >>**Tipo**:Code[15]
 
 >#### Remito de proyecto
 >>**Descripción**: 
-	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear un remito de proyecto. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Remito de proyecto](../Maestros/LATAM-VoucherClassType.md#remito-de-proyecto)
+	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear un remito de proyecto. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Remito de proyecto](../Maestros/LATAM-VoucherClassType.md#remito-de-proyecto) y estén cargados en en la sección [Sección clase de comprobante Cliente/Proveedor](#seccion-clase-de-comprobante-clienteproveedor)
 	
 >>**Tipo**:Code[15]
 
 >#### Remito de devolución proyecto
 >>**Descripción**: 
-	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una devolución de proyecto. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Remito de devolución proyecto](../Maestros/LATAM-VoucherClassType.md#remito-de-devolucion-proyecto)
+	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una devolución de proyecto. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Remito de devolución proyecto](../Maestros/LATAM-VoucherClassType.md#remito-de-devolucion-proyecto) y estén cargados en en la sección [Sección clase de comprobante Cliente/Proveedor](#seccion-clase-de-comprobante-clienteproveedor)
 	
 >>**Tipo**:Code[15]
 
 >#### Remito de reembolso
 >>**Descripción**: 
-	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Remito de devolución](../Maestros/LATAM-VoucherClassType.md#remito-de-devolucion)
+	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Remito de devolución](../Maestros/LATAM-VoucherClassType.md#remito-de-devolucion) y estén cargados en en la sección [Sección clase de comprobante Cliente/Proveedor](#seccion-clase-de-comprobante-clienteproveedor)
 >>**Tipo**:Code[15]
 
 >#### Nota de crédito de venta
 >>**Descripción**: 
-	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una nota de crédito de ventas. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Nota de crédito de venta](../Maestros/LATAM-VoucherClassType.md#notas-de-credito-de-ventas) 
+	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una nota de crédito de ventas. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Nota de crédito de venta](../Maestros/LATAM-VoucherClassType.md#notas-de-credito-de-ventas) y estén cargados en en la sección [Sección clase de comprobante Cliente/Proveedor](#seccion-clase-de-comprobante-clienteproveedor) 
 	
 >>**Tipo**:Code[15]
 
 >#### Factura de venta
 >>**Descripción**: 
-	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una factura de ventas. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Factura de venta](../Maestros/LATAM-VoucherClassType.md#factura-ventas)  
+	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una factura de ventas. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Factura de venta](../Maestros/LATAM-VoucherClassType.md#factura-ventas) y estén cargados en en la sección [Sección clase de comprobante Cliente/Proveedor](#seccion-clase-de-comprobante-clienteproveedor)  
 	
 >>**Tipo**:Code[15]
 
@@ -135,25 +137,25 @@ un grupo tipo cuenta cuyo tipo cuenta es `cliente` solo puede ser usado en la ex
 ### Campos
 >#### Diario de crédito
 >>**Descripción**: 
-	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en el diario del proveedor al crédito. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el check [Línea de crédito de diario de proveedor](../Maestros/LATAM-VoucherClassType.md#linea-de-credito-de-diario-de-proveedor) 
+	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en el diario del proveedor al crédito. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el check [Línea de crédito de diario de proveedor](../Maestros/LATAM-VoucherClassType.md#linea-de-credito-de-diario-de-proveedor) y estén cargados en en la sección [Sección clase de comprobante Cliente/Proveedor](#seccion-clase-de-comprobante-clienteproveedor) 
 	
 >>**Tipo**:Code[15]
 
 >#### Diario de débito
 >>**Descripción**: 
-	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada  en el diario del proveedor al débito. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el check [Línea de débito de diario de proveedor](../Maestros/LATAM-VoucherClassType.md#linea-de-debito-de-diario-de-proveedor)
+	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada  en el diario del proveedor al débito. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el check [Línea de débito de diario de proveedor](../Maestros/LATAM-VoucherClassType.md#linea-de-debito-de-diario-de-proveedor) y estén cargados en en la sección [Sección clase de comprobante Cliente/Proveedor](#seccion-clase-de-comprobante-clienteproveedor)
 	
 >>**Tipo**:Code[15]
 
 >#### Medio de pago predeterminado
 >>**Descripción**: 
-	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear un medio de cobro pago para un proveedor. En este campo solo se pueden cargar comprobante que tenga marcado el [Medio de cobro/pago](../Maestros/LATAM-VoucherClassType.md#medio-de-cobropago)
+	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear un medio de cobro pago para un proveedor. En este campo solo se pueden cargar comprobante que tenga marcado el [Medio de cobro/pago](../Maestros/LATAM-VoucherClassType.md#medio-de-cobropago) y estén cargados en en la sección [Sección clase de comprobante Cliente/Proveedor](#seccion-clase-de-comprobante-clienteproveedor)
 	
 >>**Tipo**:Code[15]
 
 >#### Remito
 >>**Descripción**: 
-	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear un remito de compras. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Remito](../Maestros/LATAM-VoucherClassType.md#remito)
+	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear un remito de compras. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Remito](../Maestros/LATAM-VoucherClassType.md#remito) y estén cargados en en la sección [Sección clase de comprobante Cliente/Proveedor](#seccion-clase-de-comprobante-clienteproveedor)
 	
 >>**Tipo**:Code[15]
 
@@ -165,13 +167,13 @@ un grupo tipo cuenta cuyo tipo cuenta es `cliente` solo puede ser usado en la ex
 
 >#### Factura de compra
 >>**Descripción**: 
-	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una factura de compras. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Factura compra](../Maestros/LATAM-VoucherClassType.md#factura-compras)   
+	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una factura de compras. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Factura compra](../Maestros/LATAM-VoucherClassType.md#factura-compras) y estén cargados en en la sección [Sección clase de comprobante Cliente/Proveedor](#seccion-clase-de-comprobante-clienteproveedor)   
 	
 >>**Tipo**:Code[15]
 
 >#### Remito de reembolso
 >>**Descripción**: 
-	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Remito de devolución](../Maestros/LATAM-VoucherClassType.md#remito-de-devolucion)   
+	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una entrada en diario de crédito. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Remito de devolución](../Maestros/LATAM-VoucherClassType.md#remito-de-devolucion) y estén cargados en en la sección [Sección clase de comprobante Cliente/Proveedor](#seccion-clase-de-comprobante-clienteproveedor)   
 >>**Tipo**:Code[15]
 
 
