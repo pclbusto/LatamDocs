@@ -1,4 +1,4 @@
-# Grupo de tipo de cuenta
+# Grupo de tipo de cuenta 11111
 ![Ventana de configuración](../Imagenes/LATAM-AccountTypeGroup-MainPage.PNG)
 ## Descripción
 Maestro de grupo de tipo de cuenta. Crea una tipificación para un tipo de cuenta. 
@@ -64,13 +64,13 @@ un grupo tipo cuenta cuyo tipo cuenta es `cliente` solo puede ser usado en la ex
 ### Campos
 >#### Nota de crédito de servicio
 >>**Descripción**: 
-	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una nota de crédito de servicio. En este campo solo 	se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Notas de crédito de servicio](../Maestros/LATAM-VoucherClassType.md#notas-de-credito-de-servicio)
+	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una nota de crédito de servicio. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Notas de crédito de servicio](../Maestros/LATAM-VoucherClassType.md#notas-de-credito-de-servicio)
 	
 >>**Tipo**:Code[15]
 
 >#### Factura de servicio
 >>**Descripción**: 
-	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una factura de servicio. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Factura de servicio](../Maestros/LATAM-VoucherClassType.md#factura-de-servicio) 
+	Id de [clases de comprobantes](../Maestros/LATAM-VoucherClass.md) que será propuesto como clase de comprobante por defecto al crear una factura de servicio. En este campo solo se pueden cargar comprobante cuyo tipo clase de comprobante tenga marcado el [check Factura de servicio](../Maestros/LATAM-VoucherClassType.md#factura-de-servicio) y estén cargados en los comprobantes a los que tiene acceso [Sección clase de comprobante Cliente/Proveedor](#seccion-clase-de-comprobante-clienteproveedor). 
 	
 >>**Tipo**:Code[15]
 

@@ -50,9 +50,9 @@ Extensión a los clientes de Business Central.
 >>**Descripción**: 
 	Número de documento del contribuyente. Si el tipo de documento tiene marcado [Validar máscara](../Maestros/LATAM-DocumentType.md#validar-mascara) o [Verifica método](../Maestros/LATAM-DocumentType.md#verifica-metodo). Este valor debe ser validado.
 	
->#### Grupo tipo de cuenta
+>#### Grupo de cliente
 >>**Descripción**: 
-	Id. del grupo de tipo cuenta a la que pertenece el cliente. Solo puede ser un grupo tipo cuenta cuyo tipo sea cliente. Ver [tipo en grupo tipo cuenta](../Maestros/LATAM-AccountTypeGroup.md#tipo-de-cuenta)
+	Id. del [tipo en grupo tipo cuenta](../Maestros/LATAM-AccountTypeGroup.md) a la que pertenece el cliente. Solo puede ser un grupo tipo cuenta cuyo tipo sea cliente. Ver [tipo en grupo tipo cuenta](../Maestros/LATAM-AccountTypeGroup.md#tipo-de-cuenta)
 	
 >>**Tipo**:Entero
 
