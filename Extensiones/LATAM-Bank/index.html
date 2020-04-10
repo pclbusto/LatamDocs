@@ -90,6 +90,18 @@
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#tipo-de-contribuyente">Tipo de contribuyente</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#pais-de-radicacion">País de radicación</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tipo-documento-pais">Tipo documento país</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#n-documento-pais">N° documento país</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#inscripto-en-jurisdiccion">Inscripto en jurisdicción</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tipo-documento-estado">Tipo documento estado</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#n-documento-estado">N° documento estado</a>
+    </li>
     <li class="toctree-l4"><a class="reference internal" href="#grupo-tipo-de-cuenta">Grupo tipo de cuenta</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#concepto-1">Concepto 1</a>
@@ -112,6 +124,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../LATAM-SalesOrder/">Ordenes de ventas</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-CountriesRegion/">Paises/Regiones</a>
+                    </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Desarrollo</span></p>
                 <ul>
@@ -122,6 +136,8 @@
                 <li class="toctree-l2"><a class="reference internal" href="../../Desarrollo/Code-Units/LATAM-Document-Extension/">LATAM Document Extension</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../Desarrollo/Code-Units/LATAM-SalesPostSubscribers/">LATAM Sales Post Subscribers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Desarrollo/Code-Units/LATAM-PurchasePostSubscribers/">LATAM Purchase Post Subscribers</a>
                 </li>
     </ul>
                     </li>
@@ -193,14 +209,51 @@
 <blockquote>
 <h4 id="tipo-de-contribuyente">Tipo de contribuyente</h4>
 <blockquote>
-<p><strong>Descripción</strong>: </p>
-<p><strong>Tipo</strong>:Code</p>
+<p><strong>Descripción</strong>: 
+    ver <a href="../../Reglas/LATAM-Rules-TaxPayerType/">Comportamiento fijados por tipo de contribuyente</a></p>
+<p><strong>Tipo</strong>:Code[15]</p>
+</blockquote>
+<h4 id="pais-de-radicacion">País de radicación</h4>
+<blockquote>
+<p><strong>Descripción</strong>: 
+    Id de país que indica donde esta radicado.</p>
+<p><strong>Tipo</strong>:Code[10]</p>
+</blockquote>
+<h4 id="tipo-documento-pais">Tipo documento país</h4>
+<blockquote>
+<p><strong>Descripción</strong>: 
+    Id a tipo de documento. Solo pueden cargarse tipos de documentos que tenga el flag <a href="../../Maestros/LATAM-DocumentType/#tipo-documento-pais">tipo documento país</a> en <code>true</code></p>
+<p><strong>Tipo</strong>:Text[15]</p>
+</blockquote>
+<h4 id="n-documento-pais">N° documento país</h4>
+<blockquote>
+<p><strong>Descripción</strong>: 
+    Número de documento del contribuyente. Si el tipo de documento tiene marcado <a href="../../Maestros/LATAM-DocumentType/#validar-mascara">Validar máscara</a> o <a href="../../Maestros/LATAM-DocumentType/#verifica-metodo">Verifica método</a>. Este valor debe ser validado.</p>
+<p><strong>Tipo</strong>:Text[30]</p>
+</blockquote>
+<h4 id="inscripto-en-jurisdiccion">Inscripto en jurisdicción</h4>
+<blockquote>
+<p><strong>Descripción</strong>: 
+    Id <a href="../../Maestros/LATAM-State/">Estado</a> en que está inscripto.</p>
+<p><strong>Tipo</strong>:Code[10]</p>
+</blockquote>
+<h4 id="tipo-documento-estado">Tipo documento estado</h4>
+<blockquote>
+<p><strong>Descripción</strong>: 
+    Id a tipo de documento. Solo pueden cargarse tipos de documentos que tenga el flag <a href="../../Maestros/LATAM-DocumentType/#tipo-documento-estado">tipo documento estado</a> en <code>true</code></p>
+<p><strong>Tipo</strong>:Text[15]</p>
+</blockquote>
+<h4 id="n-documento-estado">N° documento estado</h4>
+<blockquote>
+<p><strong>Descripción</strong>: 
+    Número de documento del contribuyente. Si el tipo de documento tiene marcado <a href="../../Maestros/LATAM-DocumentType/#validar-mascara">Validar máscara</a> o <a href="../../Maestros/LATAM-DocumentType/#verifica-metodo">Verifica método</a>. Este valor debe ser validado.</p>
+<p><strong>Tipo</strong>:Text[30]</p>
 </blockquote>
 <h4 id="grupo-tipo-de-cuenta">Grupo tipo de cuenta</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
-    Id. del grupo de tipo cuenta a la que pertenece el cliente. Solo puede ser un grupo tipo cuenta cuyo tipo sea cliente. Ver <a href="../../Maestros/LATAM-AccountTypeGroup/LATAM-AccountTypeGroup.md# tipo-de-cuenta">tipo en grupo tipo cuenta</a></p>
-<p><strong>Tipo</strong>:Entero</p>
+    Id. del grupo de tipo cuenta a la que pertenece el banco. Solo puede ser un grupo tipo cuenta cuyo tipo sea banco. Ver <a href="../../Maestros/LATAM-AccountTypeGroup/LATAM-AccountTypeGroup.md# tipo-de-cuenta">tipo en grupo tipo cuenta</a></p>
+<p><strong>Tipo</strong>:Code[20]</p>
 </blockquote>
 <h4 id="concepto-1">Concepto 1</h4>
 <blockquote>

@@ -90,13 +90,13 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#tipo-documento-pais">Tipo documento país</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#n-documento-pais">"N° documento país</a>
+    <li class="toctree-l4"><a class="reference internal" href="#n-documento-pais">N° documento país</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#inscripto-en-jurisdiccion">Inscripto en jurisdicción</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#tipo-documento-estado">Tipo documento estado</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#n-documento-estado">"N° documento estado</a>
+    <li class="toctree-l4"><a class="reference internal" href="#n-documento-estado">N° documento estado</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#grupo-de-cliente">Grupo de cliente</a>
     </li>
@@ -124,6 +124,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../LATAM-SalesOrder/">Ordenes de ventas</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../LATAM-CountriesRegion/">Paises/Regiones</a>
+                    </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Desarrollo</span></p>
                 <ul>
@@ -134,6 +136,8 @@
                 <li class="toctree-l2"><a class="reference internal" href="../../Desarrollo/Code-Units/LATAM-Document-Extension/">LATAM Document Extension</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../Desarrollo/Code-Units/LATAM-SalesPostSubscribers/">LATAM Sales Post Subscribers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Desarrollo/Code-Units/LATAM-PurchasePostSubscribers/">LATAM Purchase Post Subscribers</a>
                 </li>
     </ul>
                     </li>
@@ -205,22 +209,23 @@
 <blockquote>
 <h4 id="tipo-de-contribuyente">Tipo de contribuyente</h4>
 <blockquote>
-<p><strong>Descripción</strong>: </p>
-<p><strong>Tipo</strong>:Code</p>
+<p><strong>Descripción</strong>: 
+    ver <a href="../../Reglas/LATAM-Rules-TaxPayerType/">Comportamiento fijados por tipo de contribuyente</a></p>
+<p><strong>Tipo</strong>:Code[15]</p>
 </blockquote>
 <h4 id="pais-de-radicacion">País de radicación</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
     Id de país que indica donde esta radicado el cliente.</p>
-<p><strong>Tipo</strong>:Code</p>
+<p><strong>Tipo</strong>:Code[10]</p>
 </blockquote>
 <h4 id="tipo-documento-pais">Tipo documento país</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
     Id a tipo de documento. Solo pueden cargarse tipos de documentos que tenga el flag <a href="../../Maestros/LATAM-DocumentType/#tipo-documento-pais">tipo documento país</a> en <code>true</code></p>
-<p><strong>Tipo</strong>:Code</p>
+<p><strong>Tipo</strong>:Text[15]</p>
 </blockquote>
-<h4 id="n-documento-pais">"N° documento país</h4>
+<h4 id="n-documento-pais">N° documento país</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
     Número de documento del contribuyente. Si el tipo de documento tiene marcado <a href="../../Maestros/LATAM-DocumentType/#validar-mascara">Validar máscara</a> o <a href="../../Maestros/LATAM-DocumentType/#verifica-metodo">Verifica método</a>. Este valor debe ser validado.</p>
@@ -230,60 +235,61 @@
 <blockquote>
 <p><strong>Descripción</strong>: 
     Id <a href="../../Maestros/LATAM-State/">Estado</a> en que está inscripto.</p>
-<p><strong>Tipo</strong>:Code</p>
+<p><strong>Tipo</strong>:Code[10]</p>
 </blockquote>
 <h4 id="tipo-documento-estado">Tipo documento estado</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
     Id a tipo de documento. Solo pueden cargarse tipos de documentos que tenga el flag <a href="../../Maestros/LATAM-DocumentType/#tipo-documento-estado">tipo documento estado</a> en <code>true</code></p>
-<p><strong>Tipo</strong>:Code</p>
+<p><strong>Tipo</strong>:Text[15]</p>
 </blockquote>
-<h4 id="n-documento-estado">"N° documento estado</h4>
+<h4 id="n-documento-estado">N° documento estado</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
     Número de documento del contribuyente. Si el tipo de documento tiene marcado <a href="../../Maestros/LATAM-DocumentType/#validar-mascara">Validar máscara</a> o <a href="../../Maestros/LATAM-DocumentType/#verifica-metodo">Verifica método</a>. Este valor debe ser validado.</p>
+<p><strong>Tipo</strong>:Text[30]</p>
 </blockquote>
 <h4 id="grupo-de-cliente">Grupo de cliente</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
     Id. del <a href="../../Maestros/LATAM-AccountTypeGroup/">tipo en grupo tipo cuenta</a> a la que pertenece el cliente. Solo puede ser un grupo tipo cuenta cuyo tipo sea cliente. Ver <a href="../../Maestros/LATAM-AccountTypeGroup/#tipo-de-cuenta">tipo en grupo tipo cuenta</a></p>
-<p><strong>Tipo</strong>:Entero</p>
+<p><strong>Tipo</strong>:Code[20]</p>
 </blockquote>
 <h4 id="concepto-1">Concepto 1</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
     Campo de texto libre. Puede tener el significado que el usuario decida darle mediante la etiqueta definida en la <a href="../../LATAM-Setup/LATAM-Setup/#etiqueta-concepto-1">sección definido usuario cliente, concepto 1</a>. El valor que se ingrese en esa configuración determina el rótulo que va a tener en esta ventana.</p>
-<p><strong>Tipo</strong>:Texto(250)</p>
+<p><strong>Tipo</strong>:Text[250]</p>
 </blockquote>
 <h4 id="concepto-2">Concepto 2</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
     Mismo comportamiento que el campo concepto 1.</p>
-<p><strong>Tipo</strong>:Texto(250)</p>
+<p><strong>Tipo</strong>:Text[250]</p>
 </blockquote>
 <h4 id="concepto-3">Concepto 3</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
     Mismo comportamiento que el campo concepto 1.</p>
-<p><strong>Tipo</strong>:Texto(250)</p>
+<p><strong>Tipo</strong>:Text[250]</p>
 </blockquote>
 <h4 id="nota-1">Nota 1</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
     Mismo comportamiento que el campo concepto 1.</p>
-<p><strong>Tipo</strong>:Texto(250)</p>
+<p><strong>Tipo</strong>:Text[250]</p>
 </blockquote>
 <h4 id="nota-2">Nota 2</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
     Mismo comportamiento que el campo concepto 1.</p>
-<p><strong>Tipo</strong>:Texto(250)</p>
+<p><strong>Tipo</strong>:Text[250]</p>
 </blockquote>
 <h4 id="nota-3">Nota 3</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
     Mismo comportamiento que el campo concepto 1.</p>
-<p><strong>Tipo</strong>:Texto(250)</p>
+<p><strong>Tipo</strong>:Text[250]</p>
 </blockquote>
 </blockquote>
               
