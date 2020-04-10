@@ -18,11 +18,13 @@ nav:
         - Proveedor: Extensiones/LATAM-Vendor.md
         - Banco: Extensiones/LATAM-Bank.md
         - Ordenes de ventas: Extensiones/LATAM-SalesOrder.md
+        - Paises/Regiones: Extensiones/LATAM-CountriesRegion.md
     - Desarrollo:
         - Code Units:
             - LATAM SalesHeaderDocExt: Desarrollo/Code-Units/LATAM-SalesHeaderDocExt.md
             - LATAM Document Extension: Desarrollo/Code-Units/LATAM-Document-Extension.md
             - LATAM Sales Post Subscribers: Desarrollo/Code-Units/LATAM-SalesPostSubscribers.md
+            - LATAM Purchase Post Subscribers: Desarrollo/Code-Units/LATAM-PurchasePostSubscribers.md
         - Enums:
             - LATAM Document Extension Type: Desarrollo/Enums/LATAM-DocumentExtensionType.md
             - LATAM Entity Type: Desarrollo/Enums/LATAM-EntityType/LATAM-EntityType.md

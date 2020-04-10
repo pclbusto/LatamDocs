@@ -7,14 +7,52 @@ Extensión a la entidad de información de compañía de Business Central.
 
 >#### Tipo de contribuyente
 >>**Descripción**: 
-	
->>**Tipo**:Code
+ver [Comportamiento fijados por tipo de contribuyente](../Reglas/LATAM-Rules-TaxPayerType.md)
 
->#### Grupo tipo de cuenta
+>>**Tipo**:Code[15]
+
+
+>#### País de radicación
+
 >>**Descripción**: 
-	Id. del grupo de tipo cuenta a la que pertenece el cliente. Solo puede ser un grupo tipo cuenta cuyo tipo sea cliente. Ver [tipo en grupo tipo cuenta](../../Maestros/LATAM-AccountTypeGroup/LATAM-AccountTypeGroup.md# tipo-de-cuenta)
+	Id de país que indica donde esta radicado.
 	
->>**Tipo**:Entero
+>>**Tipo**:Code[10]
+
+>#### Tipo documento país
+
+>>**Descripción**: 
+	Id a tipo de documento. Solo pueden cargarse tipos de documentos que tenga el flag [tipo documento país](../Maestros/LATAM-DocumentType.md#tipo-documento-pais) en `true`
+	
+>>**Tipo**:Text[15]
+
+>#### N° documento país
+	
+>>**Descripción**: 
+	Número de documento del contribuyente. Si el tipo de documento tiene marcado [Validar máscara](../Maestros/LATAM-DocumentType.md#validar-mascara) o [Verifica método](../Maestros/LATAM-DocumentType.md#verifica-metodo). Este valor debe ser validado.
+	
+>>**Tipo**:Text[30]
+
+>#### Inscripto en jurisdicción
+
+>>**Descripción**: 
+	Id [Estado](../Maestros/LATAM-State.md) en que está inscripto.
+	
+>>**Tipo**:Code[10]
+
+>#### Tipo documento estado
+
+>>**Descripción**: 
+	Id a tipo de documento. Solo pueden cargarse tipos de documentos que tenga el flag [tipo documento estado](../Maestros/LATAM-DocumentType.md#tipo-documento-estado) en `true`
+	
+>>**Tipo**:Text[15]
+
+>#### N° documento estado
+	
+>>**Descripción**: 
+	Número de documento del contribuyente. Si el tipo de documento tiene marcado [Validar máscara](../Maestros/LATAM-DocumentType.md#validar-mascara) o [Verifica método](../Maestros/LATAM-DocumentType.md#verifica-metodo). Este valor debe ser validado.
+	
+>>**Tipo**:Text[30]
 
 >#### Concepto 1
 >>**Descripción**: 
