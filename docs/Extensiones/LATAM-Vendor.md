@@ -6,7 +6,8 @@ Extensión a los proveedor de Business Central.
 ### Campos
 
 >#### Tipo de contribuyente
->>**Descripción**: 
+>>**Descripción**:
+	Id a [Tipo Contribuyente](../Maestros/LATAM-TaxPayerType.md). El tipifica la entidad y fija ciertos comportamientos definidos en el maestro.
 	ver [Comportamiento fijados por tipo de contribuyente](../Reglas/LATAM-Rules-TaxPayerType.md)
 
 >>**Tipo**:Code[15]
@@ -15,20 +16,24 @@ Extensión a los proveedor de Business Central.
 
 >>**Descripción**: 
 	Id de país que indica donde esta radicado el proveedor.
+	ver [Comportamiento fijados por tipo de contribuyente](../Reglas/LATAM-Rules-TaxPayerType.md)
+
 	
 >>**Tipo**:Code[10]
 
 >#### Tipo documento país
 
 >>**Descripción**: 
-	Id a tipo de documento. Solo pueden cargarse tipos de documentos que tenga el flag [tipo documento país](../Maestros/LATAM-DocumentType.md#tipo-documento-pais) en `true`
+	Id a tipo de documento. Solo pueden cargarse tipos de documentos que tenga el flag [tipo documento país](../Maestros/LATAM-DocumentType.md#tipo-documento-pais) en `true`. ver [Comportamiento fijados por tipo de contribuyente](../Reglas/LATAM-Rules-TaxPayerType.md)
+
 	
 >>**Tipo**:Text[15]
 
 >#### N° documento país
 	
 >>**Descripción**: 
-	Número de documento del contribuyente. Si el tipo de documento tiene marcado [Validar máscara](../Maestros/LATAM-DocumentType.md#validar-mascara) o [Verifica método](../Maestros/LATAM-DocumentType.md#verifica-metodo). Este valor debe ser validado.
+	Número de documento del contribuyente. Si el tipo de documento tiene marcado [Validar máscara](../Maestros/LATAM-DocumentType.md#validar-mascara) o [Verifica método](../Maestros/LATAM-DocumentType.md#verifica-metodo). Este valor debe ser validado.ver [Comportamiento fijados por tipo de contribuyente](../Reglas/LATAM-Rules-TaxPayerType.md)
+
 	
 >>**Tipo**:Text[30]
 
@@ -36,20 +41,23 @@ Extensión a los proveedor de Business Central.
 
 >>**Descripción**: 
 	Id [Estado](../Maestros/LATAM-State.md) en que está inscripto.
-	
+	ver [Comportamiento fijados por tipo de contribuyente](../Reglas/LATAM-Rules-TaxPayerType.md)
+
 >>**Tipo**:Code[10]
 
 >#### Tipo documento estado
 
 >>**Descripción**: 
-	Id a tipo de documento. Solo pueden cargarse tipos de documentos que tenga el flag [tipo documento estado](../Maestros/LATAM-DocumentType.md#tipo-documento-estado) en `true`
+	Id a tipo de documento. Solo pueden cargarse tipos de documentos que tenga el flag [tipo documento estado](../Maestros/LATAM-DocumentType.md#tipo-documento-estado) en `true`. ver [Comportamiento fijados por tipo de contribuyente](../Reglas/LATAM-Rules-TaxPayerType.md)
+
 	
 >>**Tipo**:Text[15]
 
 >#### N° documento estado
 	
 >>**Descripción**: 
-	Número de documento del contribuyente. Si el tipo de documento tiene marcado [Validar máscara](../Maestros/LATAM-DocumentType.md#validar-mascara) o [Verifica método](../Maestros/LATAM-DocumentType.md#verifica-metodo). Este valor debe ser validado.
+	Número de documento del contribuyente. Si el tipo de documento tiene marcado [Validar máscara](../Maestros/LATAM-DocumentType.md#validar-mascara) o [Verifica método](../Maestros/LATAM-DocumentType.md#verifica-metodo). Este valor debe ser validado. ver [Comportamiento fijados por tipo de contribuyente](../Reglas/LATAM-Rules-TaxPayerType.md)
+
 	
 >>**Tipo**:Text[30]
 	

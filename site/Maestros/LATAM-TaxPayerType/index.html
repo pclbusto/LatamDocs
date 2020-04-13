@@ -77,7 +77,7 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#descripcion_1">Descripción.</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#valida-codigo-de-autorizacion">Valida código de autorización</a>
+    <li class="toctree-l4"><a class="reference internal" href="#validar-codigo-autorizacion-proveedor">Validar código autorización proveedor</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#contribuyente-exterior">Contribuyente exterior</a>
     </li>
@@ -85,11 +85,11 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#pais-de-radicacion-requerido">País de radicación requerido</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#jurisdiccion-requerida">Jurisdicción requerida</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#documento-pais-requerido">Documento país requerido</a>
+    </li>
     <li class="toctree-l4"><a class="reference internal" href="#documento-estado-requerido">Documento estado requerido</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#juridisccion-requerida">Juridiscción requerida</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#documento-estado-requerido_1">Documento estado requerido</a>
     </li>
         </ul>
     </li>
@@ -106,6 +106,8 @@
         </ul>
     </li>
         </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#reglas-en-general">Reglas en general:</a>
     </li>
     </ul>
                     </li>
@@ -128,6 +130,8 @@
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../../Extensiones/LATAM-SalesOrder/">Ordenes de ventas</a>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Extensiones/LATAM-CountriesRegion/">Paises/Regiones</a>
+                    </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Desarrollo</span></p>
                 <ul>
@@ -138,6 +142,8 @@
                 <li class="toctree-l2"><a class="reference internal" href="../../Desarrollo/Code-Units/LATAM-Document-Extension/">LATAM Document Extension</a>
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../Desarrollo/Code-Units/LATAM-SalesPostSubscribers/">LATAM Sales Post Subscribers</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Desarrollo/Code-Units/LATAM-PurchasePostSubscribers/">LATAM Purchase Post Subscribers</a>
                 </li>
     </ul>
                     </li>
@@ -204,7 +210,7 @@
                 <h1 id="latam-tax-payer-type">LATAM Tax Payer Type</h1>
 <p><img alt="Ventana de configuración de tipo de contribuyente" src="../../Imagenes/LATAM-TaxPayerType-MainPage.PNG" /></p>
 <h2 id="descripcion">Descripción</h2>
-<p>Ventana de configuración de tipo de contribuyente.</p>
+<p>De acuerdo a nuestra legislación, los contribuyentes pueden adoptar diferentes condiciones impositivas frente al fisco. Por ejemplo, Responsable Inscripto, Exento, Sujeto del exterior, etc.  Es por ello que se requiere un maestro, donde se puedan dar de alta todos los tipos de documento válidos para identificar a todos los sujetos con los que realiza operaciones la compañía (clientes, proveedores, empleados, e incluso a la propia compañía).</p>
 <h2 id="seccion-general">Sección general</h2>
 <p><img alt="Ventana de configuración de tipo de contribuyente" src="../../Imagenes/LATAM-TaxPayerType-Seccion-General.PNG" /></p>
 <h3 id="campos">Campos</h3>
@@ -221,23 +227,25 @@ Identificador único de tipo contribuyente.</p>
 Breve descripción.</p>
 <p><strong>Tipo</strong>:Text</p>
 </blockquote>
-<h4 id="valida-codigo-de-autorizacion">Valida código de autorización</h4>
+<h4 id="validar-codigo-autorizacion-proveedor">Validar código autorización proveedor</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
-Solo tiene validez si esta clase de contribuyente se usa con un proveedor. Este flag indica que los documentos de este proveedor van a requerir un CA al momento de ser cargados.</p>
+Solo tiene validez si esta clase de contribuyente se usa con un proveedor. Este flag indica que los documentos de este proveedor (factura, notas de crédito) van a requerir un CA al momento de ser cargados.</p>
 <p><strong>Tipo</strong>:Boolean</p>
 </blockquote>
 <h4 id="contribuyente-exterior">Contribuyente exterior</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
-Indica que es un contribuyente del exterior. Este flag impacta en los documentos a los cuales tiene acceso en la <a href="#seccion-tipo-documento-contribuyente">sección tipo documento contribuyente</a>. Si este flag esta en <code>true</code> entonces el lookup solo mostrará documentos que tengan el flag <a href="../LATAM-DocumentType/#tipo-documento-exterior">Tipo documento exterior</a> en <code>true</code>.</p>
+Indica que es un contribuyente del exterior. Este flag impacta en los documentos a los cuales tiene acceso en la <a href="#seccion-tipo-documento-contribuyente">sección tipo documento contribuyente</a>. Si este flag esta en <code>true</code> entonces el lookup solo mostrará documentos que tengan el flag <a href="../LATAM-DocumentType/#tipo-documento-exterior">Tipo documento exterior</a> en <code>true</code>.<br>
+Por ejemplo puede darse de alta PERSONA FISICA DEL EXTERIOR, PERSONA JURIDICA DEL EXTERIOR, y en ambos debería el usuario marcar la opción Exterior (SI / NO). 
+El campo  Exterior va a ser utilizado en el maestro país para filtrar que opciones de Tipo Contribuyente se muestran o admiten al seleccionar para dicho maestro.   Si el país está configurado como Exterior = SI solo se mostraran en el look-up los Tipo Contribuyente que tienen configurado Exterior = Si.   Y si el país está configurado como Exterior = No solo se mostraran en el look-up los Tipo Contribuyente que tienen configurado Exterior = No. </p>
 <p><strong>Tipo</strong>:Boolean</p>
 </blockquote>
 <h4 id="contribuyente-interno">Contribuyente interno</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
-FALTA
-<strong>Tipo</strong>:Boolean</p>
+permite configurar un Tipo de Contribuyente Interno, que no represente un cliente o proveedor real. Todas las transacciones realizadas por proveedores o clientes que posean este Tipo  en su maestro,  no deberían informarse en lo archivos magnéticos y Libros de IVA.</p>
+<p><strong>Tipo</strong>:Boolean</p>
 </blockquote>
 <h4 id="pais-de-radicacion-requerido">País de radicación requerido</h4>
 <blockquote>
@@ -245,37 +253,104 @@ FALTA
 Para toda entidad que use una clase de contribuyente que tenga este flag en <code>true</code> hace que el campo país de radicación sea requerido. Por ejemplo en <a href="../../Extensiones/LATAM-Customer/#pais-de-radicacion">país de radicación</a> del cliente.</p>
 <p><strong>Tipo</strong>:Boolean</p>
 </blockquote>
+<h4 id="jurisdiccion-requerida">Jurisdicción requerida</h4>
+<blockquote>
+<p><strong>Descripción</strong>: 
+Para toda entidad que use una clase de contribuyente que tenga este flag en <code>true</code> hace que el Inscripto en jurisdicción sea requerido. Por ejemplo en <a href="../../Extensiones/LATAM-Customer/#inscripto-en-jurisdiccion">Inscripto en jurisdicción</a> del cliente.
+<strong>Tipo</strong>:Boolean</p>
+</blockquote>
+<h4 id="documento-pais-requerido">Documento país requerido</h4>
+<blockquote>
+<p><strong>Descripción</strong>: 
+Para toda entidad que use una clase de contribuyente que tenga este flag en <code>true</code> hace que los campos N° documento país y Tipo documento país sean requerido. Por ejemplo en <a href="../../Extensiones/LATAM-Customer/#tipo-documento-pais">la extension del cliente</a>.</p>
+<p><strong>Tipo</strong>:Boolean</p>
+</blockquote>
 <h4 id="documento-estado-requerido">Documento estado requerido</h4>
 <blockquote>
 <p><strong>Descripción</strong>: 
-Para toda entidad que use una clase de contribuyente que tenga este flag en <code>true</code> hace que el campo inscripto en jurisdicción sea requerido. Por ejemplo en <a href="../../Extensiones/LATAM-Customer/#pais-de-radicacion">inscripto en jurisdicción</a> del cliente.</p>
-<p><strong>Tipo</strong>:Boolean</p>
-</blockquote>
-<h4 id="juridisccion-requerida">Juridiscción requerida</h4>
-<blockquote>
-<p><strong>Descripción</strong>: </p>
-<p><strong>Tipo</strong>:Boolean</p>
-</blockquote>
-<h4 id="documento-estado-requerido_1">Documento estado requerido</h4>
-<blockquote>
-<p><strong>Descripción</strong>: </p>
+Para toda entidad que use una clase de contribuyente que tenga este flag en <code>true</code> hace que los campos N° documento estado y Tipo documento estado sean requerido. Por ejemplo en <a href="../../Extensiones/LATAM-Customer/#tipo-documento-estado">la extension del cliente</a>.</p>
 <p><strong>Tipo</strong>:Boolean</p>
 </blockquote>
 </blockquote>
 <h2 id="seccion-tipo-documento-contribuyente">Sección tipo documento contribuyente</h2>
+<p><img alt="Ventana de configuración de tipo de contribuyente" src="../../Imagenes/LATAM-TaxPayerType-Seccion-TiposDocumentoContribuyentes.PNG" />
+Se cargan los tipos de documentos que va a tener acceso el tipo de contribuyente que se esta dando de alta.</p>
 <h3 id="campos_1">Campos</h3>
 <blockquote>
 <h4 id="tipo-documento">Tipo documento</h4>
 <blockquote>
-<p><strong>Descripción</strong>: </p>
+<p><strong>Descripción</strong>: 
+    <a href="../LATAM-DocumentType/">Id de tipo de documento</a></p>
 <p><strong>Tipo</strong>:Code</p>
 </blockquote>
 <h4 id="descripcion_2">Descripción</h4>
 <blockquote>
-<p><strong>Descripción</strong>: </p>
+<p><strong>Descripción</strong>: 
+    descripción del tipo de documento.</p>
 <p><strong>Tipo</strong>:text</p>
 </blockquote>
 </blockquote>
+<h2 id="reglas-en-general">Reglas en general:</h2>
+<p>Si el Tipo Contribuyente no es Interno y no es del Exterior entonces: </p>
+<ul>
+<li>
+<p>País de radicación obligatorio debe ser <code>true</code>. Independientemente de esto, deberá poder ser configurable a nivel de usuario. </p>
+</li>
+<li>
+<p>Jurisdicción inscripta obligatorio debe ser <code>true</code>. Independientemente de esto, deberá poder ser configurable a nivel de usuario. </p>
+</li>
+<li>
+<p>Número identificación país obligatorio debe ser <code>true</code>. Independientemente de esto, deberá poder ser configurable a nivel de usuario. </p>
+</li>
+<li>
+<p>Número identificación estado obligatorio debe ser <code>true</code>. Independientemente de esto, deberá poder ser configurable a nivel de usuario. </p>
+</li>
+<li>
+<p>Valida CAI Proveedor puede ser <code>true</code> o <code>false</code> </p>
+</li>
+</ul>
+<p>Si el Tipo contribuyente es Interno entonces: </p>
+<ul>
+<li>
+<p>Exterior debe ser <code>false</code></p>
+</li>
+<li>
+<p>País de radicación obligatorio   debe ser <code>false</code>. Independientemente de esto, deberá poder ser configurable a nivel de usuario. </p>
+</li>
+<li>
+<p>Jurisdicción inscripta obligatorio debe ser <code>false</code>. Independientemente de esto, deberá poder ser configurable a nivel de usuario. </p>
+</li>
+<li>
+<p>Número identificación país obligatorio debe ser <code>false</code>. Independientemente de esto, deberá poder ser configurable a nivel de usuario. </p>
+</li>
+<li>
+<p>Número identificación estado obligatorio debe ser <code>false</code>. Independientemente de esto, deberá poder ser configurable a nivel de usuario. </p>
+</li>
+<li>
+<p>Valida CAI Proveedor debe ser <code>false</code> </p>
+</li>
+</ul>
+<p>Si el Tipo contribuyente es del exterior entonces: </p>
+<ul>
+<li>
+<p>Interno debe ser <code>false</code> </p>
+</li>
+<li>
+<p>País de radicación obligatorio   debe ser <code>true</code>. Independientemente de esto, deberá poder ser configurable a nivel de usuario. </p>
+</li>
+<li>
+<p>Jurisdicción inscripta obligatorio puede ser <code>true</code> o <code>false</code>. Independientemente de esto, deberá poder ser configurable a nivel de usuario. </p>
+</li>
+<li>
+<p>Número identificación país obligatorio puede ser <code>true</code> o <code>false</code>. Independientemente de esto, deberá poder ser configurable a nivel de usuario. </p>
+</li>
+<li>
+<p>Número identificación estado obligatorio puede ser <code>true</code> o <code>false</code>   (Si es <code>true</code> debe ser <code>true</code> el de País). Independientemente de esto, deberá poder ser configurable a nivel de usuario. </p>
+</li>
+<li>
+<p>Valida CAI Proveedor debe ser <code>false</code> </p>
+</li>
+</ul>
               
             </div>
           </div>

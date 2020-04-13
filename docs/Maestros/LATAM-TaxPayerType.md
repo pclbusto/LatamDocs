@@ -1,4 +1,4 @@
-# LATAM Tax Payer Type
+# LATAM Tipo contribuyente
 ![Ventana de configuración de tipo de contribuyente](../Imagenes/LATAM-TaxPayerType-MainPage.PNG)
 ## Descripción
 De acuerdo a nuestra legislación, los contribuyentes pueden adoptar diferentes condiciones impositivas frente al fisco. Por ejemplo, Responsable Inscripto, Exento, Sujeto del exterior, etc.  Es por ello que se requiere un maestro, donde se puedan dar de alta todos los tipos de documento válidos para identificar a todos los sujetos con los que realiza operaciones la compañía (clientes, proveedores, empleados, e incluso a la propia compañía).
