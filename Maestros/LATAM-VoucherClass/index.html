@@ -87,7 +87,7 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#separador">Separador</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#copiar-numero-de-documento">copiar número de documento</a>
+    <li class="toctree-l4"><a class="reference internal" href="#copiar-numero-de-documento">Copiar número de documento</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#requiere-ca">Requiere CA</a>
     </li>
@@ -252,20 +252,22 @@
                 <h1 id="latam-clase-de-comprobante">LATAM Clase de comprobante</h1>
 <p><img alt="Ventana de configuración" src="../../Imagenes/LATAM-VoucherClass-MainPage.PNG" /></p>
 <h2 id="descripcion">Descripción</h2>
-<p>Maestro de clase de comprobante. Esta entidad es como un talonario, donde se configuran los campos que va a tener dicho talonario.  </p>
+<p>Se debe contar con un maestro que permita dar de alta los diferentes comprobantes con los que puede trabajar la compañía en relación con terceros. Ejemplo: Factura, Nota de Débito, etc. <br>
+Además se utilizará para cargar comprobantes representantes de valores como ser Cheques de Terceros al Día y comprobantes representantes de transacciones de Tesorería como  Recibo u Orden de Pago. <br>
+Esta venta permite configurar el comprobante así como el comportamiento de varios de sus campos y como se va a comportar los campos relacionados a la generacion del numero de comprobante.</p>
 <h2 id="seccion-general">Sección General</h2>
 <h3 id="campos">Campos</h3>
 <hr />
 <blockquote>
 <h4 id="no">No.</h4>
 <blockquote>
-<p><strong>Descripción</strong>: </p>
+<p><strong>Descripción</strong>: Este campo deberá ser completado manualmente por el usuario, identificando con un código al comprobante que se esté dando de alta. </p>
 <p><strong>Tipo</strong>:Code[15]</p>
 </blockquote>
 <h4 id="descripcion_1">Descripción</h4>
 <blockquote>
-<p><strong>Descripción</strong>: </p>
-<p><strong>Tipo</strong>:Code[30]</p>
+<p><strong>Descripción</strong>: Este campo deberá ser completado manualmente por el usuario, ampliando con un detalle el código de comprobante que se esté dando de alta. </p>
+<p><strong>Tipo</strong>:Text[100]</p>
 </blockquote>
 <h4 id="descripcion-legal">Descripción Legal</h4>
 <blockquote>
@@ -274,23 +276,33 @@
 </blockquote>
 <h4 id="tipo-clase-comprobantes">Tipo Clase Comprobantes</h4>
 <blockquote>
-<p><strong>Descripción</strong>: id tipo clase de comprobante. Indica que comportamiento va a tener este comprobante, el cual esta supeditado a lo configurado en el <a href="../LATAM-VoucherClassType/">tipo clase comprobante</a></p>
-<p><strong>Tipo</strong>:Code[5]</p>
+<p><strong>Descripción</strong>: id tipo clase de comprobante. Indica que comportamiento va a tener este comprobante, el cual esta supeditado a lo configurado en el <a href="../LATAM-VoucherClassType/">tipo clase comprobante</a>.</p>
+<p><strong>Tipo</strong>:Code[15]</p>
 </blockquote>
 <h4 id="letra">Letra</h4>
 <blockquote>
-<p><strong>Descripción</strong>: Letra que tiene asignada el comprobante. Esto permite identificar de otra forma los comprobantes. Por ejemplo Factura, pueden haber facturas 'A', 'B', 'C'. Este campo sirve para identificar esta tipificación.</p>
-<p><strong>Tipo</strong>:Code[5]</p>
+<p><strong>Descripción</strong>: El usuario deberá seleccionar de un campo look-up las letras de comprobante disponibles del maestro de <a href="../LATAM-VoucherClassLetter/">Letra Comprobante</a>, la que identifica al código de comprobante que se está configurando (A, B, E, etc.). 
+NOTA: A  efectos de la configuración de los comprobantes con Tipo ‘medio de Cobro/Pago, se creará una letra ‘Sin letra’ que no poseerá prefijo. </p>
+<p><strong>Tipo</strong>:Code[15]</p>
 </blockquote>
 <h4 id="prefijo">Prefijo</h4>
 <blockquote>
-<p><strong>Descripción</strong>: Cadena de caracteres que forma parte del cálculo del <a href="../../LATAM-DocumentExtension/#numero-de-documento-completo">número de comprobante completo</a>. Este prefijo es formado por el <a href="../LATAM-VoucherClassType/#prefijo">prefijo del tipo de comprobante</a> y el <a href="../LATAM-VoucherClassLetter/#prefijo">prefijo de la letra</a></p>
-<p><strong>Tipo</strong>:Code[5]</p>
+<p><strong>Descripción</strong>: Cadena de caracteres que forma parte del cálculo del <a href="../../LATAM-DocumentExtension/#numero-de-documento-completo">número de comprobante completo</a>. Este prefijo es formado por el <a href="../LATAM-VoucherClassType/#prefijo">prefijo del tipo de comprobante</a> y el <a href="../LATAM-VoucherClassLetter/#prefijo">prefijo de la letra</a>. 
+Este campo, debe poder ser visualizado pero no modificable por el usuario. Sí los prefijos de Letra de comprobante y/o Tipo de comprobante, se encontraran vacíos, debería completarse en este campo con los espacios en blanco. </p>
+</blockquote>
+</blockquote>
+<p>Ejemplo:   </p>
+<p>Factura A -&gt;  FCA </p>
+<p>Nota de Crédito E  -&gt; NCE </p>
+<p>Documento de importación -&gt; IM  </p>
+<blockquote>
+<blockquote>
+<p><strong>Tipo</strong>:Text[5]</p>
 </blockquote>
 <h4 id="inactivo">Inactivo</h4>
 <blockquote>
-<p><strong>Descripción</strong>: </p>
-<p><strong>Tipo</strong>:Code[5]</p>
+<p><strong>Descripción</strong>: Campo check box. Permitirá inactivar un comprobante que no se utilice más. Si el comprobante se encuentra utilizado en alguna transacción no se podrá eliminar, por lo que este tilde permitirá que no sea seleccionado. </p>
+<p><strong>Tipo</strong>:Boolean</p>
 </blockquote>
 <h4 id="forzar">Forzar ...</h4>
 <blockquote>
@@ -307,9 +319,28 @@
 <p><strong>Descripción</strong>: Caracter que permite introducir un separador al crear el <a href="../../LATAM-DocumentExtension/#numero-de-documento-completo">número de comprobante completo en la Extensión de documentos</a>. por ejemplo '-'.</p>
 <p><strong>Tipo</strong>:Code[5]</p>
 </blockquote>
-<h4 id="copiar-numero-de-documento">copiar número de documento</h4>
+<h4 id="copiar-numero-de-documento">Copiar número de documento</h4>
 <blockquote>
-<p><strong>Descripción</strong>: </p>
+<p><strong>Descripción</strong>: se utilizará para determinar si el Número de Documento completo será replicado en el campo nativo ‘Número de Documento’, en ‘Factura’  o bien en ambos. Siempre debe haber una opción seleccionada. Estará compuesto por las siguientes opciones: </p>
+</blockquote>
+</blockquote>
+<ul>
+<li>
+<p>Ninguno: será guardado solamente en la tabla de Extensión de las transacciones sin replicar en ningún campo nativo de AX </p>
+</li>
+<li>
+<p>Número de Documento: si se encuentra marcada esta opción,  el número de Documento completo se guardará en el campo Nativo ‘Número de Documento’. </p>
+</li>
+<li>
+<p>Factura: si se encuentra marcada esta opción,  el número de Documento completo se guardará en el campo Nativo ‘Factura’. </p>
+</li>
+<li>
+<p>Ambos: se replicará en el campo ‘Numero de Documento’ y ‘Factura’ al mismo tiempo. </p>
+</li>
+</ul>
+<p>Las opciones  en donde se encuentran ubicados estos campos varían según la transacción. En las EF de Tipificación de Transacciones, se indicará la ubicación exacta de cada campo. </p>
+<blockquote>
+<blockquote>
 <p><strong>Tipo</strong>:Code[5]</p>
 </blockquote>
 <h4 id="requiere-ca">Requiere CA</h4>
@@ -396,7 +427,7 @@ Permite administrar el comportamiento de los campos en el grupo <a href="../../L
 <h2 id="seccion-mascara-documento">Sección Máscara Documento</h2>
 <p><img alt="Ventana de configuración" src="../../Imagenes/LATAM-VoucherClass-DocumentMask.PNG" /></p>
 <h2 id="descripcion_3">Descripción</h2>
-<p>Configuración de máscaras para el punto de venta y el comprobante. Cuando se usa el comprobante en la ventana <a href="../../LATAM-DocumentExtension/">Extensión de Documentos</a>. Se disparan una series de comportamientos referidos al número de comprobante y punto de venta. Esta sección se sub divide a su vez por las entidades mensionadas anteriormente:</p>
+<p>Configuración de máscaras para el punto de venta y el comprobante. Cuando se usa el comprobante en la ventana <a href="../../LATAM-DocumentExtension/">Extensión de Documentos</a>. Se disparan una series de comportamientos referidos al número de comprobante y punto de venta. Esta sección se sub divide a su vez por las entidades mencionadas anteriormente:</p>
 <ul>
 <li>Cuenta GL</li>
 <li>Cliente</li>
@@ -433,6 +464,9 @@ Permite administrar el comportamiento de los campos en el grupo <a href="../../L
 </blockquote>
 </blockquote>
 <hr />
+<p>PENDIENTE MCP
+medio-de-cobropago
+Si el Tipo de Comprobante  posee tildada la opción ‘Medio de Cobro/Pago’ el tab ‘Documentos de AX’, en el Maestro de Tipo de Documento;  los Tab ‘Medio de Cobro/Pago’, ‘Nombres de Diario’, se encontrarán habilitadas, de lo contrario no se visualizarán. </p>
               
             </div>
           </div>
