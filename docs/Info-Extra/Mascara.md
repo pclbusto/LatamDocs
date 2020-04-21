@@ -11,8 +11,11 @@ Símbolos permitidos en la configuración de Mascaras.
 |Y	|Alfanumérico variable. Este carácter es un carácter comodín. El usuario al ingresar una cadena puede omitir ingresar números o letras en las posiciones donde están las Y.<br>Solo se pueden ingresar al principio de la cadena que representa la máscara. No se puede armar una máscara  de solo Y.  A la derecha de las Y debe haber al  menos una X, A o 9.<br>Este carácter no representa un espacio en blanco representa un vacío.|YYXX<br>YXX9<br>YYY9<br>Y9X9|	1W, 11R,RR71,1_TT(error)<br>RR1,TG8,GF1,RR11,1111<br>1,OIU1,T5<br>1F1,R1R1,4F6| |
 |A|	Solo letras. No es de longitud variable.|	AA|FG||	  
 ||	|	A|F||	 
-||	|	AAA|GYH||	 
-|0|	Carácter numérico  variable. Este carácter es un carácter comodín. El usuario al ingresar una cadena puede omitir ingresar números en las posiciones donde están los 0.<br>No se puede armar una máscara  de solo 0.  A la derecha de los 0 debe haber al menos una X, A o 9.|000X|F,1G,546T|
+||	|	AAA|GYH||	
+|9| Carácter numérico fijo. cada **9** implica un caracter numérico en el documento que use esta mascara|99|15|
+|9||999|195|
+|9||9999|111|error falta un caracter|
+|0|	Carácter numérico variable. Este carácter es un carácter comodín. El usuario al ingresar una cadena puede omitir ingresar números en las posiciones donde están los 0.<br>No se puede armar una máscara  de solo 0.  A la derecha de los 0 debe haber al menos una X, A o 9.|000X|F,1G,546T|
 |||009|1,5,6,123,541,125||
 |||0AX9|1T00, T00, TT1||
 |-|Representa un -|XX-XX|TR-EW||
@@ -21,7 +24,7 @@ Símbolos permitidos en la configuración de Mascaras.
 |||009|34,67,886|34,67,886|
 |||099X|123T,5436,99C|123T,5436,99C|
 |||0X9AAA|T8ERT,765EWR|T8ERT,765EWR|
-|@|Indica que la modificación que sufra la cadena de entrada por autocompletado será retornado. Solo puede ir seguido de 0. En el caso de usar el símbolo Y va a dar error.|@YYXX esto es incorrecto||
+|@|Indica que la modificación que sufra la cadena de entrada por auto completado será retornado. Solo puede ir seguido de 0. En el caso de usar el símbolo Y va a dar error. No forma parte de la longitud de la mascara este caracter|@YYXX esto es incorrecto||
 |||@009|3,45,234|003,045,234|
 |||@099X|3C,45F,123F|Error, 045F,123F|
 |||@0X9AAA|44HHH, R4TTT|044HHH,0R4TTT|

@@ -67,12 +67,14 @@ Para toda entidad que use una clase de contribuyente que tenga este flag en ``tr
 ## Sección tipo documento contribuyente
 ![Ventana de configuración de tipo de contribuyente](../Imagenes/LATAM-TaxPayerType-Seccion-TiposDocumentoContribuyentes.PNG)
 Se cargan los tipos de documentos que va a tener acceso el tipo de contribuyente que se esta dando de alta.
+Se requiere que al menos un tipo de documento con el que se identifica al tipo de contribuyente que se esté dando de alta o modificando.  No obstante un Tipo de Contribuyente puede aceptar más de un Tipo de Documento. 
+
 ### Campos
 >#### Tipo documento
 >>**Descripción**: 
-	[Id de tipo de documento](../Maestros/LATAM-DocumentType.md)
+	[Id de tipo de documento](../Maestros/LATAM-DocumentType.md). Los documentos cargados aca, deben respetar el check de configuración [Contribuyente exterior](#contribuyente-exterior). Si es del exterior traer documentos del exterior y de no ser del exterior traer los que no son del exterior.
 	
->>**Tipo**:Code
+>>**Tipo**:Code[15]
 >#### Descripción
 >>**Descripción**: 
 	descripción del tipo de documento.
