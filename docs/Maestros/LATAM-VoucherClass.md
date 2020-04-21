@@ -4,7 +4,7 @@
 ## Descripción
 Se debe contar con un maestro que permita dar de alta los diferentes comprobantes con los que puede trabajar la compañía en relación con terceros. Ejemplo: Factura, Nota de Débito, etc. <br>
 Además se utilizará para cargar comprobantes representantes de valores como ser Cheques de Terceros al Día y comprobantes representantes de transacciones de Tesorería como  Recibo u Orden de Pago. <br>
-Esta venta permite configurar el comprobante así como el comportamiento de varios de sus campos y como se va a comportar los campos relacionados a la generacion del numero de comprobante.
+Esta venta permite configurar el comprobante así como el comportamiento de varios de sus campos y como se va a comportar los campos relacionados a la generación del numero de comprobante.
 
 ## Sección General
 ### Campos
@@ -39,13 +39,10 @@ NOTA: A  efectos de la configuración de los comprobantes con Tipo ‘medio de C
 >>**Descripción**: Cadena de caracteres que forma parte del cálculo del [número de comprobante completo](../LATAM-DocumentExtension.md#numero-de-documento-completo). Este prefijo es formado por el [prefijo del tipo de comprobante](LATAM-VoucherClassType.md#prefijo) y el [prefijo de la letra](../Maestros/LATAM-VoucherClassLetter.md#prefijo). 
 Este campo, debe poder ser visualizado pero no modificable por el usuario. Sí los prefijos de Letra de comprobante y/o Tipo de comprobante, se encontraran vacíos, debería completarse en este campo con los espacios en blanco. 
 
-Ejemplo:   
-
-Factura A ->  FCA 
-
-Nota de Crédito E  -> NCE 
-
-Documento de importación -> IM  
+>>Ejemplo:   
+Factura A ->  FCA<br>
+Nota de Crédito E  -> NCE <br>
+Documento de importación -> IM  <br>
 
 	
 >>**Tipo**:Text[5]
@@ -88,14 +85,16 @@ Las opciones  en donde se encuentran ubicados estos campos varían según la tra
 >>**Tipo**:Code[5]
 
 >#### Requiere CA
->>**Descripción**: 
+>>**Descripción**:  indica cuándo la carga de número de CAI/CAE se encuentra habilitada. En caso de no estar tildada  esta opción, los campos CAI/CAE y Fecha de Vencimiento en la solapa LA de los datos adicionales de Transacciones NO se deberá visualizar. 
+
+Para más información consultar las EF de Tipificación de Transacciones. 
 	
->>**Tipo**:Code[5]
+>>**Tipo**:Boolean
 
 >#### Requiere código de control
 >>**Descripción**: 
 	
->>**Tipo**:Code[5]
+>>**Tipo**:Boolean
 
 >#### Tipo de código de control
 >>**Descripción**: 
@@ -103,19 +102,34 @@ Las opciones  en donde se encuentran ubicados estos campos varían según la tra
 >>**Tipo**:Code[5]
 
 >#### Rótulo de concepto 1
->>**Descripción**: 
+>>**Descripción**: Los conceptos serán campos alfanuméricos que permitirán Guardar Información al momento de la carga de los Comprobantes. Su funcionamiento es igual que un definido de usuario. este campo define la etiqueta que usará. En la transacción, estos campos deberán visualizarse con  la etiqueta configurada y a su vez, deberán permitir el ingreso de un cierto valor. 
 	
->>**Tipo**:Code[5]
+>>**Tipo**:Text[100]
 
 >#### Rótulo de concepto 2
->>**Descripción**: 
+>>**Descripción**: Los conceptos serán campos alfanuméricos que permitirán Guardar Información al momento de la carga de los Comprobantes. Su funcionamiento es igual que un definido de usuario. este campo define la etiqueta que usará. En la transacción, estos campos deberán visualizarse con  la etiqueta configurada y a su vez, deberán permitir el ingreso de un cierto valor. 
 	
->>**Tipo**:Code[5]
+>>**Tipo**:Text[100]
 
 >#### Rótulo de concepto 3
->>**Descripción**: 
+>>**Descripción**: Los conceptos serán campos alfanuméricos que permitirán Guardar Información al momento de la carga de los Comprobantes. Su funcionamiento es igual que un definido de usuario. este campo define la etiqueta que usará. En la transacción, estos campos deberán visualizarse con  la etiqueta configurada y a su vez, deberán permitir el ingreso de un cierto valor. 
 	
->>**Tipo**:Code[5]
+>>**Tipo**:Text[100]
+
+>#### Nota 1
+>>**Descripción**: Permitirá agregar información relacionada con el comprobante. No replicará en las ventanas transaccionales. 
+	
+>>**Tipo**:Text[250]
+
+>#### Nota 2
+>>**Descripción**: Permitirá agregar información relacionada con el comprobante. No replicará en las ventanas transaccionales. 
+	
+>>**Tipo**:Text[250]
+
+>#### Nota 3
+>>**Descripción**: Permitirá agregar información relacionada con el comprobante. No replicará en las ventanas transaccionales. 
+	
+>>**Tipo**:Text[250]
 
 >#### Reporte
 >>**Descripción**: 
@@ -137,10 +151,12 @@ Si este campo esta marcado, cambia el comportamiento a requerido de los campos e
 >>**Descripción**: 
 	
 >>**Tipo**:Code[5]
+
 ***
+
 ## Sección Datos Adicionales
 ![Ventana de configuración](../../Imagenes/LATAM-VoucherClass-AdditionalData.PNG)
-## Descripción
+### Descripción
 Configuración de campos adicionales. Esta sección permite configurar el comportamiento de los campos adicionales, los cuales aparecen en el formulario de [Extensión de Documentos](../LATAM-DocumentExtension.md). Están agrupados por secciones que son las mismas que tiene esta sección. Los comportamientos pueden ser:
 
 * **Deshabilitado:** El campo aparece deshabilitado.
@@ -161,7 +177,7 @@ Permite administrar el comportamiento de los campos en el grupo [contribuyente e
 ***
 ## Sección Máscara Documento
 ![Ventana de configuración](../../Imagenes/LATAM-VoucherClass-DocumentMask.PNG)
-## Descripción
+### Descripción
 Configuración de máscaras para el punto de venta y el comprobante. Cuando se usa el comprobante en la ventana [Extensión de Documentos](../LATAM-DocumentExtension.md). Se disparan una series de comportamientos referidos al número de comprobante y punto de venta. Esta sección se sub divide a su vez por las entidades mencionadas anteriormente:
 
 * Cuenta GL
@@ -184,23 +200,90 @@ cada una de estas secciones a su vez tiene dos secciones mas que son punto de ve
 >#### Longitud.
 >>**Descripción**: Indica la longitud que debe tener el prefijo en [Punto de venta](../Maestros/LATAM-SalesPoint.md#prefijo-punto-de-venta). Esta validación se ejecuta en el campo [prefijo de punto de venta en extensión de documentos](../LATAM-DocumentExtension.md#prefijo)
 
->>**Habilitado**: Si esta en true el campo Habilitado.
-
->>**Tipo**:boolean
-
->#### Obligatorio.
->>**Descripción**: Indica que el punto de venta o el [prefijo de Punto de venta](../Maestros/LATAM-SalesPoint.md). es obligatorio.
-
->>**Habilitado**: Si esta en true el campo Habilitado.
+>>**Editable**: Si esta en true el campo [Habilitado](#habilitado).
 
 >>**Tipo**:boolean
 
 >#### Máscara.
->>**Descripción**: Mascara para validar el prefijo de [Punto de venta](../Maestros/LATAM-SalesPoint.md).
+>>**Descripción**: Máscara para validar el prefijo de [Punto de venta](../Maestros/LATAM-SalesPoint.md).Determina la máscara y su tipo de verificación. Por ejemplo XXXXXXXX-X. La máscara deberá validar la  longitud configurada en el campo longitud. A su vez si se trata de letras, será alfanumérico. Si la máscara es numérica, sólo admitirá números.<br>
+La configuración realizada en el Grupo ‘Máscara’ se validará al momento del ingreso de la transacción a partir de la carga del campo  Comprobante.  
 
->>**Habilitado**: Si esta en true el campo Habilitado.
+>>**Editable**: Si esta en true el campo [Habilitado](#habilitado).
+
+>>**Tipo**:Text[250]
+
+>#### Obligatorio.
+>>**Descripción**: Indica que el punto de venta o el [prefijo de Punto de venta](../Maestros/LATAM-SalesPoint.md). es obligatorio.
+
+>>**Editable**: Si esta en true el campo [Habilitado](#habilitado).
 
 >>**Tipo**:boolean
+
+>#### Tipo de entrada (Punto de venta).
+>>**Descripción**: desplegable con las siguientes alternativas: 
+
+>>* Manual: esta configuración influirá en los datos adicionales, cargados en [extensión de documentos](../LATAM-DocumentExtension.md), ya que si el punto de venta o el documento dice ‘manual’, podrá ser editado en  la misma transacción. 
+
+>>* Automático: si se selecciona esta opción, en la ventana de Diario o bien en la Factura de Servicio,  se deberá tener en cuenta el siguiente comportamiento: 
+
+>>>* Punto de Venta: se deberá mostrar el desplegable con los Puntos de Venta disponibles en el Maestro de Puntos de Venta.  A su vez, si  la configuración del Punto de Venta por usuario se encuentra configurada, deberá ofrecer el punto de venta predeterminado de ese usuario.  
+
+>>>* Documento: Si el Punto de Venta se encuentra habilitado y con la opción automático,  en el campo documento, sólo deberá dejar seleccionar ‘Automático’. Si se encuentra seleccionada la opción ‘Automático’, este campo NO podrá ser editado por el usuario en las ventanas  de Diarios y Facturas de Servicios. Estará grisado.  
+
+Si el punto de venta no se encuentra habilitado o bien está habilitado y con la opción ‘Manual’, el campo ‘documento’ deberá ser manual y no podrá cambiarse a ‘Automático’. 
+
+Además, si  la opción ‘Automático’  se encuentra seleccionado,  la columna 6° se habilitará.  
+
+>>**Editable**: Si esta en true el campo [Habilitado](#habilitado).
+
+>>**Tipo**:Enum
+
+### Sub sección número de comprobante
+***
+>#### Obligatorio.
+>>**Descripción**: indica que el campo [número de documento](../LATAM-DocumentExtension.md#numero-de-documento), es obligatorio.
+	
+>>**Tipo**:boolean
+
+>#### Valida máscara.
+>>**Descripción**: indica que el campo [número de documento](../LATAM-DocumentExtension.md#numero-de-documento), al ser ingresado tiene que cumplir la mascara definida en (#).
+	
+>>**Tipo**:boolean
+
+>#### Longitud.
+>>**Descripción**: Indica la longitud que debe tener el [número de comprobante](../LATAM-DocumentExtension.md#numero-de-documento).
+
+>>**Editable**: Si esta en true el campo [Valida máscara](#valida-mascara).
+
+>>**Tipo**:boolean
+
+>#### Máscara.
+>>**Descripción**: Máscara para validar el [número de comprobante](../LATAM-DocumentExtension.md#numero-de-documento). Determina la máscara y su tipo de verificación. Por ejemplo XXXXXXXX-X. La máscara deberá validar la  longitud configurada en el campo longitud. A su vez si se trata de letras, será alfanumérico. Si la máscara es numérica, sólo admitirá números.<br>
+La configuración realizada en el Grupo ‘Máscara’ se validará al momento del ingreso de la transacción a partir de la carga del campo Comprobante.
+
+>>**Tipo**:Text[250]
+
+>#### Tipo de entrada.
+>>**Descripción**: desplegable con las siguientes alternativas: 
+
+>>* Manual: esta configuración influirá en los datos adicionales, cargados en [extensión de documentos](../LATAM-DocumentExtension.md), ya que si dice ‘manual’, podrá ser editado en  la misma transacción. 
+
+>>* Automático: si se selecciona esta opción, en la ventana de Diario o bien en la Factura de Servicio,  se deberá tener en cuenta el siguiente comportamiento: 
+
+>>>* Documento: Si el Punto de Venta se encuentra habilitado y con la opción automático,  en el campo documento, sólo deberá dejar seleccionar ‘Automático’. Si se encuentra seleccionada la opción ‘Automático’, este campo NO podrá ser editado por el usuario en las ventanas  de Diarios y Facturas de Servicios. Estará grisado.  
+
+Si el punto de venta no se encuentra habilitado o bien está habilitado y con la opción ‘Manual’, el campo ‘documento’ deberá ser manual y no podrá cambiarse a ‘Automático’. 
+
+>>**Editable**: Si esta en true el campo [Habilitado](#habilitado).
+
+>>**Tipo**:Enum
+
+>#### Tipo asignación.
+>>**Descripción**: Solo se habilitará para el campo Documento, en caso que se haya seleccionado ‘Automático’  en el campo [Tipo de entrada](#tipo-de-entrada). De lo contrario, aparecerá grisado. 
+
+>#### Tipo asignación.
+>>**Descripción**: Solo se habilitará para el campo Documento, en caso que se haya seleccionado ‘Automático’  en el campo [Tipo de entrada](#tipo-de-entrada). De lo contrario, aparecerá grisado. 
+
 ***
 
 
