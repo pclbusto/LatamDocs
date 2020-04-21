@@ -101,6 +101,12 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#rotulo-de-concepto-3">Rótulo de concepto 3</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#nota-1">Nota 1</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#nota-2">Nota 2</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#nota-3">Nota 3</a>
+    </li>
     <li class="toctree-l4"><a class="reference internal" href="#reporte">Reporte</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#tipo-transaccion-banco">Tipo transacción banco</a>
@@ -114,9 +120,9 @@
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#seccion-datos-adicionales">Sección Datos Adicionales</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#descripcion_2">Descripción</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#descripcion_2">Descripción</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#campos_1">Campos</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#comportamiento-grupo-banco">Comportamiento grupo banco.</a>
@@ -128,18 +134,38 @@
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#seccion-mascara-documento">Sección Máscara Documento</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#descripcion_3">Descripción</a>
         <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#descripcion_3">Descripción</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#sub-seccion-punto-de-ventas">Sub sección punto de ventas</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#habilitado">Habilitado.</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#longitud">Longitud.</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mascara">Máscara.</a>
+    </li>
     <li class="toctree-l4"><a class="reference internal" href="#obligatorio">Obligatorio.</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#mascara">Máscara.</a>
+    <li class="toctree-l4"><a class="reference internal" href="#tipo-de-entrada-punto-de-venta">Tipo de entrada (Punto de venta).</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sub-seccion-numero-de-comprobante">Sub sección número de comprobante</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#obligatorio_1">Obligatorio.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#valida-mascara">Valida máscara.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#longitud_1">Longitud.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mascara_1">Máscara.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tipo-de-entrada">Tipo de entrada.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tipo-asignacion">Tipo asignación.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tipo-asignacion_1">Tipo asignación.</a>
     </li>
         </ul>
     </li>
@@ -254,7 +280,7 @@
 <h2 id="descripcion">Descripción</h2>
 <p>Se debe contar con un maestro que permita dar de alta los diferentes comprobantes con los que puede trabajar la compañía en relación con terceros. Ejemplo: Factura, Nota de Débito, etc. <br>
 Además se utilizará para cargar comprobantes representantes de valores como ser Cheques de Terceros al Día y comprobantes representantes de transacciones de Tesorería como  Recibo u Orden de Pago. <br>
-Esta venta permite configurar el comprobante así como el comportamiento de varios de sus campos y como se va a comportar los campos relacionados a la generacion del numero de comprobante.</p>
+Esta venta permite configurar el comprobante así como el comportamiento de varios de sus campos y como se va a comportar los campos relacionados a la generación del numero de comprobante.</p>
 <h2 id="seccion-general">Sección General</h2>
 <h3 id="campos">Campos</h3>
 <hr />
@@ -289,14 +315,10 @@ NOTA: A  efectos de la configuración de los comprobantes con Tipo ‘medio de C
 <blockquote>
 <p><strong>Descripción</strong>: Cadena de caracteres que forma parte del cálculo del <a href="../../LATAM-DocumentExtension/#numero-de-documento-completo">número de comprobante completo</a>. Este prefijo es formado por el <a href="../LATAM-VoucherClassType/#prefijo">prefijo del tipo de comprobante</a> y el <a href="../LATAM-VoucherClassLetter/#prefijo">prefijo de la letra</a>. 
 Este campo, debe poder ser visualizado pero no modificable por el usuario. Sí los prefijos de Letra de comprobante y/o Tipo de comprobante, se encontraran vacíos, debería completarse en este campo con los espacios en blanco. </p>
-</blockquote>
-</blockquote>
-<p>Ejemplo:   </p>
-<p>Factura A -&gt;  FCA </p>
-<p>Nota de Crédito E  -&gt; NCE </p>
-<p>Documento de importación -&gt; IM  </p>
-<blockquote>
-<blockquote>
+<p>Ejemplo: <br />
+Factura A -&gt;  FCA<br>
+Nota de Crédito E  -&gt; NCE <br>
+Documento de importación -&gt; IM  <br></p>
 <p><strong>Tipo</strong>:Text[5]</p>
 </blockquote>
 <h4 id="inactivo">Inactivo</h4>
@@ -345,13 +367,18 @@ Este campo, debe poder ser visualizado pero no modificable por el usuario. Sí l
 </blockquote>
 <h4 id="requiere-ca">Requiere CA</h4>
 <blockquote>
-<p><strong>Descripción</strong>: </p>
-<p><strong>Tipo</strong>:Code[5]</p>
+<p><strong>Descripción</strong>:  indica cuándo la carga de número de CAI/CAE se encuentra habilitada. En caso de no estar tildada  esta opción, los campos CAI/CAE y Fecha de Vencimiento en la solapa LA de los datos adicionales de Transacciones NO se deberá visualizar. </p>
+</blockquote>
+</blockquote>
+<p>Para más información consultar las EF de Tipificación de Transacciones. </p>
+<blockquote>
+<blockquote>
+<p><strong>Tipo</strong>:Boolean</p>
 </blockquote>
 <h4 id="requiere-codigo-de-control">Requiere código de control</h4>
 <blockquote>
 <p><strong>Descripción</strong>: </p>
-<p><strong>Tipo</strong>:Code[5]</p>
+<p><strong>Tipo</strong>:Boolean</p>
 </blockquote>
 <h4 id="tipo-de-codigo-de-control">Tipo de código de control</h4>
 <blockquote>
@@ -360,18 +387,33 @@ Este campo, debe poder ser visualizado pero no modificable por el usuario. Sí l
 </blockquote>
 <h4 id="rotulo-de-concepto-1">Rótulo de concepto 1</h4>
 <blockquote>
-<p><strong>Descripción</strong>: </p>
-<p><strong>Tipo</strong>:Code[5]</p>
+<p><strong>Descripción</strong>: Los conceptos serán campos alfanuméricos que permitirán Guardar Información al momento de la carga de los Comprobantes. Su funcionamiento es igual que un definido de usuario. este campo define la etiqueta que usará. En la transacción, estos campos deberán visualizarse con  la etiqueta configurada y a su vez, deberán permitir el ingreso de un cierto valor. </p>
+<p><strong>Tipo</strong>:Text[100]</p>
 </blockquote>
 <h4 id="rotulo-de-concepto-2">Rótulo de concepto 2</h4>
 <blockquote>
-<p><strong>Descripción</strong>: </p>
-<p><strong>Tipo</strong>:Code[5]</p>
+<p><strong>Descripción</strong>: Los conceptos serán campos alfanuméricos que permitirán Guardar Información al momento de la carga de los Comprobantes. Su funcionamiento es igual que un definido de usuario. este campo define la etiqueta que usará. En la transacción, estos campos deberán visualizarse con  la etiqueta configurada y a su vez, deberán permitir el ingreso de un cierto valor. </p>
+<p><strong>Tipo</strong>:Text[100]</p>
 </blockquote>
 <h4 id="rotulo-de-concepto-3">Rótulo de concepto 3</h4>
 <blockquote>
-<p><strong>Descripción</strong>: </p>
-<p><strong>Tipo</strong>:Code[5]</p>
+<p><strong>Descripción</strong>: Los conceptos serán campos alfanuméricos que permitirán Guardar Información al momento de la carga de los Comprobantes. Su funcionamiento es igual que un definido de usuario. este campo define la etiqueta que usará. En la transacción, estos campos deberán visualizarse con  la etiqueta configurada y a su vez, deberán permitir el ingreso de un cierto valor. </p>
+<p><strong>Tipo</strong>:Text[100]</p>
+</blockquote>
+<h4 id="nota-1">Nota 1</h4>
+<blockquote>
+<p><strong>Descripción</strong>: Permitirá agregar información relacionada con el comprobante. No replicará en las ventanas transaccionales. </p>
+<p><strong>Tipo</strong>:Text[250]</p>
+</blockquote>
+<h4 id="nota-2">Nota 2</h4>
+<blockquote>
+<p><strong>Descripción</strong>: Permitirá agregar información relacionada con el comprobante. No replicará en las ventanas transaccionales. </p>
+<p><strong>Tipo</strong>:Text[250]</p>
+</blockquote>
+<h4 id="nota-3">Nota 3</h4>
+<blockquote>
+<p><strong>Descripción</strong>: Permitirá agregar información relacionada con el comprobante. No replicará en las ventanas transaccionales. </p>
+<p><strong>Tipo</strong>:Text[250]</p>
 </blockquote>
 <h4 id="reporte">Reporte</h4>
 <blockquote>
@@ -398,7 +440,7 @@ Si este campo esta marcado, cambia el comportamiento a requerido de los campos e
 <hr />
 <h2 id="seccion-datos-adicionales">Sección Datos Adicionales</h2>
 <p><img alt="Ventana de configuración" src="../../Imagenes/LATAM-VoucherClass-AdditionalData.PNG" /></p>
-<h2 id="descripcion_2">Descripción</h2>
+<h3 id="descripcion_2">Descripción</h3>
 <p>Configuración de campos adicionales. Esta sección permite configurar el comportamiento de los campos adicionales, los cuales aparecen en el formulario de <a href="../../LATAM-DocumentExtension/">Extensión de Documentos</a>. Están agrupados por secciones que son las mismas que tiene esta sección. Los comportamientos pueden ser:</p>
 <ul>
 <li><strong>Deshabilitado:</strong> El campo aparece deshabilitado.</li>
@@ -426,7 +468,7 @@ Permite administrar el comportamiento de los campos en el grupo <a href="../../L
 <hr />
 <h2 id="seccion-mascara-documento">Sección Máscara Documento</h2>
 <p><img alt="Ventana de configuración" src="../../Imagenes/LATAM-VoucherClass-DocumentMask.PNG" /></p>
-<h2 id="descripcion_3">Descripción</h2>
+<h3 id="descripcion_3">Descripción</h3>
 <p>Configuración de máscaras para el punto de venta y el comprobante. Cuando se usa el comprobante en la ventana <a href="../../LATAM-DocumentExtension/">Extensión de Documentos</a>. Se disparan una series de comportamientos referidos al número de comprobante y punto de venta. Esta sección se sub divide a su vez por las entidades mencionadas anteriormente:</p>
 <ul>
 <li>Cuenta GL</li>
@@ -447,20 +489,109 @@ Permite administrar el comportamiento de los campos en el grupo <a href="../../L
 <h4 id="longitud">Longitud.</h4>
 <blockquote>
 <p><strong>Descripción</strong>: Indica la longitud que debe tener el prefijo en <a href="../LATAM-SalesPoint/#prefijo-punto-de-venta">Punto de venta</a>. Esta validación se ejecuta en el campo <a href="../../LATAM-DocumentExtension/#prefijo">prefijo de punto de venta en extensión de documentos</a></p>
-<p><strong>Habilitado</strong>: Si esta en true el campo Habilitado.</p>
-<p><strong>Tipo</strong>:boolean</p>
-</blockquote>
-<h4 id="obligatorio">Obligatorio.</h4>
-<blockquote>
-<p><strong>Descripción</strong>: Indica que el punto de venta o el <a href="../LATAM-SalesPoint/">prefijo de Punto de venta</a>. es obligatorio.</p>
-<p><strong>Habilitado</strong>: Si esta en true el campo Habilitado.</p>
+<p><strong>Editable</strong>: Si esta en true el campo <a href="#habilitado">Habilitado</a>.</p>
 <p><strong>Tipo</strong>:boolean</p>
 </blockquote>
 <h4 id="mascara">Máscara.</h4>
 <blockquote>
-<p><strong>Descripción</strong>: Mascara para validar el prefijo de <a href="../LATAM-SalesPoint/">Punto de venta</a>.</p>
-<p><strong>Habilitado</strong>: Si esta en true el campo Habilitado.</p>
+<p><strong>Descripción</strong>: Máscara para validar el prefijo de <a href="../LATAM-SalesPoint/">Punto de venta</a>.Determina la máscara y su tipo de verificación. Por ejemplo XXXXXXXX-X. La máscara deberá validar la  longitud configurada en el campo longitud. A su vez si se trata de letras, será alfanumérico. Si la máscara es numérica, sólo admitirá números.<br>
+La configuración realizada en el Grupo ‘Máscara’ se validará al momento del ingreso de la transacción a partir de la carga del campo  Comprobante.  </p>
+<p><strong>Editable</strong>: Si esta en true el campo <a href="#habilitado">Habilitado</a>.</p>
+<p><strong>Tipo</strong>:Text[250]</p>
+</blockquote>
+<h4 id="obligatorio">Obligatorio.</h4>
+<blockquote>
+<p><strong>Descripción</strong>: Indica que el punto de venta o el <a href="../LATAM-SalesPoint/">prefijo de Punto de venta</a>. es obligatorio.</p>
+<p><strong>Editable</strong>: Si esta en true el campo <a href="#habilitado">Habilitado</a>.</p>
 <p><strong>Tipo</strong>:boolean</p>
+</blockquote>
+<h4 id="tipo-de-entrada-punto-de-venta">Tipo de entrada (Punto de venta).</h4>
+<blockquote>
+<p><strong>Descripción</strong>: desplegable con las siguientes alternativas: </p>
+<ul>
+<li>
+<p>Manual: esta configuración influirá en los datos adicionales, cargados en <a href="../../LATAM-DocumentExtension/">extensión de documentos</a>, ya que si el punto de venta o el documento dice ‘manual’, podrá ser editado en  la misma transacción. </p>
+</li>
+<li>
+<p>Automático: si se selecciona esta opción, en la ventana de Diario o bien en la Factura de Servicio,  se deberá tener en cuenta el siguiente comportamiento: </p>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>
+<p>Punto de Venta: se deberá mostrar el desplegable con los Puntos de Venta disponibles en el Maestro de Puntos de Venta.  A su vez, si  la configuración del Punto de Venta por usuario se encuentra configurada, deberá ofrecer el punto de venta predeterminado de ese usuario.  </p>
+</li>
+<li>
+<p>Documento: Si el Punto de Venta se encuentra habilitado y con la opción automático,  en el campo documento, sólo deberá dejar seleccionar ‘Automático’. Si se encuentra seleccionada la opción ‘Automático’, este campo NO podrá ser editado por el usuario en las ventanas  de Diarios y Facturas de Servicios. Estará grisado.  </p>
+</li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Si el punto de venta no se encuentra habilitado o bien está habilitado y con la opción ‘Manual’, el campo ‘documento’ deberá ser manual y no podrá cambiarse a ‘Automático’. </p>
+<p>Además, si  la opción ‘Automático’  se encuentra seleccionado,  la columna 6° se habilitará.  </p>
+<blockquote>
+<blockquote>
+<p><strong>Editable</strong>: Si esta en true el campo <a href="#habilitado">Habilitado</a>.</p>
+<p><strong>Tipo</strong>:Enum</p>
+</blockquote>
+</blockquote>
+<h3 id="sub-seccion-numero-de-comprobante">Sub sección número de comprobante</h3>
+<hr />
+<blockquote>
+<h4 id="obligatorio_1">Obligatorio.</h4>
+<blockquote>
+<p><strong>Descripción</strong>: indica que el campo <a href="../../LATAM-DocumentExtension/#numero-de-documento">número de documento</a>, es obligatorio.</p>
+<p><strong>Tipo</strong>:boolean</p>
+</blockquote>
+<h4 id="valida-mascara">Valida máscara.</h4>
+<blockquote>
+<p><strong>Descripción</strong>: indica que el campo <a href="../../LATAM-DocumentExtension/#numero-de-documento">número de documento</a>, al ser ingresado tiene que cumplir la mascara definida en (#).</p>
+<p><strong>Tipo</strong>:boolean</p>
+</blockquote>
+<h4 id="longitud_1">Longitud.</h4>
+<blockquote>
+<p><strong>Descripción</strong>: Indica la longitud que debe tener el <a href="../../LATAM-DocumentExtension/#numero-de-documento">número de comprobante</a>.</p>
+<p><strong>Editable</strong>: Si esta en true el campo <a href="#valida-mascara">Valida máscara</a>.</p>
+<p><strong>Tipo</strong>:boolean</p>
+</blockquote>
+<h4 id="mascara_1">Máscara.</h4>
+<blockquote>
+<p><strong>Descripción</strong>: Máscara para validar el <a href="../../LATAM-DocumentExtension/#numero-de-documento">número de comprobante</a>. Determina la máscara y su tipo de verificación. Por ejemplo XXXXXXXX-X. La máscara deberá validar la  longitud configurada en el campo longitud. A su vez si se trata de letras, será alfanumérico. Si la máscara es numérica, sólo admitirá números.<br>
+La configuración realizada en el Grupo ‘Máscara’ se validará al momento del ingreso de la transacción a partir de la carga del campo Comprobante.</p>
+<p><strong>Tipo</strong>:Text[250]</p>
+</blockquote>
+<h4 id="tipo-de-entrada">Tipo de entrada.</h4>
+<blockquote>
+<p><strong>Descripción</strong>: desplegable con las siguientes alternativas: </p>
+<ul>
+<li>
+<p>Manual: esta configuración influirá en los datos adicionales, cargados en <a href="../../LATAM-DocumentExtension/">extensión de documentos</a>, ya que si dice ‘manual’, podrá ser editado en  la misma transacción. </p>
+</li>
+<li>
+<p>Automático: si se selecciona esta opción, en la ventana de Diario o bien en la Factura de Servicio,  se deberá tener en cuenta el siguiente comportamiento: </p>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>Documento: Si el Punto de Venta se encuentra habilitado y con la opción automático,  en el campo documento, sólo deberá dejar seleccionar ‘Automático’. Si se encuentra seleccionada la opción ‘Automático’, este campo NO podrá ser editado por el usuario en las ventanas  de Diarios y Facturas de Servicios. Estará grisado.  </li>
+</ul>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Si el punto de venta no se encuentra habilitado o bien está habilitado y con la opción ‘Manual’, el campo ‘documento’ deberá ser manual y no podrá cambiarse a ‘Automático’. </p>
+<blockquote>
+<blockquote>
+<p><strong>Editable</strong>: Si esta en true el campo <a href="#habilitado">Habilitado</a>.</p>
+<p><strong>Tipo</strong>:Enum</p>
+</blockquote>
+<h4 id="tipo-asignacion">Tipo asignación.</h4>
+<blockquote>
+<p><strong>Descripción</strong>: Solo se habilitará para el campo Documento, en caso que se haya seleccionado ‘Automático’  en el campo <a href="#tipo-de-entrada">Tipo de entrada</a>. De lo contrario, aparecerá grisado. </p>
+</blockquote>
+<h4 id="tipo-asignacion_1">Tipo asignación.</h4>
+<blockquote>
+<p><strong>Descripción</strong>: Solo se habilitará para el campo Documento, en caso que se haya seleccionado ‘Automático’  en el campo <a href="#tipo-de-entrada">Tipo de entrada</a>. De lo contrario, aparecerá grisado. </p>
 </blockquote>
 </blockquote>
 <hr />
