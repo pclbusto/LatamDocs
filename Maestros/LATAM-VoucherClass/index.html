@@ -71,8 +71,6 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#descripcion_1">Descripción</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#descripcion-legal">Descripción Legal</a>
-    </li>
     <li class="toctree-l4"><a class="reference internal" href="#tipo-clase-comprobantes">Tipo Clase Comprobantes</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#letra">Letra</a>
@@ -169,6 +167,14 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#seccion-medios-de-cobropago">Sección Medios de cobro/pago</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#descripcion_4">Descripción</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tipo-de-medio-de-pago">Tipo de medio de pago.</a>
+    </li>
+        </ul>
+    </li>
         </ul>
     </li>
     </ul>
@@ -220,6 +226,8 @@
                 <li class="toctree-l2"><a class="reference internal" href="../../Desarrollo/Enums/LATAM-DocumentExtensionType/">LATAM Document Extension Type</a>
                 </li>
                 <li class="toctree-l2"><a class="" href="../../Desarrollo/Enums/LATAM-EntityType/LATAM-EntityType.md">LATAM Entity Type</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Desarrollo/Enums/LATAM-CPDPaymentMediaType/">LATAM CPD Payment media Type</a>
                 </li>
     </ul>
                     </li>
@@ -295,11 +303,14 @@ Esta venta permite configurar el comprobante así como el comportamiento de vari
 <p><strong>Descripción</strong>: Este campo deberá ser completado manualmente por el usuario, ampliando con un detalle el código de comprobante que se esté dando de alta. </p>
 <p><strong>Tipo</strong>:Text[100]</p>
 </blockquote>
-<h4 id="descripcion-legal">Descripción Legal</h4>
-<blockquote>
-<p><strong>Descripción</strong>: </p>
-<p><strong>Tipo</strong>:Code[5]</p>
 </blockquote>
+<!-- #### Descripción Legal 
+**Descripción**:
+
+>>**Tipo**:Code[5]
+-->
+
+<blockquote>
 <h4 id="tipo-clase-comprobantes">Tipo Clase Comprobantes</h4>
 <blockquote>
 <p><strong>Descripción</strong>: id tipo clase de comprobante. Indica que comportamiento va a tener este comprobante, el cual esta supeditado a lo configurado en el <a href="../LATAM-VoucherClassType/">tipo clase comprobante</a>.</p>
@@ -595,8 +606,20 @@ La configuración realizada en el Grupo ‘Máscara’ se validará al momento d
 </blockquote>
 </blockquote>
 <hr />
+<h3 id="seccion-medios-de-cobropago">Sección Medios de cobro/pago</h3>
+<h4 id="descripcion_4">Descripción</h4>
+<p>En este grupo se ingresará toda la información relacionada con  aquellos Comprobantes, cuyo Tipo de Comprobante posee tildada la opción <a href="../LATAM-VoucherClassType/#medio-de-cobropago">Medio de Cobro/Pago</a> en el maestro de <a href="../LATAM-VoucherClassType/">tipo clase de comprobante</a>.</p>
+<blockquote>
+<h4 id="tipo-de-medio-de-pago">Tipo de medio de pago.</h4>
+<blockquote>
+<p><strong>Descripción</strong>: </p>
+<p><strong>Editable</strong>: ver descripción del grupo.</p>
+<p><strong>Tipo</strong>:Enum <a href="../../Desarrollo/Enums/LATAM-CPDPaymentMediaType">LATAM CPDPaymentMediaType</a></p>
+</blockquote>
+</blockquote>
+<p>Opciones: </p>
 <p>PENDIENTE MCP
-medio-de-cobropago
+medio-de-cobro pago
 Si el Tipo de Comprobante  posee tildada la opción ‘Medio de Cobro/Pago’ el tab ‘Documentos de AX’, en el Maestro de Tipo de Documento;  los Tab ‘Medio de Cobro/Pago’, ‘Nombres de Diario’, se encontrarán habilitadas, de lo contrario no se visualizarán. </p>
               
             </div>
