@@ -119,6 +119,12 @@
                 </li>
     </ul>
                     </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Extensiones Procesos</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Desarrollo/Proceso_posting_documento_compras/">Posting de documentos de compras</a>
+                </li>
+    </ul>
+                    </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Info Extra</span></p>
                 <ul>
@@ -242,39 +248,30 @@ Podrán ser seleccionados aquellos que cumplan estas condiciones: </p>
 <p>Tipo Documento deben estar en el estado en el que está inscripto el cliente. </p>
 </li>
 </ul>
-</blockquote>
-</blockquote>
 <p>Ahora si aplicamos las tres reglas de arriba y como resultado se tiene un único <strong>Tipo de documento</strong> se deberá seleccionar automáticamente. Si el campo <strong>Jurisdicción Inscripta en</strong> y/o el <strong>Tipo Contribuyente</strong> no están seleccionados, no se deberá mostrar ningún valor posible.  Si alguno de estos campos cambia se deberá borrar el campo <strong>Tipo de documento estado</strong> y si la nueva intersección da un elemento, se deberá seleccionar automáticamente.<br>
 En caso que el registro de cliente no cuente con todos los datos  requeridos en función al Tipo de Contribuyente  o bien no se seleccione el Tipo de Contribuyente; el registro de cliente no se podrá activar, ya que el campo checkbox <strong>Inactivar</strong> debe estar marcado. A su vez, el campo checkbox <strong>Inactivar</strong>  no se debería poder editar hasta tanto se cumplan los requisitos  de alta del cliente. </p>
-<blockquote>
+</blockquote>
 <h4 id="inscripto-en-jurisdiccion">Inscripto en jurisdicción</h4>
 <blockquote>
 <p><strong>Descripción</strong>:
-Solo debería seleccionar un código de Estado (Provincia) perteneciente al país de radicación. De estar en blanco país de radicación no debe mostrar datos el lookup.</p>
-<p>El comportamiento del campo es determinado por el campo <a href="../../Maestros/LATAM-TaxPayerType/#documento-estado-requerido">documento estado requerido</a></p>
+Solo debería seleccionar un código de Estado (Provincia) perteneciente al país de radicación. De estar en blanco país de radicación no debe mostrar datos el lookup.<br>El comportamiento del campo es determinado por el campo <a href="../../Maestros/LATAM-TaxPayerType/#jurisdiccion-requerida">jurisdiccion requerida</a></p>
+</blockquote>
+<h4 id="tipo-de-documento-estado_1">Tipo de documento Estado</h4>
+<blockquote>
+<p><strong>Descripción</strong>: Este campo deberá habilitarse una vez configurado, el tipo de contribuyente. EJ. IIBB BA. <br>El comportamiento del campo es determinado por el campo <a href="../../Maestros/LATAM-TaxPayerType/#documento-estado-requerido">documento estado requerido</a><br>
+En este campo, BC, solo permitirá seleccionar entre los tipos de documento Estado que coincidan entre lo configurado para el Estado donde se encuentra inscripto el cliente, y los configurados para el tipo de contribuyente parametrizado que tienen configurado Tipo Documento Estado=SI. 
+Sí de este filtro, se obtiene un solo tipo de documento Estado, entonces será BC, el que completará automáticamente el campo <strong>Tipo de documento Estado</strong>.<br />
+En caso contrario, se permitirá al usuario, seleccionar el tipo de documento Estado entre los que sean coincidentes entre Tipo de contribuyente y Estado de Jurisdicción del cliente. <br>
+Ejemplo: Al  tipo de contribuyente Responsable Inscripto, se le ha configurado como tipo de documento admitido, el CUIT, IIBB BS AS, IIBB Córdoba, IIBB Capital Federal. A su vez los tipos de documento de IIBB fueron parametrizados como tipo de documento Estado. En cambio el CUIT, fue configurado como Tipo de documento País. <br>
+Al Estado Buenos Aires se lo configuró con el Tipo de documento Estado, IIBB BS AS, y CUIT-IB. 
+Por lo tanto, sí al Cliente, se le configura la jurisdicción inscripta  en <strong>Buenos Aires</strong> y el Tipo de contribuyente, <strong>Responsable Inscripto</strong>, el campo Tipo de documento Estado, deberá completarse automáticamente con el valor IIBB BS AS, ya que es el único que se encontraría disponible entre la intersección de los tipos de documentos configurados en el Responsable Inscripto y en la jurisdicción Inscripta Buenos Aires. Una vez que se ha seleccionado o configurado automáticamente este campo, se deberá completar el Número de Identificación Estado. </p>
+</blockquote>
+<h4 id="numero-de-identificacion-estado">Número de identificación Estado</h4>
+<blockquote>
+<p><strong>Descripción</strong>: Se habilitará para los ID de Cliente, una vez seleccionado el tipo de documento Estado, y el tipo de contribuyente parametrizado.<br>El comportamiento del campo es determinado por el campo <a href="../../Maestros/LATAM-TaxPayerType/#documento-estado-requerido">documento estado requerido</a><br>
+Este número deberá validar con la máscara configurada en Tipo Documento. </p>
 </blockquote>
 </blockquote>
-<p>Este campo será obligatorio dependiendo de lo configurado en  el Tipo de Contribuyente (seleccionado anteriormente) en el campo ‘Jurisdicción Inscripta Obligatorio’. </p>
-<p>Si el contribuyente no es interno ni del exterior la ‘Jurisdicción Inscripta’ debería ser obligatoria. </p>
-<p>Si el contribuyente es  Interno, la ‘Jurisdicción Inscripta’ no debería ser obligatoria. </p>
-<p>Si el contribuyente es del exterior la ‘Jurisdicción Inscripta’ podría ser obligatoria o no. </p>
-<p>Solo se mostrará los Estados que pertenecen al País en el que está radicado el cliente.  Si ese país cambia, se deberá vaciar el campo Estado. </p>
-<p>Esta configuración, junto con el tipo de contribuyente seleccionado, permitirá dejar solo disponibles como ‘Tipo de Documento Estado’ a los que surjan de la conjunción entre lo configurado en el valor colocado como <strong>Jurisdicción Inscripta</strong> y <strong>Tipo de contribuyente</strong>. </p>
-<p>Tipo de documento Estado: Este campo deberá habilitarse una vez configurado, el tipo de contribuyente. EJ. IIBB BA. </p>
-<p>Debe ser un campo obligatorio, sí el tipo de contribuyente configurado es del tipo Nacional (se configuró NO en el campo Exterior en el maestro de tipo de contribuyente).  </p>
-<p>Sí el tipo de contribuyente es del Exterior, no será obligatorio, seleccionar el Tipo de documento Estado e ingresar el Número de identificación Estado.  </p>
-<p>En este campo, AX, solo permitirá seleccionar entre los tipos de documento Estado que coincidan entre lo configurado para el Estado donde se encuentra inscripto el cliente, y los configurados para el tipo de contribuyente parametrizado que tienen configurado Tipo Documento Estado=SI. </p>
-<p>Sí de este filtro, se obtiene un solo tipo de documento Estado, entonces será AX, el que completará automáticamente el campo <strong>Tipo de documento Estado</strong>.  </p>
-<p>En caso contrario, se permitirá al usuario, seleccionar el tipo de documento Estado entre los que sean coincidentes entre Tipo de contribuyente y Estado de Jurisdicción del cliente. </p>
-<p>Ejemplo: Al  tipo de contribuyente Responsable Inscripto, se le ha configurado como tipo de documento admitido, el CUIT, IIBB BS AS, IIBB Córdoba, IIBB Capital Federal. A su vez los tipos de documento de IIBB fueron parametrizados como tipo de documento Estado. En cambio el CUIT, fue configurado como Tipo de documento País. </p>
-<p>Al Estado Buenos Aires se lo configuró con el Tipo de documento Estado, IIBB BS AS, y CUIT-IB. </p>
-<p>Por lo tanto, sí al Cliente, se le configura la jurisdicción inscripta  en <strong>Buenos Aires</strong> y el Tipo de contribuyente, <strong>Responsable Inscripto</strong>, el campo Tipo de documento Estado, deberá completarse automáticamente con el valor IIBB BS AS, ya que es el único que se encontraría disponible entre la intersección de los tipos de documentos configurados en el Responsable Inscripto y en la jurisdicción Inscripta Buenos Aires. Una vez que se ha seleccionado o configurado automáticamente este campo, se deberá completar el Número de Identificación Estado. </p>
-<p>Número de identificación Estado: Se habilitará para los ID de Cliente, una vez seleccionado el tipo de documento Estado, y el tipo de contribuyente parametrizado.  </p>
-<p>Este número deberá ser obligatorio dependiendo de la configuración realizada en el Tipo de Contribuyente. </p>
-<p>Si el tipo de contribuyente  no es interno ni del exterior, el ‘Número de Identificación Estado’ deberá ser Obligatorio. </p>
-<p>Si el tipo de contribuyente es interno, el ‘Número de Identificación de Estado’ no debería ser obligatorio. </p>
-<p>Si el Tipo de Contribuyente es Externo  el campo podría ser obligatorio o no. </p>
-<p>Este número deberá validar con la máscara configurada en Tipo Documento. </p>
               
             </div>
           </div>
