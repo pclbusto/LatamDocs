@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../../../img/favicon.ico">
-  <title>LATAM Document Extension Type - LATAM DOC</title>
+  <title>LATAM CopyDocumentNum - LATAM DOC</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../../../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "LATAM Document Extension Type";
-    var mkdocs_page_input_path = "Desarrollo\\Enums\\LATAM-DocumentExtensionType.md";
+    var mkdocs_page_name = "LATAM CopyDocumentNum";
+    var mkdocs_page_input_path = "Desarrollo\\Enums\\LATAM-CopyDocumentNum.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -90,7 +90,7 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Desarrollo</span></p>
-                <ul class="current">
+                <ul>
                     <li class="toctree-l1"><a class="reference internal" href="#">Code Units</a>
     <ul>
                 <li class="toctree-l2"><a class="reference internal" href="../../Code-Units/LATAM-SalesHeaderDocExt/">LATAM SalesHeaderDocExt</a>
@@ -103,13 +103,9 @@
                 </li>
     </ul>
                     </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Enums</a>
-    <ul class="current">
-                <li class="toctree-l2 current"><a class="reference internal current" href="./">LATAM Document Extension Type</a>
-    <ul class="current">
-    <li class="toctree-l3"><a class="reference internal" href="#descripcion">Descripción</a>
-    </li>
-    </ul>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Enums</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../LATAM-DocumentExtensionType/">LATAM Document Extension Type</a>
                 </li>
                 <li class="toctree-l2"><a class="" href="../LATAM-EntityType/LATAM-EntityType.md">LATAM Entity Type</a>
                 </li>
@@ -153,16 +149,8 @@
     <li><a href="../../..">Docs</a> &raquo;</li>
     
       
-        
-          <li>Enums &raquo;</li>
-        
-      
-        
-          <li>Desarrollo &raquo;</li>
-        
-      
     
-    <li>LATAM Document Extension Type</li>
+    <li>LATAM CopyDocumentNum</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -173,216 +161,42 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="latam-documentextensiontype">LATAM DocumentExtensionType</h1>
+                <h1 id="latam-copiar-numero-de-comprobante">LATAM Copiar número de comprobante</h1>
 <h2 id="descripcion">Descripción</h2>
-<p>Representa todo tipo de extensión de latam. Mediante este enumerado se da el contexto de como tiene que comportarse la page <a href="../../../LATAM-DocumentExtension/LATAM-DocumentExtension.md">Document Extesión</a>. Por ejemplo si se usa el valor PurchaseInvoice, la page va a saber que es una factura de compra y los voucher class que tiene que mostrar y el comportamiento sera relativo a facturas de compra y no remito u otros documentos.</p>
+<p>Indica como va a ser el reemplazo de los numeradores de los distintos documentos.</p>
 <table>
 <thead>
 <tr>
 <th>Nro</th>
 <th>valor</th>
 <th align="center">Caption Eng</th>
-<th>Caption Esp</th>
+<th align="center">Caption Esp</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>0</td>
+<td>None</td>
+<td align="center">'None'</td>
+<td align="center">Ninguno</td>
+</tr>
+<tr>
 <td>1</td>
-<td>ReceiptRevBank</td>
-<td align="center">'Receipt Reverse Bank'</td>
-<td>"Reversa de recibo banco"</td>
+<td>VoucherNumber</td>
+<td align="center">'Voucher No.'</td>
+<td align="center">N° de comprobante</td>
 </tr>
 <tr>
 <td>2</td>
-<td>ReceiptRevCust</td>
-<td align="center">'Receipt Reverse Customer'</td>
-<td>"Reversa de recibo cliente"</td>
+<td>Invoice</td>
+<td align="center">'Invoice'</td>
+<td align="center">Factura</td>
 </tr>
 <tr>
 <td>3</td>
-<td>ReceiptRevFA</td>
-<td align="center">'Receipt Reverse FA'</td>
-<td>"Reversa de recibo activo fijo"</td>
-</tr>
-<tr>
-<td>4</td>
-<td>ReceiptRevGL</td>
-<td align="center">'Receipt Reverse GL'</td>
-<td>"Reversa de recibo GL"</td>
-</tr>
-<tr>
-<td>5</td>
-<td>ReceiptRevProj</td>
-<td align="center">'Receipt Reverse Project'</td>
-<td>"Reversa de recibo proyecto"</td>
-</tr>
-<tr>
-<td>6</td>
-<td>ReceiptRevVend</td>
-<td align="center">'Receipt Reverse Vendor'</td>
-<td>"Reversa de recibo proveedor"</td>
-</tr>
-<tr>
-<td>9</td>
-<td>FreeTextCreditNote</td>
-<td align="center">'Free Text Credit Note'</td>
-<td>"Nota de crédito de servicios"</td>
-</tr>
-<tr>
-<td>10</td>
-<td>FreeTextInvoice</td>
-<td align="center">'Free Text Invoice'</td>
-<td>"Factura de servicios"</td>
-</tr>
-<tr>
-<td>12</td>
-<td>InventTransferPackingSlip</td>
-<td align="center">'Inventory Transfer Packing Slip'</td>
-<td>"Remito de transferencia de inventario"</td>
-</tr>
-<tr>
-<td>13</td>
-<td>JournalBankCredit</td>
-<td align="center">'Bank Journal  Credit'</td>
-<td>"Línea de crédito de diario de banco"</td>
-</tr>
-<tr>
-<td>14</td>
-<td>JournalBankDebit</td>
-<td align="center">'Bank Journal  Debit'</td>
-<td>"Línea de débito de diario de banco"</td>
-</tr>
-<tr>
-<td>15</td>
-<td>JournalCustCredit</td>
-<td align="center">'Customer Journal  Credit'</td>
-<td>"Línea de crédito de diario de cliente"</td>
-</tr>
-<tr>
-<td>16</td>
-<td>JournalCustDebit</td>
-<td align="center">'Customer Journal  Debit'</td>
-<td>"Línea de débito de diario de cliente"</td>
-</tr>
-<tr>
-<td>17</td>
-<td>JournalFACredit</td>
-<td align="center">'FA Journal  Credit'</td>
-<td>"Línea de crédito de diario de activo fijo"</td>
-</tr>
-<tr>
-<td>18</td>
-<td>JournalFADebit</td>
-<td align="center">'FA Journal  Debit'</td>
-<td>"Línea de débito de diario de activo fijo"</td>
-</tr>
-<tr>
-<td>19</td>
-<td>JournalGLCredit</td>
-<td align="center">'GL Journal  Credit'</td>
-<td>"Línea de crédito de diario de GL"</td>
-</tr>
-<tr>
-<td>20</td>
-<td>JournalGLDebit</td>
-<td align="center">'GL Journal  Debit'</td>
-<td>"Línea de débito de diario de GL"</td>
-</tr>
-<tr>
-<td>21</td>
-<td>JournalProjCredit</td>
-<td align="center">'Project Journal  Credit'</td>
-<td>"Línea de crédito de diario de proyecto"</td>
-</tr>
-<tr>
-<td>22</td>
-<td>JournalProjDebit</td>
-<td align="center">'Project Journal  Debit'</td>
-<td>"Línea de débito de diario de proyecto"</td>
-</tr>
-<tr>
-<td>23</td>
-<td>JournalVendCredit</td>
-<td align="center">'Vendor Journal  Credit'</td>
-<td>"Línea de crédito de diario de proveedor"</td>
-</tr>
-<tr>
-<td>24</td>
-<td>JournalVendDebit</td>
-<td align="center">'Vendor Journal  Debit'</td>
-<td>"Línea de débito de diario de proveedor"</td>
-</tr>
-<tr>
-<td>25</td>
-<td>PackingSlip</td>
-<td align="center">'Packing Slip'</td>
-<td>"Remito"</td>
-</tr>
-<tr>
-<td>26</td>
-<td>ProjectCreditNote</td>
-<td align="center">'Project Credit Note'</td>
-<td>"Nota de crédito de proyecto"</td>
-</tr>
-<tr>
-<td>27</td>
-<td>ProjectInvoice</td>
-<td align="center">'Project Invoice'</td>
-<td>"Factura de proyecto"</td>
-</tr>
-<tr>
-<td>28</td>
-<td>ProjectPackingSlip</td>
-<td align="center">'Project Packing Slip'</td>
-<td>"Remito de proyecto"</td>
-</tr>
-<tr>
-<td>29</td>
-<td>ProjectReturnDeliveryNote</td>
-<td align="center">'Project Return Delivery Note'</td>
-<td>"Nota de entrega de devolución de proyecto"</td>
-</tr>
-<tr>
-<td>30</td>
-<td>PurchaseCreditNote</td>
-<td align="center">'Purchase Credit Note'</td>
-<td>"Nota de crédito de compras"</td>
-</tr>
-<tr>
-<td>31</td>
-<td>PurchaseInvoice</td>
-<td align="center">'Purchase Invoice'</td>
-<td>"Factura de compras"</td>
-</tr>
-<tr>
-<td>32</td>
-<td>ReturnPackingSlip</td>
-<td align="center">'Return Packing Slip'</td>
-<td>"Remito de devolución"</td>
-</tr>
-<tr>
-<td>33</td>
-<td>SalesCreditNote</td>
-<td align="center">'Sales Credit Note'</td>
-<td>"Nota de crédito de ventas"</td>
-</tr>
-<tr>
-<td>34</td>
-<td>SalesInvoice</td>
-<td align="center">'Sales Invoice'</td>
-<td>"Factura de ventas"</td>
-</tr>
-<tr>
-<td>35</td>
-<td>SalesOrder</td>
-<td align="center">'Sales Order'</td>
-<td>"Orden de ventas"</td>
-</tr>
-<tr>
-<td>36</td>
-<td>ServiceInvoices</td>
-<td align="center">'Service Invoices'</td>
-<td>"Facturas de servicio"</td>
+<td>InvoiceAndVoucherNumber</td>
+<td align="center">'Invoice and Voucher No.'</td>
+<td align="center">Factura y N° de comprobante</td>
 </tr>
 </tbody>
 </table>
@@ -390,15 +204,6 @@
             </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../LATAM-CPDPaymentMediaType/" class="btn btn-neutral float-right" title="LATAM CPD Payment media Type">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../../Code-Units/LATAM-PurchasePostSubscribers/" class="btn btn-neutral" title="LATAM Purchase Post Subscribers"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
@@ -422,10 +227,6 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../../Code-Units/LATAM-PurchasePostSubscribers/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../LATAM-CPDPaymentMediaType/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

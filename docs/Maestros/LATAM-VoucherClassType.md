@@ -23,7 +23,6 @@ Este maestro es una tipificación para las [clases de comprobantes](../Maestros/
 	
 >>**Tipo**:boolean
 
-
 ## Sección Medio Cobro Pago
 ![Ventana de configuración](../Imagenes/LATAM-VoucherClassType-Seccion-Collection-Payment-Document.PNG)
 >#### Medio de cobro/pago

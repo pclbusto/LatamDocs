@@ -28,8 +28,11 @@ nav:
         - Enums:
             - LATAM Document Extension Type: Desarrollo/Enums/LATAM-DocumentExtensionType.md
             - LATAM Entity Type: Desarrollo/Enums/LATAM-EntityType/LATAM-EntityType.md
+            - LATAM CPD Payment media Type: Desarrollo/Enums/LATAM-CPDPaymentMediaType.md
         - Queries: 
             - LATAM Voucher Class Lookup: Desarrollo/Queries/LATAM-VoucherClassLookup/LATAM-VoucherClassLookup.md
+        - Extensiones Procesos:
+            - Posting de documentos de compras: Desarrollo/Proceso_posting_documento_compras.md
     - Info Extra:
         - Máscara Documentos: Info-Extra/Mascara.md
     - Acerca de: about.md
